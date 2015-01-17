@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Gateway.Domain;
@@ -9,7 +10,7 @@ namespace RailDataEngine.Gateway.EF.Schedule
 {
     public class AssociationGateway : IStorageGateway<AssociationEntity>
     {
-        private IScheduleContext _context;
+        private readonly IScheduleContext _context;
 
         public AssociationGateway(IScheduleDatabase scheduleDatabase)
         {
@@ -19,34 +20,38 @@ namespace RailDataEngine.Gateway.EF.Schedule
             _context = scheduleDatabase.BuildContext();
         }
 
-        public void Create(AssociationEntity entity)
+        public void Create(List<AssociationEntity> entities)
         {
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            if (entities == null)
+                throw new ArgumentNullException("entities");
 
-            _context.GetSet<AssociationEntity>().Add(entity);
+            foreach (var associationEntity in entities)
+            {
+                _context.GetSet<AssociationEntity>().Add(associationEntity);    
+            }
 
             _context.SaveChanges();
         }
 
-        public IEnumerable<AssociationEntity> Read(Expression<Func<AssociationEntity, bool>> criteria)
+        public List<AssociationEntity> Read(Expression<Func<AssociationEntity, bool>> criteria)
         {
-            throw new NotImplementedException();
+            if (criteria == null)
+                throw new ArgumentNullException("criteria");
+
+            return _context.GetSet<AssociationEntity>().Where(criteria).ToList();
         }
 
-        public void Update(AssociationEntity entity)
+        public void Destroy(List<AssociationEntity> entities)
         {
-            throw new NotImplementedException();
-        }
+            if (entities == null)
+                throw new ArgumentNullException("entities");
 
-        public void Destroy(AssociationEntity entity)
-        {
-            throw new NotImplementedException();
-        }
+            foreach (var associationEntity in entities)
+            {
+                _context.GetSet<AssociationEntity>().Remove(associationEntity);
+            }
 
-        public void Destroy(Expression<Func<AssociationEntity, bool>> criteria)
-        {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
     }
 }

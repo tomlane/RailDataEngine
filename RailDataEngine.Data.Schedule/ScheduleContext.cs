@@ -11,6 +11,7 @@ namespace RailDataEngine.Data.Schedule
         public DbSet<AssociationEntity> AssociationRecords { get; set; }
         public DbSet<TiplocEntity> TipLocs { get; set; }
         public DbSet<HeaderEntity> ScheduleHeaders { get; set; }
+        public DbSet<LocationEntity> ScheduleLocations { get; set; } 
         
 
     public ScheduleContext(string connectionString)
@@ -29,6 +30,7 @@ namespace RailDataEngine.Data.Schedule
         modelBuilder.Entity<AssociationEntity>().ToTable("Association", schema);
         modelBuilder.Entity<TiplocEntity>().ToTable("Tiploc", schema);
         modelBuilder.Entity<HeaderEntity>().ToTable("Meta", schema);
+        modelBuilder.Entity<LocationEntity>().ToTable("Location", schema);
     }
 }
 

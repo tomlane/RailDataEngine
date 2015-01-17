@@ -18,6 +18,9 @@ namespace RailDataEngine.Root
             container.RegisterType<IScheduleDatabase, ScheduleDatabase>();
 
             container.RegisterType<IStorageGateway<AssociationEntity>, AssociationGateway>();
+            container.RegisterType<IStorageGateway<HeaderEntity>, HeaderGateway>();
+            container.RegisterType<IStorageGateway<LocationEntity>, LocationGateway>();
+            container.RegisterType<IStorageGateway<RecordEntity>, RecordGateway>();
 
             return container;
         }

@@ -48,6 +48,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schedule\AssociationGateway.cs" />
+    <Compile Include="Schedule\HeaderGateway.cs" />
+    <Compile Include="Schedule\LocationGateway.cs" />
+    <Compile Include="Schedule\RecordGateway.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RailDataEngine.Data.Common\RailDataEngine.Data.Common.csproj">

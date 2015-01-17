@@ -66,6 +66,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schedule\TAssociationGateway.cs" />
+    <Compile Include="Schedule\THeaderGateway.cs" />
+    <Compile Include="Schedule\TLocationGateway.cs" />
+    <Compile Include="Schedule\TRecordGateway.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

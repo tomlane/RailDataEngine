@@ -8,7 +8,8 @@ namespace RailDataEngine.Root
         {
             var container = ContainerBuilder.Build();
 
-            Console.WriteLine("Container built.");
+            Console.WriteLine("Rail data engine started.");
+            Console.ReadKey();
         }
     }
 }

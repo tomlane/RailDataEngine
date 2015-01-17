@@ -6,10 +6,8 @@ namespace RailDataEngine.Gateway.Domain
 {
     public interface IStorageGateway<T>
     {
-        void Create(T entity);
-        IEnumerable<T> Read(Expression<Func<T, bool>> criteria);
-        void Update(T entity);
-        void Destroy(T entity);
-        void Destroy(Expression<Func<T, bool>> criteria);
+        void Create(List<T> entities);
+        List<T> Read(Expression<Func<T, bool>> criteria);
+        void Destroy(List<T> entities);
     }
 }

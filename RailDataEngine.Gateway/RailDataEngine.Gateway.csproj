@@ -43,6 +43,7 @@
     <Compile Include="Domain\IIdentifyable.cs" />
     <Compile Include="Entity\Schedule\AssociationEntity.cs" />
     <Compile Include="Entity\Schedule\HeaderEntity.cs" />
+    <Compile Include="Entity\Schedule\LocationEntity.cs" />
     <Compile Include="Entity\Schedule\RecordEntity.cs" />
     <Compile Include="Entity\Schedule\TiplocEntity.cs" />
     <Compile Include="Entity\TrainMovements\TrainActivationEntity.cs" />
