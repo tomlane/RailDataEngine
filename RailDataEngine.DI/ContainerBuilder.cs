@@ -2,10 +2,10 @@
 using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Gateway.Domain;
-using RailDataEngine.Gateway.EF.Schedule;
-using RailDataEngine.Gateway.Entity.Schedule;
+using RailDataEngine.Gateway.EF;
+using RailDataEngine.Gateway.EF.Containers;
 
-namespace RailDataEngine.Root
+namespace RailDataEngine.DI
 {
     public static class ContainerBuilder
     {
@@ -17,10 +17,11 @@ namespace RailDataEngine.Root
 
             container.RegisterType<IScheduleDatabase, ScheduleDatabase>();
 
-            container.RegisterType<IStorageGateway<AssociationEntity>, AssociationGateway>();
-            container.RegisterType<IStorageGateway<HeaderEntity>, HeaderGateway>();
-            container.RegisterType<IStorageGateway<LocationEntity>, LocationGateway>();
-            container.RegisterType<IStorageGateway<RecordEntity>, RecordGateway>();
+            container.RegisterType(typeof (IStorageGateway<>), typeof (StorageGateway<>));
+            
+            container.RegisterType<IScheduleGatewayContainer, ScheduleGatewayContainer>();
+            container.RegisterType<IMovementGatewayContainer, MovementGatewayContainer>();
+            container.RegisterType<IDescriberContainer, DescriberGatewayContainer>();
 
             return container;
         }

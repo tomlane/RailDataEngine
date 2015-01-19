@@ -39,13 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\IMovementGatewayContainer.cs" />
+    <Compile Include="Domain\IScheduleGatewayContainer.cs" />
     <Compile Include="Domain\IStorageGateway.cs" />
     <Compile Include="Domain\IIdentifyable.cs" />
+    <Compile Include="Domain\IDescriberContainer.cs" />
     <Compile Include="Entity\Schedule\AssociationEntity.cs" />
     <Compile Include="Entity\Schedule\HeaderEntity.cs" />
     <Compile Include="Entity\Schedule\LocationEntity.cs" />
     <Compile Include="Entity\Schedule\RecordEntity.cs" />
     <Compile Include="Entity\Schedule\TiplocEntity.cs" />
+    <Compile Include="Entity\TrainDescriber\Berth\BerthMessageEntity.cs" />
+    <Compile Include="Entity\TrainDescriber\Signal\SignalMessageEntity.cs" />
     <Compile Include="Entity\TrainMovements\TrainActivationEntity.cs" />
     <Compile Include="Entity\TrainMovements\TrainCancellationEntity.cs" />
     <Compile Include="Entity\TrainMovements\TrainMovementEntity.cs" />

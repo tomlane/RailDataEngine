@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Containers\MovementGatewayContainer.cs" />
+    <Compile Include="Containers\ScheduleGatewayContainer.cs" />
+    <Compile Include="Containers\DescriberGatewayContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Schedule\AssociationGateway.cs" />
-    <Compile Include="Schedule\HeaderGateway.cs" />
-    <Compile Include="Schedule\LocationGateway.cs" />
-    <Compile Include="Schedule\RecordGateway.cs" />
+    <Compile Include="StorageGateway.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RailDataEngine.Data.Common\RailDataEngine.Data.Common.csproj">
@@ -74,9 +74,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TrainMovements\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{008CD982-FFDF-47D1-A41E-CFED3EA917E6}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RailDataEngine.Root</RootNamespace>
-    <AssemblyName>RailDataEngine.Root</AssemblyName>
+    <RootNamespace>RailDataEngine.DI</RootNamespace>
+    <AssemblyName>RailDataEngine.DI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -52,11 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerBuilder.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -67,10 +63,6 @@
     <ProjectReference Include="..\RailDataEngine.Data.Schedule\RailDataEngine.Data.Schedule.csproj">
       <Project>{B5120532-0E7A-4DC8-BFDD-11703D161546}</Project>
       <Name>RailDataEngine.Data.Schedule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
-      <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>
-      <Name>RailDataEngine.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Gateway.EF\RailDataEngine.Gateway.EF.csproj">
       <Project>{C500900E-6B18-4E27-8684-949F72A98656}</Project>

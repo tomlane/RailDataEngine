@@ -4,15 +4,14 @@ using System.Linq;
 using System.Linq.Expressions;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Gateway.Domain;
-using RailDataEngine.Gateway.Entity.Schedule;
 
-namespace RailDataEngine.Gateway.EF.Schedule
+namespace RailDataEngine.Gateway.EF
 {
-    public class RecordGateway : IStorageGateway<RecordEntity>
+    public class StorageGateway<T> : IStorageGateway<T> where T : class, IIdentifyable
     {
         private readonly IScheduleContext _context;
 
-        public RecordGateway(IScheduleDatabase database)
+        public StorageGateway(IScheduleDatabase database)
         {
             if (database == null)
                 throw new ArgumentNullException("database");
@@ -20,35 +19,35 @@ namespace RailDataEngine.Gateway.EF.Schedule
             _context = database.BuildContext();
         }
 
-        public void Create(List<RecordEntity> entities)
+        public void Create(List<T> entities)
         {
             if (entities == null)
                 throw new ArgumentNullException("entities");
 
-            foreach (var recordEntity in entities)
+            foreach (var entity in entities)
             {
-                _context.GetSet<RecordEntity>().Add(recordEntity);
+                _context.GetSet<T>().Add(entity);
             }
 
             _context.SaveChanges();
         }
 
-        public List<RecordEntity> Read(Expression<Func<RecordEntity, bool>> criteria)
+        public List<T> Read(Expression<Func<T, bool>> criteria)
         {
             if (criteria == null)
                 throw new ArgumentNullException("criteria");
 
-            return _context.GetSet<RecordEntity>().Where(criteria).ToList();
+            return _context.GetSet<T>().Where(criteria).ToList();
         }
 
-        public void Destroy(List<RecordEntity> entities)
+        public void Destroy(List<T> entities)
         {
             if (entities == null)
                 throw new ArgumentNullException("entities");
 
-            foreach (var recordEntity in entities)
+            foreach (var entity in entities)
             {
-                _context.GetSet<RecordEntity>().Remove(recordEntity);
+                _context.GetSet<T>().Remove(entity);
             }
 
             _context.SaveChanges();

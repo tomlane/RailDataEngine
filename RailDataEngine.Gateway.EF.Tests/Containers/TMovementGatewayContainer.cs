@@ -1,0 +1,35 @@
+﻿using System;
+using Microsoft.Practices.Unity;
+using Moq;
+using NUnit.Framework;
+using RailDataEngine.DI;
+using RailDataEngine.Gateway.Domain;
+using RailDataEngine.Gateway.EF.Containers;
+using RailDataEngine.Gateway.Entity.TrainMovements;
+
+namespace RailDataEngine.Gateway.EF.Tests.Containers
+{
+    [TestFixture]
+    class TMovementGatewayContainer
+    {
+        [Test]
+        public void throws_when_dependencies_are_null()
+        {
+            var activationGateway = new Mock<IStorageGateway<TrainActivationEntity>>();
+            var cancellationGateway = new Mock<IStorageGateway<TrainCancellationEntity>>();
+            var movementGateway = new Mock<IStorageGateway<TrainMovementEntity>>();
+
+            Assert.Throws<ArgumentNullException>(() => new MovementGatewayContainer(null, cancellationGateway.Object, movementGateway.Object));
+            Assert.Throws<ArgumentNullException>(() => new MovementGatewayContainer(activationGateway.Object, null, movementGateway.Object));
+            Assert.Throws<ArgumentNullException>(() => new MovementGatewayContainer(activationGateway.Object, cancellationGateway.Object, null));
+        }
+
+        [Test]
+        public void can_be_built_from_static_container()
+        {
+            var container = ContainerBuilder.Build();
+            var gatewayContainer = container.Resolve<IMovementGatewayContainer>();
+            Assert.IsInstanceOf<MovementGatewayContainer>(gatewayContainer);
+        }
+    }
+}

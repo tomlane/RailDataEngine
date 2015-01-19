@@ -1,0 +1,142 @@
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Practices.Unity;
+using Moq;
+using NUnit.Framework;
+using RailDataEngine.Data.Schedule;
+using RailDataEngine.DI;
+using RailDataEngine.Gateway.Domain;
+using RailDataEngine.Gateway.Entity.Schedule;
+using RailDataEngine.Tests.Common;
+
+namespace RailDataEngine.Gateway.EF.Tests
+{
+    [TestFixture]
+    class TStorageGateway
+    {
+        [Test]
+        public void throws_when_dependencies_are_null()
+        {
+            var database = new Mock<IScheduleDatabase>();
+
+            Assert.Throws<ArgumentNullException>(() => new StorageGateway<AssociationEntity>(null));
+        }
+
+        [Test]
+        public void can_be_built_from_static_container()
+        {
+            var container = ContainerBuilder.Build();
+            var gateway = container.Resolve<IStorageGateway<AssociationEntity>>();
+            Assert.IsInstanceOf<StorageGateway<AssociationEntity>>(gateway);
+        }
+
+        [TestFixture]
+        class Create
+        {
+            [Test]
+            public void throws_when_argument_is_null()
+            {
+                var database = new Mock<IScheduleDatabase>();
+                var gateway = new StorageGateway<AssociationEntity>(database.Object);
+
+                Assert.Throws<ArgumentNullException>(() => gateway.Create(null));
+            }
+
+            [Test]
+            public void calls_save_changes_on_context()
+            {
+                var database = new Mock<IScheduleDatabase>();
+                var context = new Mock<IScheduleContext>();
+
+                var entitySet = new List<AssociationEntity>();
+
+                context.Setup(m => m.GetSet<AssociationEntity>()).Returns(MockHelpers.BuildMockSet(entitySet).Object);
+
+                database.Setup(m => m.BuildContext()).Returns(context.Object);
+
+                var gateway = new StorageGateway<AssociationEntity>(database.Object);
+
+                gateway.Create(entitySet);
+
+                context.Verify(m => m.SaveChanges(), Times.Once);
+            }
+        }
+
+        [TestFixture]
+        class Read
+        {
+            [Test]
+            public void throws_when_argument_is_null()
+            {
+                var database = new Mock<IScheduleDatabase>();
+                var gateway = new StorageGateway<AssociationEntity>(database.Object);
+
+                Assert.Throws<ArgumentNullException>(() => gateway.Read(null));
+            }
+
+            [Test]
+            public void returns_expected_result()
+            {
+                var database = new Mock<IScheduleDatabase>();
+                var context = new Mock<IScheduleContext>();
+
+                var entitySet = new List<AssociationEntity>
+                {
+                    new AssociationEntity
+                    {
+                        Id = 5,
+                        MainTrainUid = "train"
+                    },
+                    new AssociationEntity
+                    {
+                        Id = 7,
+                        MainTrainUid = "supreme"
+                    }
+                };
+
+                context.Setup(m => m.GetSet<AssociationEntity>()).Returns(MockHelpers.BuildMockSet(entitySet).Object);
+
+                database.Setup(m => m.BuildContext()).Returns(context.Object);
+
+                var gateway = new StorageGateway<AssociationEntity>(database.Object);
+
+                var result = gateway.Read(x => x.Id == 5);
+
+                Assert.AreEqual(1, result.Count);
+                Assert.AreEqual("train", result[0].MainTrainUid);
+            }
+        }
+
+        [TestFixture]
+        class Destroy
+        {
+            [Test]
+            public void throws_when_argument_is_null()
+            {
+                var database = new Mock<IScheduleDatabase>();
+                var gateway = new StorageGateway<AssociationEntity>(database.Object);
+
+                Assert.Throws<ArgumentNullException>(() => gateway.Destroy(null));
+            }
+
+            [Test]
+            public void calls_save_changes_on_context()
+            {
+                var database = new Mock<IScheduleDatabase>();
+                var context = new Mock<IScheduleContext>();
+
+                var entitySet = new List<AssociationEntity>();
+
+                context.Setup(m => m.GetSet<AssociationEntity>()).Returns(MockHelpers.BuildMockSet(entitySet).Object);
+
+                database.Setup(m => m.BuildContext()).Returns(context.Object);
+
+                var gateway = new StorageGateway<AssociationEntity>(database.Object);
+
+                gateway.Destroy(entitySet);
+
+                context.Verify(m => m.SaveChanges(), Times.Once);
+            }
+        }
+    }
+}
