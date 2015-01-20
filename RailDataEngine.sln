@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{8C7F2E91-0C9B-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F3A6A910-A304-433C-83B6-CD6F794ED522}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Service", "RailDataEngine.Service\RailDataEngine.Service.csproj", "{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
