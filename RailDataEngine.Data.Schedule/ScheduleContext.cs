@@ -22,7 +22,7 @@ namespace RailDataEngine.Data.Schedule
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
-        const string schema = "Schedule";
+        const string schema = "Schedules";
 
         modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 

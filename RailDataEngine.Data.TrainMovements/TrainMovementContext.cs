@@ -19,7 +19,7 @@ namespace RailDataEngine.Data.TrainMovements
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            const string schema = "TrainMovement";
+            const string schema = "TrainMovements";
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 

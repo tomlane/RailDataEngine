@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F3A6A9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Service", "RailDataEngine.Service\RailDataEngine.Service.csproj", "{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Data.TrainDescriber", "RailDataEngine.Data.TrainDescriber\RailDataEngine.Data.TrainDescriber.csproj", "{6D873303-E01A-4ECA-936E-5B597EE0B2DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D2344D2-75BE-4B93-9F52-DF7873C7DB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D873303-E01A-4ECA-936E-5B597EE0B2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D873303-E01A-4ECA-936E-5B597EE0B2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D873303-E01A-4ECA-936E-5B597EE0B2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D873303-E01A-4ECA-936E-5B597EE0B2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +99,6 @@ Global
 		{B87C419B-860A-4FEC-8BA9-FF2EDC41FFED} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
 		{A2D00D35-7C24-4077-BEB9-47B3C4410DC8} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
 		{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86} = {8C7F2E91-0C9B-4D55-901B-61B87DFF3C85}
+		{6D873303-E01A-4ECA-936E-5B597EE0B2DE} = {464489C1-4898-4069-A782-AB8A9ABB6F3E}
 	EndGlobalSection
 EndGlobal
