@@ -2,7 +2,7 @@
 {
     public abstract class StationBoardEntity
     {
-        public ServiceType Type { get; set; }
+        public ServiceType? Type { get; set; }
         public string ServiceId { get; set; }
         public string Operator { get; set; }
         public string Origin { get; set; }

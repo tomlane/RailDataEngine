@@ -2,7 +2,7 @@
 {
     public class Tiploc
     {
-        public TransactionType TransactionType { get; set; }
+        public TransactionType? TransactionType { get; set; }
         public string TiplocCode { get; set; }
         public string Nalco { get; set; }
         public string Stanox { get; set; }

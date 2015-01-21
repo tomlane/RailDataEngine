@@ -5,7 +5,7 @@ namespace RailDataEngine.Domain.Entity.Schedule
     public class Header
     {
         public string Classification { get; set; }
-        public DateTime Timestamp { get; set; }
+        public DateTime? Timestamp { get; set; }
         public string Owner { get; set; }
         protected Sender Sender { get; set; }
         public MetaData MetaData { get; set; }
