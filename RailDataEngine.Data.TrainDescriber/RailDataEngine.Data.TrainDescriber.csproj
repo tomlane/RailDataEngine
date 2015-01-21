@@ -50,6 +50,7 @@
     <Compile Include="ITrainDescriberDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrainDescriberContext.cs" />
+    <Compile Include="TrainDescriberContextFactory.cs" />
     <Compile Include="TrainDescriberDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
