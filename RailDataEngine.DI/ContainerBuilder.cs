@@ -8,6 +8,8 @@ using RailDataEngine.Data.Schedule;
 using RailDataEngine.Gateway.Domain;
 using RailDataEngine.Gateway.EF;
 using RailDataEngine.Gateway.EF.Containers;
+using RailDataEngine.Interactor.Implementations;
+using RailDataEngine.Interactor.StationBoardInteractor;
 
 namespace RailDataEngine.DI
 {
@@ -26,6 +28,8 @@ namespace RailDataEngine.DI
             container.RegisterType<IScheduleGatewayContainer, ScheduleGatewayContainer>();
             container.RegisterType<ITrainMovementGatewayContainer, TrainMovementGatewayContainer>();
             container.RegisterType<ITrainDescriberContainer, TrainDescriberGatewayContainer>();
+
+            container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
 
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
             container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
