@@ -55,6 +55,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Interactor.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Boundary.Tests", "RailDataEngine.Boundary.Tests\RailDataEngine.Boundary.Tests.csproj", "{24A489BB-74B7-436F-BF0A-C7DC09698BBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Interactor.Tests", "RailDataEngine.Interactor.Tests\RailDataEngine.Interactor.Tests.csproj", "{4ADC43EB-574E-46F3-A073-5AB9B99FE699}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FB6E0059-5489-45F7-8063-660768540EE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services", "RailDataEngine.Services\RailDataEngine.Services.csproj", "{F9591704-44B0-4BEA-8F71-0B6D1594C139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.DarwinStationBoard", "RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj", "{D020080C-12D6-4AF8-9168-1B4342AB21BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +141,18 @@ Global
 		{24A489BB-74B7-436F-BF0A-C7DC09698BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A489BB-74B7-436F-BF0A-C7DC09698BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A489BB-74B7-436F-BF0A-C7DC09698BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ADC43EB-574E-46F3-A073-5AB9B99FE699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ADC43EB-574E-46F3-A073-5AB9B99FE699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ADC43EB-574E-46F3-A073-5AB9B99FE699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ADC43EB-574E-46F3-A073-5AB9B99FE699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9591704-44B0-4BEA-8F71-0B6D1594C139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9591704-44B0-4BEA-8F71-0B6D1594C139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9591704-44B0-4BEA-8F71-0B6D1594C139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9591704-44B0-4BEA-8F71-0B6D1594C139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D020080C-12D6-4AF8-9168-1B4342AB21BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D020080C-12D6-4AF8-9168-1B4342AB21BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D020080C-12D6-4AF8-9168-1B4342AB21BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D020080C-12D6-4AF8-9168-1B4342AB21BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,5 +176,8 @@ Global
 		{A63360D1-E562-464A-890E-E66F17B4E5D4} = {E93FC3E7-B35D-456C-A0D1-88C541619FB1}
 		{4BAF053C-BCAC-498E-BA28-1161620E0CD9} = {E93FC3E7-B35D-456C-A0D1-88C541619FB1}
 		{24A489BB-74B7-436F-BF0A-C7DC09698BBB} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
+		{4ADC43EB-574E-46F3-A073-5AB9B99FE699} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
+		{F9591704-44B0-4BEA-8F71-0B6D1594C139} = {FB6E0059-5489-45F7-8063-660768540EE8}
+		{D020080C-12D6-4AF8-9168-1B4342AB21BC} = {FB6E0059-5489-45F7-8063-660768540EE8}
 	EndGlobalSection
 EndGlobal

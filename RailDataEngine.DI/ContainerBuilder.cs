@@ -10,6 +10,8 @@ using RailDataEngine.Gateway.EF;
 using RailDataEngine.Gateway.EF.Containers;
 using RailDataEngine.Interactor.Implementations;
 using RailDataEngine.Interactor.StationBoardInteractor;
+using RailDataEngine.Services.DarwinStationBoard;
+using RailDataEngine.Services.StationBoardService;
 
 namespace RailDataEngine.DI
 {
@@ -28,6 +30,8 @@ namespace RailDataEngine.DI
             container.RegisterType<IScheduleGatewayContainer, ScheduleGatewayContainer>();
             container.RegisterType<ITrainMovementGatewayContainer, TrainMovementGatewayContainer>();
             container.RegisterType<ITrainDescriberContainer, TrainDescriberGatewayContainer>();
+
+            container.RegisterType<IStationBoardService, DarwinBoardService>();
 
             container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
 
