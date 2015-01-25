@@ -48,7 +48,7 @@
     <Compile Include="StationBoard\StationBoardDeparturesBoundary\StationBoardDeparturesBoundaryResponse.cs" />
     <Compile Include="StationBoard\StationBoardServiceDetailsBoundary\IStationBoardServiceDetailsBoundary.cs" />
     <Compile Include="StationBoard\StationBoardServiceDetailsBoundary\StationBoardServiceDetailsBoundaryResponse.cs" />
-    <Compile Include="StationBoard\StationBoardServiceDetailsBoundary\StationBoardServiceDetailsRequest.cs" />
+    <Compile Include="StationBoard\StationBoardServiceDetailsBoundary\StationBoardServiceDetailsBoundaryRequest.cs" />
     <Compile Include="TrainDescriber\SaveDescriberMessageBoundary\ISaveDescriberMessagesBoundary.cs" />
     <Compile Include="TrainDescriber\SaveDescriberMessageBoundary\SaveDescriberBoundaryRequest.cs" />
     <Compile Include="TrainMovements\FetchMovementMessageBoundary\FetchMovementMessageBoundaryRequest.cs" />

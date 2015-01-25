@@ -19,17 +19,17 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
             var cancellationGateway = new Mock<IStorageGateway<TrainCancellationEntity>>();
             var movementGateway = new Mock<IStorageGateway<TrainMovementEntity>>();
 
-            Assert.Throws<ArgumentNullException>(() => new MovementGatewayContainer(null, cancellationGateway.Object, movementGateway.Object));
-            Assert.Throws<ArgumentNullException>(() => new MovementGatewayContainer(activationGateway.Object, null, movementGateway.Object));
-            Assert.Throws<ArgumentNullException>(() => new MovementGatewayContainer(activationGateway.Object, cancellationGateway.Object, null));
+            Assert.Throws<ArgumentNullException>(() => new TrainMovementGatewayContainer(null, cancellationGateway.Object, movementGateway.Object));
+            Assert.Throws<ArgumentNullException>(() => new TrainMovementGatewayContainer(activationGateway.Object, null, movementGateway.Object));
+            Assert.Throws<ArgumentNullException>(() => new TrainMovementGatewayContainer(activationGateway.Object, cancellationGateway.Object, null));
         }
 
         [Test]
         public void can_be_built_from_static_container()
         {
             var container = ContainerBuilder.Build();
-            var gatewayContainer = container.Resolve<IMovementGatewayContainer>();
-            Assert.IsInstanceOf<MovementGatewayContainer>(gatewayContainer);
+            var gatewayContainer = container.Resolve<ITrainMovementGatewayContainer>();
+            Assert.IsInstanceOf<TrainMovementGatewayContainer>(gatewayContainer);
         }
     }
 }

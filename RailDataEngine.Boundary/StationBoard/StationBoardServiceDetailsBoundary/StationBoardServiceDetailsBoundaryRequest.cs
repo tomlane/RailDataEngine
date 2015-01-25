@@ -1,6 +1,6 @@
 ﻿namespace RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary
 {
-    public class StationBoardServiceDetailsRequest
+    public class StationBoardServiceDetailsBoundaryRequest
     {
         public string ServiceId { get; set; }
     }

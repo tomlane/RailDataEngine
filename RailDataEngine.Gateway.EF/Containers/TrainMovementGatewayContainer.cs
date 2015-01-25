@@ -4,13 +4,13 @@ using RailDataEngine.Gateway.Entity.TrainMovements;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {
-    public class MovementGatewayContainer : IMovementGatewayContainer
+    public class TrainMovementGatewayContainer : ITrainMovementGatewayContainer
     {
         public IStorageGateway<TrainActivationEntity> ActivationGateway { get; set; }
         public IStorageGateway<TrainCancellationEntity> CancellationGateway { get; set; }
         public IStorageGateway<TrainMovementEntity> MovementGateway { get; set; }
 
-        public MovementGatewayContainer(
+        public TrainMovementGatewayContainer(
             IStorageGateway<TrainActivationEntity> activationGateway, 
             IStorageGateway<TrainCancellationEntity> cancellationGateway,
             IStorageGateway<TrainMovementEntity> movementGateway)

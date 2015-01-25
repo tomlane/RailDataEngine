@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\IMovementGatewayContainer.cs" />
+    <Compile Include="Domain\ITrainMovementGatewayContainer.cs" />
     <Compile Include="Domain\IScheduleGatewayContainer.cs" />
     <Compile Include="Domain\IStorageGateway.cs" />
     <Compile Include="Domain\IIdentifyable.cs" />
-    <Compile Include="Domain\IDescriberContainer.cs" />
+    <Compile Include="Domain\ITrainDescriberContainer.cs" />
     <Compile Include="Entity\Schedule\AssociationEntity.cs" />
     <Compile Include="Entity\Schedule\HeaderEntity.cs" />
     <Compile Include="Entity\Schedule\LocationEntity.cs" />

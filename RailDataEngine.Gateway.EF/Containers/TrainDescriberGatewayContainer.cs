@@ -5,12 +5,12 @@ using RailDataEngine.Gateway.Entity.TrainDescriber.Signal;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {
-    public class DescriberGatewayContainer : IDescriberContainer
+    public class TrainDescriberGatewayContainer : ITrainDescriberContainer
     {
         public IStorageGateway<BerthMessageEntity> BerthGateway { get; set; }
         public IStorageGateway<SignalMessageEntity> SignalGateway { get; set; }
 
-        public DescriberGatewayContainer(
+        public TrainDescriberGatewayContainer(
             IStorageGateway<BerthMessageEntity> berthGateway,
             IStorageGateway<SignalMessageEntity> signalGateway)
         {

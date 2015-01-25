@@ -2,6 +2,6 @@
 {
     public interface IStationBoardServiceDetailsBoundary
     {
-        StationBoardServiceDetailsBoundaryResponse Invoke(StationBoardServiceDetailsRequest request);
+        StationBoardServiceDetailsBoundaryResponse Invoke(StationBoardServiceDetailsBoundaryRequest request);
     }
 }

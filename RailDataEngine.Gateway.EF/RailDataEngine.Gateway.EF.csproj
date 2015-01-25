@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\MovementGatewayContainer.cs" />
+    <Compile Include="Containers\TrainMovementGatewayContainer.cs" />
     <Compile Include="Containers\ScheduleGatewayContainer.cs" />
-    <Compile Include="Containers\DescriberGatewayContainer.cs" />
+    <Compile Include="Containers\TrainDescriberGatewayContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageGateway.cs" />
   </ItemGroup>

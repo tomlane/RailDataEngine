@@ -19,16 +19,16 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
             var berthGateway = new Mock<IStorageGateway<BerthMessageEntity>>();
             var signalGateway = new Mock<IStorageGateway<SignalMessageEntity>>();
 
-            Assert.Throws<ArgumentNullException>(() => new DescriberGatewayContainer(null, signalGateway.Object));
-            Assert.Throws<ArgumentNullException>(() => new DescriberGatewayContainer(berthGateway.Object, null));
+            Assert.Throws<ArgumentNullException>(() => new TrainDescriberGatewayContainer(null, signalGateway.Object));
+            Assert.Throws<ArgumentNullException>(() => new TrainDescriberGatewayContainer(berthGateway.Object, null));
         }
 
         [Test]
         public void can_be_built_from_static_container()
         {
             var container = ContainerBuilder.Build();
-            var gatewayContainer = container.Resolve<IDescriberContainer>();
-            Assert.IsInstanceOf<DescriberGatewayContainer>(gatewayContainer);
+            var gatewayContainer = container.Resolve<ITrainDescriberContainer>();
+            Assert.IsInstanceOf<TrainDescriberGatewayContainer>(gatewayContainer);
         }
     }
 }

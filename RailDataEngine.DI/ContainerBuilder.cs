@@ -1,4 +1,8 @@
 ﻿using Microsoft.Practices.Unity;
+using RailDataEngine.Boundary.Implementations.StationBoard;
+using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
+using RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary;
+using RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Gateway.Domain;
@@ -20,8 +24,12 @@ namespace RailDataEngine.DI
             container.RegisterType(typeof (IStorageGateway<>), typeof (StorageGateway<>));
             
             container.RegisterType<IScheduleGatewayContainer, ScheduleGatewayContainer>();
-            container.RegisterType<IMovementGatewayContainer, MovementGatewayContainer>();
-            container.RegisterType<IDescriberContainer, DescriberGatewayContainer>();
+            container.RegisterType<ITrainMovementGatewayContainer, TrainMovementGatewayContainer>();
+            container.RegisterType<ITrainDescriberContainer, TrainDescriberGatewayContainer>();
+
+            container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
+            container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
+            container.RegisterType<IStationBoardServiceDetailsBoundary, StationBoardServiceDetailsBoundary>();
 
             return container;
         }
