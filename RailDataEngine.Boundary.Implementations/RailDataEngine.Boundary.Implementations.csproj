@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6575CB95-C880-484F-8589-6FAB5EC35888}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RailDataEngine.Boundary.Implementations</RootNamespace>
+    <AssemblyName>RailDataEngine.Boundary.Implementations</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StationBoard\StationBoardArrivalsBoundary.cs" />
+    <Compile Include="StationBoard\StationBoardDeparturesBoundary.cs" />
+    <Compile Include="StationBoard\StationBoardServiceDetailsBoundary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RailDataEngine.Boundary\RailDataEngine.Boundary.csproj">
+      <Project>{060C0FEA-AA8F-4EF4-8C8A-921BE2A065A3}</Project>
+      <Name>RailDataEngine.Boundary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
+      <Project>{2abe2e53-fb17-4b5b-9c09-d3bf1b038a4b}</Project>
+      <Name>RailDataEngine.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Interactor\RailDataEngine.Interactor.csproj">
+      <Project>{A63360D1-E562-464A-890E-E66F17B4E5D4}</Project>
+      <Name>RailDataEngine.Interactor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
