@@ -272,22 +272,22 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
                     ServiceId = "serviceId"
                 });
 
-                Assert.AreEqual(mockResponse.GetServiceDetailsResult.crs, response.Crs);
-                Assert.AreEqual(mockResponse.GetServiceDetailsResult.locationName, response.LocationName);
-                Assert.AreEqual(mockResponse.GetServiceDetailsResult.generatedAt, response.GeneratedAt);
-                Assert.AreEqual(mockResponse.GetServiceDetailsResult.@operator, response.Operator);
+                Assert.AreEqual(mockResponse.GetServiceDetailsResult.crs, response.ServiceDetails.Crs);
+                Assert.AreEqual(mockResponse.GetServiceDetailsResult.locationName, response.ServiceDetails.LocationName);
+                Assert.AreEqual(mockResponse.GetServiceDetailsResult.generatedAt, response.ServiceDetails.GeneratedAt);
+                Assert.AreEqual(mockResponse.GetServiceDetailsResult.@operator, response.ServiceDetails.Operator);
 
                 Assert.AreEqual(
                     mockResponse.GetServiceDetailsResult.previousCallingPoints[0].callingPoint[0].locationName,
-                    response.PreviousCallingPoints[0].LocationName);
+                    response.ServiceDetails.PreviousCallingPoints[0].LocationName);
                 Assert.AreEqual(mockResponse.GetServiceDetailsResult.previousCallingPoints[0].callingPoint[0].at,
-                    response.PreviousCallingPoints[0].ActualTime);
+                    response.ServiceDetails.PreviousCallingPoints[0].ActualTime);
                 Assert.AreEqual(mockResponse.GetServiceDetailsResult.previousCallingPoints[0].callingPoint[0].st,
-                    response.PreviousCallingPoints[0].ScheduledTime);
+                    response.ServiceDetails.PreviousCallingPoints[0].ScheduledTime);
                 Assert.AreEqual(mockResponse.GetServiceDetailsResult.previousCallingPoints[0].callingPoint[0].et,
-                    response.PreviousCallingPoints[0].EstimatedTime);
+                    response.ServiceDetails.PreviousCallingPoints[0].EstimatedTime);
                 Assert.AreEqual(mockResponse.GetServiceDetailsResult.previousCallingPoints[0].callingPoint[0].crs,
-                    response.PreviousCallingPoints[0].Crs);
+                    response.ServiceDetails.PreviousCallingPoints[0].Crs);
             }
 
             private static GetServiceDetailsResponse GetServiceDetailsResponse()

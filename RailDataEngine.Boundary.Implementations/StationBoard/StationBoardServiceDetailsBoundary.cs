@@ -16,12 +16,14 @@ namespace RailDataEngine.Boundary.Implementations.StationBoard
 
         public StationBoardServiceDetailsBoundaryResponse Invoke(StationBoardServiceDetailsBoundaryRequest request)
         {
+            var serviceDetails = _interactor.GetServiceDetails(new StationBoardServiceDetailsInteractorRequest
+            {
+                ServiceId = request.ServiceId
+            });
+
             return new StationBoardServiceDetailsBoundaryResponse
             {
-                ServiceDetails = _interactor.GetServiceDetails(new StationBoardServiceDetailsInteractorRequest
-                {
-                    ServiceId = request.ServiceId
-                })
+                ServiceDetails = serviceDetails.ServiceDetails
             };
         }
     }

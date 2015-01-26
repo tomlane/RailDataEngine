@@ -6,6 +6,7 @@ using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
 using RailDataEngine.Services.Exception;
 using RailDataEngine.Services.StationBoardService;
 using CallingPoint = RailDataEngine.Domain.Entity.StationBoard.CallingPoint;
+using ServiceDetails = RailDataEngine.Domain.Entity.StationBoard.ServiceDetails;
 
 namespace RailDataEngine.Services.DarwinStationBoard
 {
@@ -115,22 +116,26 @@ namespace RailDataEngine.Services.DarwinStationBoard
 
             var response = new ServiceDetailsResponse
             {
-                ActualArrivalTime = serviceResponse.GetServiceDetailsResult.ata,
-                ActualDepartureTime = serviceResponse.GetServiceDetailsResult.atd,
-                CallingPoints = new List<CallingPoint>(),
-                Cancelled = serviceResponse.GetServiceDetailsResult.isCancelled,
-                Crs = serviceResponse.GetServiceDetailsResult.crs,
-                DisruptionReason = serviceResponse.GetServiceDetailsResult.disruptionReason,
-                EstimatedArrivalTime = serviceResponse.GetServiceDetailsResult.eta,
-                EstimatedDepartureTime = serviceResponse.GetServiceDetailsResult.etd,
-                GeneratedAt = serviceResponse.GetServiceDetailsResult.generatedAt,
-                LocationName = serviceResponse.GetServiceDetailsResult.locationName,
-                Operator = serviceResponse.GetServiceDetailsResult.@operator,
-                OverdueMessage = serviceResponse.GetServiceDetailsResult.overdueMessage,
-                Platform = serviceResponse.GetServiceDetailsResult.platform,
-                PreviousCallingPoints = new List<CallingPoint>(),
-                ScheduledDepartureTime = serviceResponse.GetServiceDetailsResult.std,
-                ScheduledArrivalTime = serviceResponse.GetServiceDetailsResult.sta
+                ServiceDetails = new ServiceDetails
+                {
+                    ActualArrivalTime = serviceResponse.GetServiceDetailsResult.ata,
+                    ActualDepartureTime = serviceResponse.GetServiceDetailsResult.atd,
+                    CallingPoints = new List<CallingPoint>(),
+                    Cancelled = serviceResponse.GetServiceDetailsResult.isCancelled,
+                    Crs = serviceResponse.GetServiceDetailsResult.crs,
+                    DisruptionReason = serviceResponse.GetServiceDetailsResult.disruptionReason,
+                    EstimatedArrivalTime = serviceResponse.GetServiceDetailsResult.eta,
+                    EstimatedDepartureTime = serviceResponse.GetServiceDetailsResult.etd,
+                    GeneratedAt = serviceResponse.GetServiceDetailsResult.generatedAt,
+                    LocationName = serviceResponse.GetServiceDetailsResult.locationName,
+                    Operator = serviceResponse.GetServiceDetailsResult.@operator,
+                    OverdueMessage = serviceResponse.GetServiceDetailsResult.overdueMessage,
+                    Platform = serviceResponse.GetServiceDetailsResult.platform,
+                    PreviousCallingPoints = new List<CallingPoint>(),
+                    ScheduledDepartureTime = serviceResponse.GetServiceDetailsResult.std,
+                    ScheduledArrivalTime = serviceResponse.GetServiceDetailsResult.sta    
+                }
+                
             };
 
             if (serviceResponse.GetServiceDetailsResult.previousCallingPoints.Length > 0)
@@ -139,7 +144,7 @@ namespace RailDataEngine.Services.DarwinStationBoard
                     var callingPoint in
                         serviceResponse.GetServiceDetailsResult.previousCallingPoints[0].callingPoint)
                 {
-                    response.PreviousCallingPoints.Add(new CallingPoint
+                    response.ServiceDetails.PreviousCallingPoints.Add(new CallingPoint
                     {
                         ActualTime = callingPoint.at,
                         Crs = callingPoint.crs,
@@ -156,7 +161,7 @@ namespace RailDataEngine.Services.DarwinStationBoard
                     var callingPoint in
                         serviceResponse.GetServiceDetailsResult.subsequentCallingPoints[0].callingPoint)
                 {
-                    response.CallingPoints.Add(new CallingPoint
+                    response.ServiceDetails.CallingPoints.Add(new CallingPoint
                     {
                         ActualTime = callingPoint.at,
                         Crs = callingPoint.crs,

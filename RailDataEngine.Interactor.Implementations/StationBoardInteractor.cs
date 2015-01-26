@@ -8,7 +8,7 @@ namespace RailDataEngine.Interactor.Implementations
 {
     public class StationBoardInteractor : IStationBoardInteractor
     {
-        private IStationBoardService _stationBoardService;
+        private readonly IStationBoardService _stationBoardService;
 
         public StationBoardInteractor(IStationBoardService stationBoardService)
         {
@@ -16,34 +16,45 @@ namespace RailDataEngine.Interactor.Implementations
             _stationBoardService = stationBoardService;
         }
 
-        public List<Arrival> GetArrivals(StationBoardArrivalsInteractorRequest request)
+        public StationBoardArrivalsInteractorResponse GetArrivals(StationBoardArrivalsInteractorRequest request)
         {
             var arrivals = _stationBoardService.GetArrivals(new StationBoardRequest
             {
                 Crs = request.Crs
             });
 
-            return null;
+            return new StationBoardArrivalsInteractorResponse
+            {
+                Arrivals = arrivals.Services,
+                StationName = arrivals.StationName
+            };
         }
 
-        public List<Departure> GetDepartures(StationBoardDeparturesInteractorRequest request)
+        public StationBoardDeparturesInteractorResponse GetDepartures(StationBoardDeparturesInteractorRequest request)
         {
             var departures = _stationBoardService.GetDepartures(new StationBoardRequest
             {
                 Crs = request.Crs
             });
 
-            return null;
+            return new StationBoardDeparturesInteractorResponse
+            {
+                Services = departures.Departures,
+                StationName = departures.StationName
+            };
         }
 
-        public ServiceDetails GetServiceDetails(StationBoardServiceDetailsInteractorRequest request)
+        public StationBoardServiceDetailsInteractorResponse GetServiceDetails(StationBoardServiceDetailsInteractorRequest request)
         {
             var serviceDetails = _stationBoardService.GetServiceDetails(new ServiceDetailsRequest
             {
                 ServiceId = request.ServiceId
             });
 
-            return null;
+            return new StationBoardServiceDetailsInteractorResponse
+            {
+                ServiceDetails = serviceDetails.ServiceDetails
+            };
         }
     }
 }

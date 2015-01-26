@@ -39,7 +39,7 @@ namespace RailDataEngine.Boundary.Tests.StationBoard
                 var interactor = new Mock<IStationBoardInteractor>();
 
                 interactor.Setup(m => m.GetDepartures(It.IsAny<StationBoardDeparturesInteractorRequest>()))
-                    .Returns(new List<Departure>());
+                    .Returns(new StationBoardDeparturesInteractorResponse());
 
                 var boundary = new StationBoardDeparturesBoundary(interactor.Object);
 

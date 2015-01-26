@@ -16,12 +16,14 @@ namespace RailDataEngine.Boundary.Implementations.StationBoard
 
         public StationBoardArrivalsBoundaryResponse Invoke(StationBoardArrivalsBoundaryRequest request)
         {
+            var arrivals = _interactor.GetArrivals(new StationBoardArrivalsInteractorRequest
+            {
+                Crs = request.Crs
+            });
+
             return new StationBoardArrivalsBoundaryResponse
             {
-                Arrivals = _interactor.GetArrivals(new StationBoardArrivalsInteractorRequest
-                {
-                    Crs = request.Crs
-                })
+                Arrivals = arrivals.Arrivals
             };
         }
     }

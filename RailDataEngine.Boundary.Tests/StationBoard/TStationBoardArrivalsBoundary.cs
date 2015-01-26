@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.Boundary.Implementations.StationBoard;
 using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Entity.StationBoard;
 using RailDataEngine.Interactor.StationBoardInteractor;
 
 namespace RailDataEngine.Boundary.Tests.StationBoard
@@ -35,6 +37,12 @@ namespace RailDataEngine.Boundary.Tests.StationBoard
             public void calls_interactor()
             {
                 var stationBoardInteractor = new Mock<IStationBoardInteractor>();
+
+                stationBoardInteractor.Setup(m => m.GetArrivals(It.IsAny<StationBoardArrivalsInteractorRequest>()))
+                    .Returns(new StationBoardArrivalsInteractorResponse
+                    {
+                        Arrivals = new List<Arrival>()
+                    });
 
                 var boundary = new StationBoardArrivalsBoundary(stationBoardInteractor.Object);
 

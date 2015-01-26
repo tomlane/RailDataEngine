@@ -1,8 +1,8 @@
 ﻿using RailDataEngine.Domain.Entity.StationBoard;
 
-namespace RailDataEngine.Services.StationBoardService
+namespace RailDataEngine.Interactor.StationBoardInteractor
 {
-    public class ServiceDetailsResponse
+    public class StationBoardServiceDetailsInteractorResponse
     {
         public ServiceDetails ServiceDetails { get; set; }
     }
