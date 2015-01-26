@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.DarwinStationBoard", "RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj", "{D020080C-12D6-4AF8-9168-1B4342AB21BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.DarwinStationBoard.Tests", "RailDataEngine.Services.DarwinStationBoard.Tests\RailDataEngine.Services.DarwinStationBoard.Tests.csproj", "{CD9FA119-0A48-451D-B6DD-30EF3ED98566}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{D020080C-12D6-4AF8-9168-1B4342AB21BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D020080C-12D6-4AF8-9168-1B4342AB21BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D020080C-12D6-4AF8-9168-1B4342AB21BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD9FA119-0A48-451D-B6DD-30EF3ED98566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD9FA119-0A48-451D-B6DD-30EF3ED98566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD9FA119-0A48-451D-B6DD-30EF3ED98566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD9FA119-0A48-451D-B6DD-30EF3ED98566}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -179,5 +185,6 @@ Global
 		{4ADC43EB-574E-46F3-A073-5AB9B99FE699} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
 		{F9591704-44B0-4BEA-8F71-0B6D1594C139} = {FB6E0059-5489-45F7-8063-660768540EE8}
 		{D020080C-12D6-4AF8-9168-1B4342AB21BC} = {FB6E0059-5489-45F7-8063-660768540EE8}
+		{CD9FA119-0A48-451D-B6DD-30EF3ED98566} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
 	EndGlobalSection
 EndGlobal
