@@ -29,6 +29,7 @@ namespace RailDataEngine.Api.Controllers
             _serviceDetailsBoundary = serviceDetailsBoundary;
         }
 
+        [HttpGet]
         public List<Arrival> Arrivals(string crs)
         {
             if (string.IsNullOrEmpty(crs))
@@ -48,6 +49,7 @@ namespace RailDataEngine.Api.Controllers
             }
         }
 
+        [HttpGet]
         public List<Departure> Departures(string crs)
         {
             if (string.IsNullOrEmpty(crs))
@@ -67,6 +69,7 @@ namespace RailDataEngine.Api.Controllers
             }
         }
 
+        [HttpGet]
         public ServiceDetails ServiceDetails(string serviceId)
         {
             if (string.IsNullOrEmpty(serviceId))
