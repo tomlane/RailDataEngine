@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Results;
+using Exceptionless;
 using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
@@ -40,8 +41,9 @@ namespace RailDataEngine.Api.Controllers
                     Crs = crs
                 }).Arrivals;
             }
-            catch (NotImplementedException)
+            catch (NotImplementedException exception)
             {
+                exception.ToExceptionless().Submit();
                 throw new HttpResponseException(HttpStatusCode.NotImplemented);
             }
         }
@@ -58,8 +60,9 @@ namespace RailDataEngine.Api.Controllers
                     Crs = crs
                 }).Departures;
             }
-            catch (NotImplementedException)
+            catch (NotImplementedException exception)
             {
+                exception.ToExceptionless().Submit();
                 throw new HttpResponseException(HttpStatusCode.NotImplemented);
             }
         }
@@ -76,8 +79,9 @@ namespace RailDataEngine.Api.Controllers
                     ServiceId = serviceId
                 }).ServiceDetails;
             }
-            catch (NotImplementedException)
+            catch (NotImplementedException exception)
             {
+                exception.ToExceptionless().Submit();
                 throw new HttpResponseException(HttpStatusCode.NotImplemented);
             }
         }
