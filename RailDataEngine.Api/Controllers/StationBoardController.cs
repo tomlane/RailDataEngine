@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Results;
 using Exceptionless;
 using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary;
@@ -14,9 +12,9 @@ namespace RailDataEngine.Api.Controllers
 {
     public class StationBoardController : ApiController
     {
-        private IStationBoardArrivalsBoundary _arrivalsBoundary;
-        private IStationBoardDeparturesBoundary _departuresBoundary;
-        private IStationBoardServiceDetailsBoundary _serviceDetailsBoundary;
+        private readonly IStationBoardArrivalsBoundary _arrivalsBoundary;
+        private readonly IStationBoardDeparturesBoundary _departuresBoundary;
+        private readonly IStationBoardServiceDetailsBoundary _serviceDetailsBoundary;
 
         public StationBoardController(IStationBoardArrivalsBoundary arrivalsBoundary, IStationBoardDeparturesBoundary departuresBoundary, IStationBoardServiceDetailsBoundary serviceDetailsBoundary)
         {
@@ -29,6 +27,11 @@ namespace RailDataEngine.Api.Controllers
             _serviceDetailsBoundary = serviceDetailsBoundary;
         }
 
+        /// <summary>
+        /// Returns a list of arrivals for a station.
+        /// </summary>
+        /// <param name="crs">The CRS code for the requested station.</param>
+        /// <returns></returns>
         [HttpGet]
         public List<Arrival> Arrivals(string crs)
         {
@@ -49,6 +52,11 @@ namespace RailDataEngine.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns a list of departures for a station.
+        /// </summary>
+        /// <param name="crs">The CRS code for the requested station.</param>
+        /// <returns></returns>
         [HttpGet]
         public List<Departure> Departures(string crs)
         {
@@ -69,6 +77,11 @@ namespace RailDataEngine.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns the details of a service.
+        /// </summary>
+        /// <param name="serviceId">The id of the service to be requested.</param>
+        /// <returns></returns>
         [HttpGet]
         public ServiceDetails ServiceDetails(string serviceId)
         {
