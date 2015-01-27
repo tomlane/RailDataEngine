@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace RailDataEngine.Domain.Entity.StationBoard
 {
     public class ServiceDetails : StationBoardEntity
     {
-        public DateTime? GeneratedAt { get; set; }
         public string Crs { get; set; }
         public bool? Cancelled { get; set; }
         public string DisruptionReason { get; set; }

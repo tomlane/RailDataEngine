@@ -23,7 +23,8 @@ namespace RailDataEngine.Boundary.Implementations.StationBoard
 
             return new StationBoardArrivalsBoundaryResponse
             {
-                Arrivals = arrivals.Arrivals
+                Services = arrivals.Services,
+                StationName = arrivals.StationName
             };
         }
     }

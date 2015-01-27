@@ -6,7 +6,7 @@ namespace RailDataEngine.Boundary.Implementations.StationBoard
 {
     public class StationBoardServiceDetailsBoundary : IStationBoardServiceDetailsBoundary
     {
-        private IStationBoardInteractor _interactor;
+        private readonly IStationBoardInteractor _interactor;
 
         public StationBoardServiceDetailsBoundary(IStationBoardInteractor interactor)
         {

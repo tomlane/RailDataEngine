@@ -6,7 +6,7 @@ namespace RailDataEngine.Boundary.Implementations.StationBoard
 {
     public class StationBoardDeparturesBoundary : IStationBoardDeparturesBoundary
     {
-        private IStationBoardInteractor _interactor;
+        private readonly IStationBoardInteractor _interactor;
 
         public StationBoardDeparturesBoundary(IStationBoardInteractor interactor)
         {
@@ -23,7 +23,8 @@ namespace RailDataEngine.Boundary.Implementations.StationBoard
 
             return new StationBoardDeparturesBoundaryResponse
             {
-                Departures = departures.Services
+                Services = departures.Services,
+                StationName = departures.StationName
             };
         }
     }

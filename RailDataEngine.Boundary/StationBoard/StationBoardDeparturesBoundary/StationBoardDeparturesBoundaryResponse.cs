@@ -5,6 +5,7 @@ namespace RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary
 {
     public class StationBoardDeparturesBoundaryResponse
     {
-        public List<Departure> Departures { get; set; } 
+        public List<Departure> Services { get; set; }
+        public string StationName { get; set; }
     }
 }

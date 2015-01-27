@@ -25,7 +25,7 @@ namespace RailDataEngine.Interactor.Implementations
 
             return new StationBoardArrivalsInteractorResponse
             {
-                Arrivals = arrivals.Services,
+                Services = arrivals.Services,
                 StationName = arrivals.StationName
             };
         }

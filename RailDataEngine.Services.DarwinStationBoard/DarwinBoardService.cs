@@ -126,7 +126,6 @@ namespace RailDataEngine.Services.DarwinStationBoard
                     DisruptionReason = serviceResponse.GetServiceDetailsResult.disruptionReason,
                     EstimatedArrivalTime = serviceResponse.GetServiceDetailsResult.eta,
                     EstimatedDepartureTime = serviceResponse.GetServiceDetailsResult.etd,
-                    GeneratedAt = serviceResponse.GetServiceDetailsResult.generatedAt,
                     LocationName = serviceResponse.GetServiceDetailsResult.locationName,
                     Operator = serviceResponse.GetServiceDetailsResult.@operator,
                     OverdueMessage = serviceResponse.GetServiceDetailsResult.overdueMessage,

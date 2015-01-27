@@ -50,6 +50,37 @@ namespace RailDataEngine.Boundary.Tests.StationBoard
 
                 interactor.Verify(m => m.GetDepartures(It.IsAny<StationBoardDeparturesInteractorRequest>()), Times.Once);
             }
+
+            [Test]
+            public void returns_expected_result()
+            {
+                var stationBoardInteractor = new Mock<IStationBoardInteractor>();
+
+                var mockDeparture = new StationBoardDeparturesInteractorResponse
+                {
+                    Services = new List<Departure>
+                    {
+                        new Departure
+                        {
+                            Operator = "First Great Western",
+                            Platform = "4"
+                        }
+                    },
+                    StationName = "Swindon"
+                };
+                stationBoardInteractor.Setup(m => m.GetDepartures(It.IsAny<StationBoardDeparturesInteractorRequest>()))
+                    .Returns(mockDeparture);
+
+                var boundary = new StationBoardDeparturesBoundary(stationBoardInteractor.Object);
+
+                var response = boundary.Invoke(new StationBoardDeparturesBoundaryRequest
+                {
+                    Crs = "swi"
+                });
+
+                Assert.AreEqual(mockDeparture.Services.Count, response.Services.Count);
+                Assert.AreEqual(mockDeparture.StationName, response.StationName);
+            }
         }
     }
 }

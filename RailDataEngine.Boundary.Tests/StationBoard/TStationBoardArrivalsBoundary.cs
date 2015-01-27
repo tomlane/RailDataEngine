@@ -41,7 +41,7 @@ namespace RailDataEngine.Boundary.Tests.StationBoard
                 stationBoardInteractor.Setup(m => m.GetArrivals(It.IsAny<StationBoardArrivalsInteractorRequest>()))
                     .Returns(new StationBoardArrivalsInteractorResponse
                     {
-                        Arrivals = new List<Arrival>()
+                        Services = new List<Arrival>()
                     });
 
                 var boundary = new StationBoardArrivalsBoundary(stationBoardInteractor.Object);
@@ -52,6 +52,37 @@ namespace RailDataEngine.Boundary.Tests.StationBoard
                 });
 
                 stationBoardInteractor.Verify(m => m.GetArrivals(It.IsAny<StationBoardArrivalsInteractorRequest>()), Times.Once);
+            }
+
+            [Test]
+            public void returns_expected_result()
+            {
+                var stationBoardInteractor = new Mock<IStationBoardInteractor>();
+
+                var mockArrival = new StationBoardArrivalsInteractorResponse
+                {
+                    Services = new List<Arrival>
+                    {
+                        new Arrival
+                        {
+                            Operator = "First Great Western",
+                            Platform = "4"
+                        }
+                    },
+                    StationName = "Swindon"
+                };
+                stationBoardInteractor.Setup(m => m.GetArrivals(It.IsAny<StationBoardArrivalsInteractorRequest>()))
+                    .Returns(mockArrival);
+
+                var boundary = new StationBoardArrivalsBoundary(stationBoardInteractor.Object);
+
+                var response = boundary.Invoke(new StationBoardArrivalsBoundaryRequest
+                {
+                    Crs = "swi"
+                });
+
+                Assert.AreEqual(mockArrival.Services.Count, response.Services.Count);
+                Assert.AreEqual(mockArrival.StationName, response.StationName);
             }
         }
     }

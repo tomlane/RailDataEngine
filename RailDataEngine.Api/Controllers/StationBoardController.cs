@@ -40,7 +40,7 @@ namespace RailDataEngine.Api.Controllers
                 return _arrivalsBoundary.Invoke(new StationBoardArrivalsBoundaryRequest
                 {
                     Crs = crs
-                }).Arrivals;
+                }).Services;
             }
             catch (NotImplementedException exception)
             {
@@ -60,7 +60,7 @@ namespace RailDataEngine.Api.Controllers
                 return _departuresBoundary.Invoke(new StationBoardDeparturesBoundaryRequest
                 {
                     Crs = crs
-                }).Departures;
+                }).Services;
             }
             catch (NotImplementedException exception)
             {

@@ -83,7 +83,7 @@ namespace RailDataEngine.Interactor.Tests
                     Crs = "swi"
                 });
 
-                Assert.AreEqual(mockStationArrival.Services.Count, response.Arrivals.Count);
+                Assert.AreEqual(mockStationArrival.Services.Count, response.Services.Count);
                 Assert.AreEqual(mockStationArrival.StationName, response.StationName);
             }
         }
@@ -211,7 +211,6 @@ namespace RailDataEngine.Interactor.Tests
                         Crs = "swi",
                         DisruptionReason = "signalling problems",
                         EstimatedDepartureTime = "1752",
-                        GeneratedAt = new DateTime(2015, 11, 11),
                         LocationName = "Swindon",
                         Operator = "First Great Western",
                         Platform = "4",

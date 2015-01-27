@@ -274,7 +274,6 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
 
                 Assert.AreEqual(mockResponse.GetServiceDetailsResult.crs, response.ServiceDetails.Crs);
                 Assert.AreEqual(mockResponse.GetServiceDetailsResult.locationName, response.ServiceDetails.LocationName);
-                Assert.AreEqual(mockResponse.GetServiceDetailsResult.generatedAt, response.ServiceDetails.GeneratedAt);
                 Assert.AreEqual(mockResponse.GetServiceDetailsResult.@operator, response.ServiceDetails.Operator);
 
                 Assert.AreEqual(
