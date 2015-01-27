@@ -20,7 +20,7 @@ namespace RailDataEngine.Interactor.Implementations
         {
             var arrivals = _stationBoardService.GetArrivals(new StationBoardRequest
             {
-                Crs = request.Crs
+                Crs = request.Crs.ToUpper()
             });
 
             return new StationBoardArrivalsInteractorResponse
@@ -34,7 +34,7 @@ namespace RailDataEngine.Interactor.Implementations
         {
             var departures = _stationBoardService.GetDepartures(new StationBoardRequest
             {
-                Crs = request.Crs
+                Crs = request.Crs.ToUpper()
             });
 
             return new StationBoardDeparturesInteractorResponse
