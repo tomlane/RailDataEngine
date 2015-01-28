@@ -117,7 +117,7 @@ namespace RailDataEngine.Interactor.Tests
                 var mockStationDeparture = new StationDepartureResponse
                 {
                     StationName = "Swindon",
-                    Departures = new List<Departure>
+                    Services = new List<Departure>
                     {
                         new Departure
                         {
@@ -142,7 +142,7 @@ namespace RailDataEngine.Interactor.Tests
                     Crs = "swi"
                 });
 
-                Assert.AreEqual(mockStationDeparture.Departures.Count, response.Services.Count);
+                Assert.AreEqual(mockStationDeparture.Services.Count, response.Services.Count);
                 Assert.AreEqual(mockStationDeparture.StationName, response.StationName);
             }
         }

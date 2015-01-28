@@ -39,7 +39,7 @@ namespace RailDataEngine.Interactor.Implementations
 
             return new StationBoardDeparturesInteractorResponse
             {
-                Services = departures.Departures,
+                Services = departures.Services,
                 StationName = departures.StationName
             };
         }

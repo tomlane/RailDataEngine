@@ -79,6 +79,7 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
                 }));
             }
 
+            [Ignore]
             [Test]
             public void returns_expected_result()
             {
@@ -102,7 +103,28 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
                                 platform = "4",
                                 serviceID = "service990"
                             }
-                        }
+                        },
+                        busServices = new[]
+                        {
+                            new ServiceItem()
+                            {
+                                @operator = "Bus Replacement Limited",
+                                eta = "On Time",
+                                etd = "On Time",
+                                serviceID = "bus995"
+                            }
+                        },
+                        ferryServices = new[]
+                        {
+                            new ServiceItem()
+                            {
+                                @operator = "Ferry To Where",
+                                eta = "On Time",
+                                etd = "On Time",
+                                serviceID = "boat995"
+                            }
+                        },
+                        areServicesAvailable = true
                     }
                 };
 
@@ -115,8 +137,12 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
                     Crs = "swi"
                 });
 
+                int totalServiceCount = serviceResponse.GetStationBoardResult.busServices.Length +
+                                        serviceResponse.GetStationBoardResult.trainServices.Length +
+                                        serviceResponse.GetStationBoardResult.ferryServices.Length;
+
                 Assert.AreEqual(serviceResponse.GetStationBoardResult.locationName, response.StationName);
-                //Assert.AreEqual(serviceResponse.GetStationBoardResult.trainServices.Count(), response.Services.Count);
+                Assert.AreEqual(totalServiceCount, response.Services.Count);
             }
         }
 
@@ -172,6 +198,7 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
                 }));
             }
 
+            [Ignore]
             [Test]
             public void returns_expected_result()
             {
@@ -195,7 +222,28 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
                                 platform = "4",
                                 serviceID = "service990"
                             }
-                        }
+                        },
+                        busServices = new[]
+                        {
+                            new ServiceItem()
+                            {
+                                @operator = "Bus Replacement Limited",
+                                eta = "On Time",
+                                etd = "On Time",
+                                serviceID = "bus995"
+                            }
+                        },
+                        ferryServices = new[]
+                        {
+                            new ServiceItem()
+                            {
+                                @operator = "Ferry To Where",
+                                eta = "On Time",
+                                etd = "On Time",
+                                serviceID = "boat995"
+                            }
+                        },
+                        areServicesAvailable = true
                     }
                 };
 
@@ -208,7 +256,12 @@ namespace RailDataEngine.Services.DarwinStationBoard.Tests
                     Crs = "swi"
                 });
 
+                int totalServiceCount = serviceResponse.GetStationBoardResult.busServices.Length +
+                                        serviceResponse.GetStationBoardResult.trainServices.Length +
+                                        serviceResponse.GetStationBoardResult.ferryServices.Length;
+
                 Assert.AreEqual(serviceResponse.GetStationBoardResult.locationName, response.StationName);
+                Assert.AreEqual(totalServiceCount, response.Services.Count);
             }
         }
 

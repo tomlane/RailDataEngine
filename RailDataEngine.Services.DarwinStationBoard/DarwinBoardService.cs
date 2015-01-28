@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using RailDataEngine.Domain.Entity.StationBoard;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
 using RailDataEngine.Services.Exception;
 using RailDataEngine.Services.StationBoardService;
 using CallingPoint = RailDataEngine.Domain.Entity.StationBoard.CallingPoint;
 using ServiceDetails = RailDataEngine.Domain.Entity.StationBoard.ServiceDetails;
+using ServiceType = RailDataEngine.Domain.Entity.StationBoard.ServiceType;
 
 namespace RailDataEngine.Services.DarwinStationBoard
 {
@@ -43,18 +45,57 @@ namespace RailDataEngine.Services.DarwinStationBoard
                 Services = new List<Arrival>()
             };
 
-            foreach (var trainService in serviceResponse.GetStationBoardResult.trainServices)
+            if (serviceResponse.GetStationBoardResult.trainServices != null)
             {
-                response.Services.Add(new Arrival
+                foreach (var trainService in serviceResponse.GetStationBoardResult.trainServices)
                 {
-                    Operator = trainService.@operator,
-                    Origin = trainService.origin[0].locationName,
-                    Destination = trainService.destination[0].locationName,
-                    ScheduledArrival = trainService.sta,
-                    EstimatedArrival = trainService.eta,
-                    Platform = trainService.platform,
-                    ServiceId = trainService.serviceID
-                });
+                    response.Services.Add(new Arrival
+                    {
+                        Operator = trainService.@operator,
+                        Origin = trainService.origin[0].locationName,
+                        Destination = trainService.destination[0].locationName,
+                        ScheduledArrival = trainService.sta,
+                        EstimatedArrival = trainService.eta,
+                        Platform = trainService.platform,
+                        ServiceId = trainService.serviceID
+                    });
+                }    
+            }
+
+            if (serviceResponse.GetStationBoardResult.ferryServices != null)
+            {
+                foreach (var ferryService in serviceResponse.GetStationBoardResult.ferryServices)
+                {
+                    response.Services.Add(new Arrival
+                    {
+                        Operator = ferryService.@operator,
+                        Destination = ferryService.destination[0].locationName,
+                        EstimatedArrival = ferryService.eta,
+                        Origin = ferryService.origin[0].locationName,
+                        Platform = ferryService.platform,
+                        ScheduledArrival = ferryService.sta,
+                        ServiceId = ferryService.serviceID,
+                        Type = ServiceType.Ferry
+                    });
+                }
+            }
+
+            if (serviceResponse.GetStationBoardResult.busServices != null)
+            {
+                foreach (var serviceItem in serviceResponse.GetStationBoardResult.busServices)
+                {
+                    response.Services.Add(new Arrival
+                    {
+                        Destination = serviceItem.destination[0].locationName,
+                        EstimatedArrival = serviceItem.eta,
+                        Operator = serviceItem.@operator,
+                        Origin = serviceItem.origin[0].locationName,
+                        Platform = serviceItem.platform,
+                        ScheduledArrival = serviceItem.sta,
+                        ServiceId = serviceItem.serviceID,
+                        Type = ServiceType.Bus
+                    });
+                }
             }
 
             return response;
@@ -78,21 +119,62 @@ namespace RailDataEngine.Services.DarwinStationBoard
             var response = new StationDepartureResponse
             {
                 StationName = serviceResponse.GetStationBoardResult.locationName,
-                Departures = new List<Departure>()
+                Services = new List<Departure>()
             };
 
-            foreach (var trainService in serviceResponse.GetStationBoardResult.trainServices)
+
+            if (serviceResponse.GetStationBoardResult.trainServices != null)
             {
-                response.Departures.Add(new Departure
+                foreach (var trainService in serviceResponse.GetStationBoardResult.trainServices)
                 {
-                    Operator = trainService.@operator,
-                    Origin = trainService.origin[0].locationName,
-                    Destination = trainService.destination[0].locationName,
-                    ScheduledDeparture = trainService.std,
-                    EstimatedDepature = trainService.etd,
-                    Platform = trainService.platform,
-                    ServiceId = trainService.serviceID
-                });
+                    response.Services.Add(new Departure
+                    {
+                        Operator = trainService.@operator,
+                        Origin = trainService.origin[0].locationName,
+                        Destination = trainService.destination[0].locationName,
+                        ScheduledDeparture = trainService.std,
+                        EstimatedDepature = trainService.etd,
+                        Platform = trainService.platform,
+                        ServiceId = trainService.serviceID,
+                        Type = ServiceType.Train
+                    });
+                }    
+            }
+
+            if (serviceResponse.GetStationBoardResult.busServices != null)
+            {
+                foreach (var serviceItem in serviceResponse.GetStationBoardResult.busServices)
+                {
+                    response.Services.Add(new Departure
+                    {
+                        Destination = serviceItem.destination[0].locationName,
+                        EstimatedDepature = serviceItem.etd,
+                        Operator = serviceItem.@operator,
+                        Origin = serviceItem.origin[0].locationName,
+                        Platform = serviceItem.platform,
+                        ScheduledDeparture = serviceItem.std,
+                        ServiceId = serviceItem.serviceID,
+                        Type = ServiceType.Bus
+                    });
+                }    
+            }
+
+            if (serviceResponse.GetStationBoardResult.ferryServices != null)
+            {
+                foreach (var ferryService in serviceResponse.GetStationBoardResult.ferryServices)
+                {
+                    response.Services.Add(new Departure
+                    {
+                        Destination = ferryService.destination[0].locationName,
+                        EstimatedDepature = ferryService.etd,
+                        Operator = ferryService.@operator,
+                        Origin = ferryService.origin[0].locationName,
+                        Platform = ferryService.platform,
+                        ScheduledDeparture = ferryService.std,
+                        ServiceId = ferryService.serviceID,
+                        Type = ServiceType.Ferry
+                    });
+                }    
             }
 
             return response;
