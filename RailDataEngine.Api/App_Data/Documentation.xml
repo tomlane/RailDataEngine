@@ -14,15 +14,6 @@
             Gets the configured Unity container.
             </summary>
         </member>
-        <member name="T:RailDataEngine.Api.App_Start.UnityWebApiActivator">
-            <summary>Provides the bootstrapping for integrating Unity with WebApi when it is hosted in ASP.NET</summary>
-        </member>
-        <member name="M:RailDataEngine.Api.App_Start.UnityWebApiActivator.Start">
-            <summary>Integrates Unity when the application starts.</summary>
-        </member>
-        <member name="M:RailDataEngine.Api.App_Start.UnityWebApiActivator.Shutdown">
-            <summary>Disposes the Unity container when the application is shut down.</summary>
-        </member>
         <member name="M:RailDataEngine.Api.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
             <summary>
             Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
