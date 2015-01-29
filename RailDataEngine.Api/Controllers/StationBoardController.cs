@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 using Exceptionless;
+using RailDataEngine.Api.ViewModels;
 using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
-using RailDataEngine.Domain.Entity.StationBoard;
 
 namespace RailDataEngine.Api.Controllers
 {
@@ -33,17 +32,23 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="crs">The CRS code for the requested station.</param>
         /// <returns></returns>
         [HttpGet]
-        public List<Arrival> Arrivals(string crs)
+        public StationBoardArrivalsViewModel Arrivals(string crs)
         {
             if (string.IsNullOrEmpty(crs))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             try
             {
-                return _arrivalsBoundary.Invoke(new StationBoardArrivalsBoundaryRequest
+                var serviceResponse = _arrivalsBoundary.Invoke(new StationBoardArrivalsBoundaryRequest
                 {
                     Crs = crs
-                }).Services;
+                });
+
+                return new StationBoardArrivalsViewModel
+                {
+                    Services = serviceResponse.Services,
+                    StationName = serviceResponse.StationName
+                };
             }
             catch (NotImplementedException exception)
             {
@@ -58,17 +63,23 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="crs">The CRS code for the requested station.</param>
         /// <returns></returns>
         [HttpGet]
-        public List<Departure> Departures(string crs)
+        public StationBoardDeparturesViewModel Departures(string crs)
         {
             if (string.IsNullOrEmpty(crs))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             try
             {
-                return _departuresBoundary.Invoke(new StationBoardDeparturesBoundaryRequest
+                var serviceResponse = _departuresBoundary.Invoke(new StationBoardDeparturesBoundaryRequest
                 {
                     Crs = crs
-                }).Services;
+                });
+
+                return new StationBoardDeparturesViewModel
+                {
+                    Services = serviceResponse.Services,
+                    StationName = serviceResponse.StationName
+                };
             }
             catch (NotImplementedException exception)
             {
@@ -83,17 +94,22 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="serviceId">The id of the service to be requested.</param>
         /// <returns></returns>
         [HttpGet]
-        public ServiceDetails ServiceDetails(string serviceId)
+        public StationBoardServiceDetailsViewModel ServiceDetails(string serviceId)
         {
             if (string.IsNullOrEmpty(serviceId))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             try
             {
-                return _serviceDetailsBoundary.Invoke(new StationBoardServiceDetailsBoundaryRequest
+                var serviceResponse = _serviceDetailsBoundary.Invoke(new StationBoardServiceDetailsBoundaryRequest
                 {
                     ServiceId = serviceId
-                }).ServiceDetails;
+                });
+
+                return new StationBoardServiceDetailsViewModel
+                {
+                    ServiceDetails = serviceResponse.ServiceDetails
+                };
             }
             catch (NotImplementedException exception)
             {

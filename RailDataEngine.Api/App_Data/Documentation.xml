@@ -512,5 +512,30 @@
             <param name="serviceId">The id of the service to be requested.</param>
             <returns></returns>
         </member>
+        <member name="P:RailDataEngine.Api.ViewModels.StationBoardArrivalsViewModel.Services">
+            <summary>
+            List of arrivals from the station board API.
+            </summary>
+        </member>
+        <member name="P:RailDataEngine.Api.ViewModels.StationBoardArrivalsViewModel.StationName">
+            <summary>
+            Name of the station from the CRS code of the request.
+            </summary>
+        </member>
+        <member name="P:RailDataEngine.Api.ViewModels.StationBoardDeparturesViewModel.Services">
+            <summary>
+            List of departures from the station board API.
+            </summary>
+        </member>
+        <member name="P:RailDataEngine.Api.ViewModels.StationBoardDeparturesViewModel.StationName">
+            <summary>
+            Name of the station from the CRS code of the request.
+            </summary>
+        </member>
+        <member name="P:RailDataEngine.Api.ViewModels.StationBoardServiceDetailsViewModel.ServiceDetails">
+            <summary>
+            Details for a specific service.
+            </summary>
+        </member>
     </members>
 </doc>
