@@ -65,6 +65,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.Dar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.DarwinStationBoard.Tests", "RailDataEngine.Services.DarwinStationBoard.Tests\RailDataEngine.Services.DarwinStationBoard.Tests.csproj", "{CD9FA119-0A48-451D-B6DD-30EF3ED98566}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Listener", "Listener", "{98F9B540-2542-4DA7-9F7C-0AE389758974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Listener.TrainMovements", "RailDataEngine.Listener.TrainMovements\RailDataEngine.Listener.TrainMovements.csproj", "{B717E882-5AA9-4872-90E0-3CFA77C990A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +163,10 @@ Global
 		{CD9FA119-0A48-451D-B6DD-30EF3ED98566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD9FA119-0A48-451D-B6DD-30EF3ED98566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD9FA119-0A48-451D-B6DD-30EF3ED98566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B717E882-5AA9-4872-90E0-3CFA77C990A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B717E882-5AA9-4872-90E0-3CFA77C990A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B717E882-5AA9-4872-90E0-3CFA77C990A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B717E882-5AA9-4872-90E0-3CFA77C990A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,5 +194,6 @@ Global
 		{F9591704-44B0-4BEA-8F71-0B6D1594C139} = {FB6E0059-5489-45F7-8063-660768540EE8}
 		{D020080C-12D6-4AF8-9168-1B4342AB21BC} = {FB6E0059-5489-45F7-8063-660768540EE8}
 		{CD9FA119-0A48-451D-B6DD-30EF3ED98566} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
+		{B717E882-5AA9-4872-90E0-3CFA77C990A5} = {98F9B540-2542-4DA7-9F7C-0AE389758974}
 	EndGlobalSection
 EndGlobal
