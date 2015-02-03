@@ -62,10 +62,6 @@
       <Project>{6575CB95-C880-484F-8589-6FAB5EC35888}</Project>
       <Name>RailDataEngine.Boundary.Implementations</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Boundary\RailDataEngine.Boundary.csproj">
-      <Project>{060C0FEA-AA8F-4EF4-8C8A-921BE2A065A3}</Project>
-      <Name>RailDataEngine.Boundary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Data.Common\RailDataEngine.Data.Common.csproj">
       <Project>{C99687BD-0029-44FE-A008-CDBD1E2DCAF9}</Project>
       <Name>RailDataEngine.Data.Common</Name>
@@ -74,21 +70,17 @@
       <Project>{B5120532-0E7A-4DC8-BFDD-11703D161546}</Project>
       <Name>RailDataEngine.Data.Schedule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
+      <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>
+      <Name>RailDataEngine.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Gateway.EF\RailDataEngine.Gateway.EF.csproj">
       <Project>{C500900E-6B18-4E27-8684-949F72A98656}</Project>
       <Name>RailDataEngine.Gateway.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Gateway\RailDataEngine.Gateway.csproj">
-      <Project>{A7B98994-1F1E-4B27-BE4C-93102E4460C9}</Project>
-      <Name>RailDataEngine.Gateway</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Interactor.Implementations\RailDataEngine.Interactor.Implementations.csproj">
       <Project>{4BAF053C-BCAC-498E-BA28-1161620E0CD9}</Project>
       <Name>RailDataEngine.Interactor.Implementations</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Interactor\RailDataEngine.Interactor.csproj">
-      <Project>{A63360D1-E562-464A-890E-E66F17B4E5D4}</Project>
-      <Name>RailDataEngine.Interactor</Name>
     </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj">
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>
@@ -97,10 +89,6 @@
     <ProjectReference Include="..\RailDataEngine.Services.FeedListener\RailDataEngine.Services.FeedListener.csproj">
       <Project>{CEC2184B-570D-4320-9617-1F1390F42F48}</Project>
       <Name>RailDataEngine.Services.FeedListener</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Services\RailDataEngine.Services.csproj">
-      <Project>{F9591704-44B0-4BEA-8F71-0B6D1594C139}</Project>
-      <Name>RailDataEngine.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

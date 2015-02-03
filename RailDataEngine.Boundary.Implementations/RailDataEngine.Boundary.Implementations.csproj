@@ -46,17 +46,9 @@
     <Compile Include="TrainMovements\SaveMovementMessageBoundary.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RailDataEngine.Boundary\RailDataEngine.Boundary.csproj">
-      <Project>{060C0FEA-AA8F-4EF4-8C8A-921BE2A065A3}</Project>
-      <Name>RailDataEngine.Boundary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
       <Project>{2abe2e53-fb17-4b5b-9c09-d3bf1b038a4b}</Project>
       <Name>RailDataEngine.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Interactor\RailDataEngine.Interactor.csproj">
-      <Project>{A63360D1-E562-464A-890E-E66F17B4E5D4}</Project>
-      <Name>RailDataEngine.Interactor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,8 +2,9 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
+using RailDataEngine.Domain.Services.FeedListener;
 
 namespace RailDataEngine.Services.FeedListener.Tests
 {

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using RailDataEngine.Domain.Entity.StationBoard;
-using RailDataEngine.Interactor.StationBoardInteractor;
-using RailDataEngine.Services.StationBoardService;
+using RailDataEngine.Domain.Interactor.StationBoardInteractor;
+using RailDataEngine.Domain.Services.StationBoardService;
 
 namespace RailDataEngine.Interactor.Implementations
 {

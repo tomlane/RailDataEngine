@@ -66,10 +66,6 @@
       <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>
       <Name>RailDataEngine.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Gateway\RailDataEngine.Gateway.csproj">
-      <Project>{A7B98994-1F1E-4B27-BE4C-93102E4460C9}</Project>
-      <Name>RailDataEngine.Gateway</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

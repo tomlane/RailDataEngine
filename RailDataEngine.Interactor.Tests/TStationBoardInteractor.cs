@@ -5,8 +5,8 @@ using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Entity.StationBoard;
-using RailDataEngine.Interactor.StationBoardInteractor;
-using RailDataEngine.Services.StationBoardService;
+using RailDataEngine.Domain.Interactor.StationBoardInteractor;
+using RailDataEngine.Domain.Services.StationBoardService;
 
 namespace RailDataEngine.Interactor.Tests
 {

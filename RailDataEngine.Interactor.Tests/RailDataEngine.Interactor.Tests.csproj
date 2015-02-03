@@ -75,14 +75,6 @@
       <Project>{4BAF053C-BCAC-498E-BA28-1161620E0CD9}</Project>
       <Name>RailDataEngine.Interactor.Implementations</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Interactor\RailDataEngine.Interactor.csproj">
-      <Project>{A63360D1-E562-464A-890E-E66F17B4E5D4}</Project>
-      <Name>RailDataEngine.Interactor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Services\RailDataEngine.Services.csproj">
-      <Project>{F9591704-44B0-4BEA-8F71-0B6D1594C139}</Project>
-      <Name>RailDataEngine.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,8 +4,8 @@ using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Exception;
+using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
-using RailDataEngine.Services.StationBoardService;
 
 namespace RailDataEngine.Services.DarwinStationBoard.Tests
 {

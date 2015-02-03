@@ -3,9 +3,9 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
-using RailDataEngine.Gateway.Domain;
+using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Entity.Schedule;
 using RailDataEngine.Gateway.EF.Containers;
-using RailDataEngine.Gateway.Entity.Schedule;
 
 namespace RailDataEngine.Gateway.EF.Tests.Containers
 {

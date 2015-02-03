@@ -4,12 +4,12 @@
         <name>RailDataEngine.Api</name>
     </assembly>
     <members>
-        <member name="T:RailDataEngine.Api.App_Start.UnityConfig">
+        <member name="T:RailDataEngine.Api.UnityConfig">
             <summary>
             Specifies the Unity configuration for the main container.
             </summary>
         </member>
-        <member name="M:RailDataEngine.Api.App_Start.UnityConfig.GetConfiguredContainer">
+        <member name="M:RailDataEngine.Api.UnityConfig.GetConfiguredContainer">
             <summary>
             Gets the configured Unity container.
             </summary>
@@ -21,7 +21,7 @@
             <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
             <returns>The ID as a string.</returns>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.HelpPageConfig">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.App_Start.HelpPageConfig">
             <summary>
             Use this class to customize the Help Page.
             For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
@@ -155,7 +155,7 @@
             <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
             <returns>The help page sample generator.</returns>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator)">
             <summary>
             Sets the help page sample generator.
             </summary>
@@ -254,31 +254,31 @@
             Gets the error messages associated with this model.
             </summary>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator">
             <summary>
             This class will generate the samples for the help page.
             </summary>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            Initializes a new instance of the <see cref="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator"/> class.
             </summary>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
             <summary>
             Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
             </summary>
             <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
             <returns>The samples keyed by media type.</returns>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
             <summary>
             Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
             </summary>
             <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
             <returns>The samples keyed by media type.</returns>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,RailDataEngine.Api.Areas.HelpPage.SampleDirection)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,RailDataEngine.Api.Areas.HelpPage.SampleGeneration.SampleDirection)">
             <summary>
             Gets the request or response body samples.
             </summary>
@@ -286,9 +286,9 @@
             <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
             <returns>The samples keyed by media type.</returns>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,RailDataEngine.Api.Areas.HelpPage.SampleDirection)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,RailDataEngine.Api.Areas.HelpPage.SampleGeneration.SampleDirection)">
             <summary>
-            Search for samples that are provided directly through <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            Search for samples that are provided directly through <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.ActionSamples"/>.
             </summary>
             <param name="controllerName">Name of the controller.</param>
             <param name="actionName">Name of the action.</param>
@@ -299,24 +299,24 @@
             <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
             <returns>The sample that matches the parameters.</returns>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.GetSampleObject(System.Type)">
             <summary>
             Gets the sample object that will be serialized by the formatters. 
-            First, it will look at the <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
-            one using <see cref="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:RailDataEngine.Api.Areas.HelpPage.ObjectGenerator"/>) and other
-            factories in <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            First, it will look at the <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.DefaultSampleObjectFactory(RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.ObjectGenerator"/>) and other
+            factories in <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.SampleObjectFactories"/>.
             </summary>
             <param name="type">The type.</param>
             <returns>The sample object.</returns>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
             <summary>
             Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
             </summary>
             <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
             <returns>The type.</returns>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},RailDataEngine.Api.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},RailDataEngine.Api.Areas.HelpPage.SampleGeneration.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
             <summary>
             Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
             </summary>
@@ -327,7 +327,7 @@
             <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
             <param name="formatters">The formatters.</param>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
             <summary>
             Writes the sample object using formatter.
             </summary>
@@ -337,69 +337,69 @@
             <param name="mediaType">Type of the media.</param>
             <returns></returns>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.ActualHttpMessageTypes">
             <summary>
             Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
             </summary>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.ActionSamples">
             <summary>
             Gets the objects that are used directly as samples for certain actions.
             </summary>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.SampleObjects">
             <summary>
             Gets the objects that are serialized as samples by the supported formatters.
             </summary>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleGenerator.SampleObjectFactories">
             <summary>
             Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
             stopping when the factory successfully returns a non-<see langref="null"/> object.
             </summary>
             <remarks>
-            Collection includes just <see cref="M:RailDataEngine.Api.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            Collection includes just <see cref="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
             <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
             <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey">
             <summary>
             This is used to identify the place where the sample should be applied.
             </summary>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
             <summary>
-            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey"/> based on media type.
             </summary>
             <param name="mediaType">The media type.</param>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
             <summary>
-            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey"/> based on media type and CLR type.
             </summary>
             <param name="mediaType">The media type.</param>
             <param name="type">The CLR type.</param>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(RailDataEngine.Api.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.#ctor(RailDataEngine.Api.Areas.HelpPage.SampleGeneration.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
-            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey"/> based on <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
             </summary>
-            <param name="sampleDirection">The <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="sampleDirection">The <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.SampleDirection"/>.</param>
             <param name="controllerName">Name of the controller.</param>
             <param name="actionName">Name of the action.</param>
             <param name="parameterNames">The parameter names.</param>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,RailDataEngine.Api.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,RailDataEngine.Api.Areas.HelpPage.SampleGeneration.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
-            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            Creates a new <see cref="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey"/> based on media type, <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
             </summary>
             <param name="mediaType">The media type.</param>
-            <param name="sampleDirection">The <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="sampleDirection">The <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.SampleDirection"/>.</param>
             <param name="controllerName">Name of the controller.</param>
             <param name="actionName">Name of the action.</param>
             <param name="parameterNames">The parameter names.</param>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.ControllerName">
             <summary>
             Gets the name of the controller.
             </summary>
@@ -407,7 +407,7 @@
             The name of the controller.
             </value>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.ActionName">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.ActionName">
             <summary>
             Gets the name of the action.
             </summary>
@@ -415,7 +415,7 @@
             The name of the action.
             </value>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.MediaType">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.MediaType">
             <summary>
             Gets the media type.
             </summary>
@@ -423,38 +423,38 @@
             The media type.
             </value>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.ParameterNames">
             <summary>
             Gets the parameter names.
             </summary>
         </member>
-        <member name="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+        <member name="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.SampleDirection">
             <summary>
-            Gets the <see cref="P:RailDataEngine.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            Gets the <see cref="P:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.HelpPageSampleKey.SampleDirection"/>.
             </summary>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.ImageSample">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.ImageSample">
             <summary>
             This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
             </summary>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.ImageSample.#ctor(System.String)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.ImageSample.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:RailDataEngine.Api.Areas.HelpPage.ImageSample"/> class.
+            Initializes a new instance of the <see cref="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.ImageSample"/> class.
             </summary>
             <param name="src">The URL of an image.</param>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.InvalidSample">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.InvalidSample">
             <summary>
             This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
             </summary>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.ObjectGenerator">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.ObjectGenerator">
             <summary>
             This class will create an object of a given type and populate it with sample data.
             </summary>
         </member>
-        <member name="M:RailDataEngine.Api.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+        <member name="M:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.ObjectGenerator.GenerateObject(System.Type)">
             <summary>
             Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
             Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
@@ -470,12 +470,12 @@
             <param name="type">The type.</param>
             <returns>An object of the given type.</returns>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleDirection">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.SampleDirection">
             <summary>
             Indicates whether the sample is used for request or response
             </summary>
         </member>
-        <member name="T:RailDataEngine.Api.Areas.HelpPage.TextSample">
+        <member name="T:RailDataEngine.Api.Areas.HelpPage.SampleGeneration.TextSample">
             <summary>
             This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
             </summary>

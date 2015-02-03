@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Dynamic;
 using System.Linq;
-using RailDataEngine.Gateway.Domain;
+using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Data.Common
 {

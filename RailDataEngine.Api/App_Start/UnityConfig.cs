@@ -1,9 +1,8 @@
 using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 using RailDataEngine.DI;
 
-namespace RailDataEngine.Api.App_Start
+namespace RailDataEngine.Api
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.

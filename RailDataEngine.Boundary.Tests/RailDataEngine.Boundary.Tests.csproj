@@ -69,10 +69,6 @@
       <Project>{6575CB95-C880-484F-8589-6FAB5EC35888}</Project>
       <Name>RailDataEngine.Boundary.Implementations</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Boundary\RailDataEngine.Boundary.csproj">
-      <Project>{060C0FEA-AA8F-4EF4-8C8A-921BE2A065A3}</Project>
-      <Name>RailDataEngine.Boundary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.DI\RailDataEngine.DI.csproj">
       <Project>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</Project>
       <Name>RailDataEngine.DI</Name>
@@ -84,10 +80,6 @@
     <ProjectReference Include="..\RailDataEngine.Interactor.Implementations\RailDataEngine.Interactor.Implementations.csproj">
       <Project>{4baf053c-bcac-498e-ba28-1161620e0cd9}</Project>
       <Name>RailDataEngine.Interactor.Implementations</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Interactor\RailDataEngine.Interactor.csproj">
-      <Project>{A63360D1-E562-464A-890E-E66F17B4E5D4}</Project>
-      <Name>RailDataEngine.Interactor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using RailDataEngine.Data.Common;
-using RailDataEngine.Gateway.Entity.TrainMovements;
+using RailDataEngine.Domain.Gateway.Entity.TrainMovements;
 
 namespace RailDataEngine.Data.TrainMovements
 {

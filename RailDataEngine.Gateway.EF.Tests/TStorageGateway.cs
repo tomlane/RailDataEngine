@@ -5,8 +5,8 @@ using Moq;
 using NUnit.Framework;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.DI;
-using RailDataEngine.Gateway.Domain;
-using RailDataEngine.Gateway.Entity.Schedule;
+using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Entity.Schedule;
 using RailDataEngine.Tests.Common;
 
 namespace RailDataEngine.Gateway.EF.Tests

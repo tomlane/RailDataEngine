@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using RailDataEngine.Data.Common;
-using RailDataEngine.Gateway.Entity.Schedule;
+using RailDataEngine.Domain.Gateway.Entity.Schedule;
 
 namespace RailDataEngine.Data.Schedule
 {

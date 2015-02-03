@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Configuration;
 using Apache.NMS;
-using RailDataEngine.Boundary.TrainMovements.SaveMovementMessageBoundary;
+using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
+using RailDataEngine.Domain.Services.FeedListener;
 
 namespace RailDataEngine.Services.FeedListener
 {

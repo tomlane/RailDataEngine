@@ -39,6 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\ISaveScheduleMessagesBoundary.cs" />
+    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\SaveSchedulesBoundaryRequest.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\IStationBoardArrivalsBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\StationBoardArrivalsBoundaryRequest.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\StationBoardArrivalsBoundaryResponse.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary\IStationBoardDeparturesBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary\StationBoardDeparturesBoundaryRequest.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary\StationBoardDeparturesBoundaryResponse.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary\IStationBoardServiceDetailsBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary\StationBoardServiceDetailsBoundaryRequest.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary\StationBoardServiceDetailsBoundaryResponse.cs" />
+    <Compile Include="Boundary\TrainDescriber\SaveDescriberMessageBoundary\ISaveDescriberMessagesBoundary.cs" />
+    <Compile Include="Boundary\TrainDescriber\SaveDescriberMessageBoundary\SaveDescriberBoundaryRequest.cs" />
+    <Compile Include="Boundary\TrainMovements\FetchMovementMessageBoundary\FetchMovementMessageBoundaryRequest.cs" />
+    <Compile Include="Boundary\TrainMovements\FetchMovementMessageBoundary\FetchMovementMessagesBoundaryResponse.cs" />
+    <Compile Include="Boundary\TrainMovements\FetchMovementMessageBoundary\IFetchMovementMessagesBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary\ISaveMovementMessageBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary\SaveMovementMessageBoundaryRequest.cs" />
     <Compile Include="Entity\Schedule\Association.cs" />
     <Compile Include="Entity\Schedule\BankHolidayRunning.cs" />
     <Compile Include="Entity\Schedule\Category.cs" />
@@ -79,8 +97,38 @@
     <Compile Include="Entity\TrainMovements\TrainMovement.cs" />
     <Compile Include="Entity\TrainMovements\VariationStatus.cs" />
     <Compile Include="Exception\NullServiceResultException.cs" />
+    <Compile Include="Gateway\Entity\Schedule\AssociationEntity.cs" />
+    <Compile Include="Gateway\Entity\Schedule\HeaderEntity.cs" />
+    <Compile Include="Gateway\Entity\Schedule\LocationEntity.cs" />
+    <Compile Include="Gateway\Entity\Schedule\RecordEntity.cs" />
+    <Compile Include="Gateway\Entity\Schedule\TiplocEntity.cs" />
+    <Compile Include="Gateway\Entity\TrainDescriber\Berth\BerthMessageEntity.cs" />
+    <Compile Include="Gateway\Entity\TrainDescriber\Signal\SignalMessageEntity.cs" />
+    <Compile Include="Gateway\Entity\TrainMovements\TrainActivationEntity.cs" />
+    <Compile Include="Gateway\Entity\TrainMovements\TrainCancellationEntity.cs" />
+    <Compile Include="Gateway\Entity\TrainMovements\TrainMovementEntity.cs" />
+    <Compile Include="Gateway\IIdentifyable.cs" />
+    <Compile Include="Gateway\IScheduleGatewayContainer.cs" />
+    <Compile Include="Gateway\IStorageGateway.cs" />
+    <Compile Include="Gateway\ITrainDescriberContainer.cs" />
+    <Compile Include="Gateway\ITrainMovementGatewayContainer.cs" />
+    <Compile Include="Interactor\StationBoardInteractor\IStationBoardInteractor.cs" />
+    <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorRequest.cs" />
+    <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorResponse.cs" />
+    <Compile Include="Interactor\StationBoardInteractor\StationBoardDeparturesInteractorRequest.cs" />
+    <Compile Include="Interactor\StationBoardInteractor\StationBoardDeparturesInteractorResponse.cs" />
+    <Compile Include="Interactor\StationBoardInteractor\StationBoardServiceDetailsInteractorRequest.cs" />
+    <Compile Include="Interactor\StationBoardInteractor\StationBoardServiceDetailsInteractorResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FeedListener\ITrainMovementListener.cs" />
+    <Compile Include="Services\StationBoardService\IStationBoardService.cs" />
+    <Compile Include="Services\StationBoardService\ServiceDetailsRequest.cs" />
+    <Compile Include="Services\StationBoardService\ServiceDetailsResponse.cs" />
+    <Compile Include="Services\StationBoardService\StationArrivalResponse.cs" />
+    <Compile Include="Services\StationBoardService\StationBoardRequest.cs" />
+    <Compile Include="Services\StationBoardService\StationDepartureResponse.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

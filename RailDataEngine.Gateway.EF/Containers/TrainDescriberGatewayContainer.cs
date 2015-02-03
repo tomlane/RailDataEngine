@@ -1,7 +1,7 @@
 ﻿using System;
-using RailDataEngine.Gateway.Domain;
-using RailDataEngine.Gateway.Entity.TrainDescriber.Berth;
-using RailDataEngine.Gateway.Entity.TrainDescriber.Signal;
+using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Berth;
+using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Signal;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {

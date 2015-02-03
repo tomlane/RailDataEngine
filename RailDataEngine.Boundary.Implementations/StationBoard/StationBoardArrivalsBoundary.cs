@@ -1,6 +1,6 @@
 ﻿using System;
-using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
-using RailDataEngine.Interactor.StationBoardInteractor;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
+using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 
 namespace RailDataEngine.Boundary.Implementations.StationBoard
 {

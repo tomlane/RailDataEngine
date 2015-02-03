@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using RailDataEngine.Data.Schedule;
-using RailDataEngine.Gateway.Domain;
+using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Gateway.EF
 {

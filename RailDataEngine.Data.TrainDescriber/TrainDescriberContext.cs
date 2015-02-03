@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using RailDataEngine.Data.Common;
-using RailDataEngine.Gateway.Entity.TrainDescriber.Berth;
-using RailDataEngine.Gateway.Entity.TrainDescriber.Signal;
+using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Berth;
+using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Signal;
 
 namespace RailDataEngine.Data.TrainDescriber
 {

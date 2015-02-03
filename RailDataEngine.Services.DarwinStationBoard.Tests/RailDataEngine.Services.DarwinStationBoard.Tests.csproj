@@ -74,10 +74,6 @@
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>
       <Name>RailDataEngine.Services.DarwinStationBoard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Services\RailDataEngine.Services.csproj">
-      <Project>{F9591704-44B0-4BEA-8F71-0B6D1594C139}</Project>
-      <Name>RailDataEngine.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

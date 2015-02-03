@@ -95,10 +95,6 @@
       <Project>{C500900E-6B18-4E27-8684-949F72A98656}</Project>
       <Name>RailDataEngine.Gateway.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Gateway\RailDataEngine.Gateway.csproj">
-      <Project>{A7B98994-1F1E-4B27-BE4C-93102E4460C9}</Project>
-      <Name>RailDataEngine.Gateway</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Tests.Common\RailDataEngine.Tests.Common.csproj">
       <Project>{A2D00D35-7C24-4077-BEB9-47B3C4410DC8}</Project>
       <Name>RailDataEngine.Tests.Common</Name>

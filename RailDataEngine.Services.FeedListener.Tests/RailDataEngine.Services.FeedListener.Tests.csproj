@@ -62,21 +62,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RailDataEngine.Boundary\RailDataEngine.Boundary.csproj">
-      <Project>{060C0FEA-AA8F-4EF4-8C8A-921BE2A065A3}</Project>
-      <Name>RailDataEngine.Boundary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.DI\RailDataEngine.DI.csproj">
       <Project>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</Project>
       <Name>RailDataEngine.DI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
+      <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>
+      <Name>RailDataEngine.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services.FeedListener\RailDataEngine.Services.FeedListener.csproj">
       <Project>{CEC2184B-570D-4320-9617-1F1390F42F48}</Project>
       <Name>RailDataEngine.Services.FeedListener</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Services\RailDataEngine.Services.csproj">
-      <Project>{F9591704-44B0-4BEA-8F71-0B6D1594C139}</Project>
-      <Name>RailDataEngine.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

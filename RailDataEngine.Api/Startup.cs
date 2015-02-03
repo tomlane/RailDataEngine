@@ -6,7 +6,6 @@ using Exceptionless;
 using Microsoft.Owin;
 using Microsoft.Practices.Unity.WebApi;
 using Owin;
-using RailDataEngine.Api.App_Start;
 
 [assembly: OwinStartup(typeof(RailDataEngine.Api.Startup))]
 

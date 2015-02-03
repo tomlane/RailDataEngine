@@ -4,10 +4,10 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.Api.Controllers;
-using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
-using RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary;
-using RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 
 namespace RailDataEngine.Api.Tests.Controllers
 {

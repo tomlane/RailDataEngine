@@ -3,10 +3,9 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.Boundary.Implementations.StationBoard;
-using RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.DI;
-using RailDataEngine.Domain.Entity.StationBoard;
-using RailDataEngine.Interactor.StationBoardInteractor;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
+using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 
 namespace RailDataEngine.Boundary.Tests.StationBoard
 {

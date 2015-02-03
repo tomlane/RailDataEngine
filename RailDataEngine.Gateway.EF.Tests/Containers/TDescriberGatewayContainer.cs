@@ -3,10 +3,10 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
-using RailDataEngine.Gateway.Domain;
+using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Berth;
+using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Signal;
 using RailDataEngine.Gateway.EF.Containers;
-using RailDataEngine.Gateway.Entity.TrainDescriber.Berth;
-using RailDataEngine.Gateway.Entity.TrainDescriber.Signal;
 
 namespace RailDataEngine.Gateway.EF.Tests.Containers
 {

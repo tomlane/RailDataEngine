@@ -1,6 +1,6 @@
 ﻿using System;
-using RailDataEngine.Gateway.Domain;
-using RailDataEngine.Gateway.Entity.TrainMovements;
+using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Entity.TrainMovements;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {

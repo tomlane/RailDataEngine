@@ -1,4 +1,4 @@
-﻿using RailDataEngine.Boundary.TrainMovements.SaveMovementMessageBoundary;
+﻿using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 
 namespace RailDataEngine.Boundary.Implementations.TrainMovements
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SqlClient;
-using RailDataEngine.Gateway.Domain;
+using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Data.Common
 {

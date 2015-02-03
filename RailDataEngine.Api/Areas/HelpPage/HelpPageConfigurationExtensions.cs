@@ -13,6 +13,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using RailDataEngine.Api.Areas.HelpPage.ModelDescriptions;
 using RailDataEngine.Api.Areas.HelpPage.Models;
+using RailDataEngine.Api.Areas.HelpPage.SampleGeneration;
 
 namespace RailDataEngine.Api.Areas.HelpPage
 {

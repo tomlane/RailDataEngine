@@ -110,10 +110,6 @@
       <Project>{EFE98C51-9437-47C6-9E97-82350E9AFB63}</Project>
       <Name>RailDataEngine.Api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Boundary\RailDataEngine.Boundary.csproj">
-      <Project>{060C0FEA-AA8F-4EF4-8C8A-921BE2A065A3}</Project>
-      <Name>RailDataEngine.Boundary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.DI\RailDataEngine.DI.csproj">
       <Project>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</Project>
       <Name>RailDataEngine.DI</Name>

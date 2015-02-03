@@ -3,9 +3,9 @@ using System.Net;
 using System.Web.Http;
 using Exceptionless;
 using RailDataEngine.Api.ViewModels;
-using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
-using RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary;
-using RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
+using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 
 namespace RailDataEngine.Api.Controllers
 {

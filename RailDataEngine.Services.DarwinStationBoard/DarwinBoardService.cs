@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using RailDataEngine.Domain.Entity.StationBoard;
 using RailDataEngine.Domain.Exception;
+using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
-using RailDataEngine.Services.StationBoardService;
 using CallingPoint = RailDataEngine.Domain.Entity.StationBoard.CallingPoint;
 using ServiceDetails = RailDataEngine.Domain.Entity.StationBoard.ServiceDetails;
 using ServiceType = RailDataEngine.Domain.Entity.StationBoard.ServiceType;
