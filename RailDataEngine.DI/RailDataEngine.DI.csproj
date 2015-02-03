@@ -94,6 +94,10 @@
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>
       <Name>RailDataEngine.Services.DarwinStationBoard</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.FeedListener\RailDataEngine.Services.FeedListener.csproj">
+      <Project>{CEC2184B-570D-4320-9617-1F1390F42F48}</Project>
+      <Name>RailDataEngine.Services.FeedListener</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services\RailDataEngine.Services.csproj">
       <Project>{F9591704-44B0-4BEA-8F71-0B6D1594C139}</Project>
       <Name>RailDataEngine.Services</Name>

@@ -64,6 +64,10 @@
       <Project>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</Project>
       <Name>RailDataEngine.DI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.FeedListener\RailDataEngine.Services.FeedListener.csproj">
+      <Project>{CEC2184B-570D-4320-9617-1F1390F42F48}</Project>
+      <Name>RailDataEngine.Services.FeedListener</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

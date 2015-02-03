@@ -54,8 +54,8 @@
     <Compile Include="TrainMovements\FetchMovementMessageBoundary\FetchMovementMessageBoundaryRequest.cs" />
     <Compile Include="TrainMovements\FetchMovementMessageBoundary\FetchMovementMessagesBoundaryResponse.cs" />
     <Compile Include="TrainMovements\FetchMovementMessageBoundary\IFetchMovementMessagesBoundary.cs" />
-    <Compile Include="TrainMovements\SaveMovementMessageBoundary\ISaveMovementMessagesBoundary.cs" />
-    <Compile Include="TrainMovements\SaveMovementMessageBoundary\SaveMovementsBoundaryRequest.cs" />
+    <Compile Include="TrainMovements\SaveMovementMessageBoundary\ISaveMovementMessageBoundary.cs" />
+    <Compile Include="TrainMovements\SaveMovementMessageBoundary\SaveMovementMessageBoundaryRequest.cs" />
     <Compile Include="Schedule\SaveScheduleMessageBoundary\ISaveScheduleMessagesBoundary.cs" />
     <Compile Include="Schedule\SaveScheduleMessageBoundary\SaveSchedulesBoundaryRequest.cs" />
   </ItemGroup>

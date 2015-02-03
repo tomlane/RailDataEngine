@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RailDataEngine.Services.Exception
+namespace RailDataEngine.Domain.Exception
 {
     public class NullServiceResultException : System.Exception
     {

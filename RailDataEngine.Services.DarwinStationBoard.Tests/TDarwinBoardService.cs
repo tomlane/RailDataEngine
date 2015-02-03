@@ -3,8 +3,8 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Exception;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
-using RailDataEngine.Services.Exception;
 using RailDataEngine.Services.StationBoardService;
 
 namespace RailDataEngine.Services.DarwinStationBoard.Tests

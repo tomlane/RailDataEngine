@@ -78,6 +78,7 @@
     <Compile Include="Entity\TrainMovements\TrainCancellation.cs" />
     <Compile Include="Entity\TrainMovements\TrainMovement.cs" />
     <Compile Include="Entity\TrainMovements\VariationStatus.cs" />
+    <Compile Include="Exception\NullServiceResultException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,8 +1,10 @@
 ﻿using Microsoft.Practices.Unity;
 using RailDataEngine.Boundary.Implementations.StationBoard;
+using RailDataEngine.Boundary.Implementations.TrainMovements;
 using RailDataEngine.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
+using RailDataEngine.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Gateway.Domain;
@@ -12,6 +14,7 @@ using RailDataEngine.Interactor.Implementations;
 using RailDataEngine.Interactor.StationBoardInteractor;
 using RailDataEngine.Services.DarwinStationBoard;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
+using RailDataEngine.Services.FeedListener;
 using RailDataEngine.Services.StationBoardService;
 
 namespace RailDataEngine.DI
@@ -40,6 +43,9 @@ namespace RailDataEngine.DI
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
             container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
             container.RegisterType<IStationBoardServiceDetailsBoundary, StationBoardServiceDetailsBoundary>();
+            container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
+
+            container.RegisterType<ITrainMovementListener, StompTrainMovementListener>();
 
             return container;
         }
