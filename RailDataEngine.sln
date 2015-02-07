@@ -61,6 +61,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.Fee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.FeedListener.Tests", "RailDataEngine.Services.FeedListener.Tests\RailDataEngine.Services.FeedListener.Tests.csproj", "{DECD4DB5-0C05-4655-8419-25C44AEE727B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.MessageConversion", "RailDataEngine.Services.MessageConversion\RailDataEngine.Services.MessageConversion.csproj", "{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.MessageConversion.Tests", "RailDataEngine.Services.MessageConversion.Tests\RailDataEngine.Services.MessageConversion.Tests.csproj", "{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +151,14 @@ Global
 		{DECD4DB5-0C05-4655-8419-25C44AEE727B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DECD4DB5-0C05-4655-8419-25C44AEE727B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DECD4DB5-0C05-4655-8419-25C44AEE727B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,5 +184,7 @@ Global
 		{CD9FA119-0A48-451D-B6DD-30EF3ED98566} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
 		{CEC2184B-570D-4320-9617-1F1390F42F48} = {FB6E0059-5489-45F7-8063-660768540EE8}
 		{DECD4DB5-0C05-4655-8419-25C44AEE727B} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
+		{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F} = {FB6E0059-5489-45F7-8063-660768540EE8}
+		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
 	EndGlobalSection
 EndGlobal

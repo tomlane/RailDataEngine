@@ -9,7 +9,10 @@ using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoun
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
+using RailDataEngine.Domain.Providers;
 using RailDataEngine.Domain.Services.FeedListener;
+using RailDataEngine.Domain.Services.MessageValidationService;
+using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
 using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Gateway.EF;
 using RailDataEngine.Gateway.EF.Containers;
@@ -17,6 +20,7 @@ using RailDataEngine.Interactor.Implementations;
 using RailDataEngine.Services.DarwinStationBoard;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
 using RailDataEngine.Services.FeedListener;
+using RailDataEngine.Services.MessageConversion;
 
 namespace RailDataEngine.DI
 {
@@ -47,6 +51,11 @@ namespace RailDataEngine.DI
             container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
 
             container.RegisterType<ITrainMovementListener, StompTrainMovementListener>();
+
+            container.RegisterType<IMovementMessageDeserializationService, JsonMovementMessageDeserializationService>();
+            container.RegisterType<IMessageValidationService, MessageValidationService>();
+
+            container.RegisterType<IMovementInformationProvider, MovementInformationProvider>();
 
             return container;
         }
