@@ -1,12 +1,15 @@
 ﻿using RailDataEngine.Domain.Entity.TrainMovements;
 using RailDataEngine.Domain.Providers;
 
-namespace RailDataEngine.Services.MessageConversion
+namespace RailDataEngine.Services.MessageConversion.Providers
 {
     public class MovementInformationProvider : IMovementInformationProvider
     {
-        public EventSource GetEventSource(string eventSource)
+        public EventSource? GetEventSource(string eventSource)
         {
+            if (string.IsNullOrWhiteSpace(eventSource))
+                return null;
+
             switch (eventSource)
             {
                 case "AUTOMATIC":
@@ -16,8 +19,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public VariationStatus GetVariationStatus(string variationStatus)
+        public VariationStatus? GetVariationStatus(string variationStatus)
         {
+            if (string.IsNullOrWhiteSpace(variationStatus))
+                return null;
+
             switch (variationStatus)
             {
                 case "ON TIME":
@@ -31,8 +37,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public EventType GetEventType(string eventType)
+        public EventType? GetEventType(string eventType)
         {
+            if (string.IsNullOrWhiteSpace(eventType))
+                return null;
+
             switch (eventType)
             {
                 case "ARRIVAL":
@@ -44,8 +53,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public CancellationType GetCancellationType(string cancellationType)
+        public CancellationType? GetCancellationType(string cancellationType)
         {
+            if (string.IsNullOrWhiteSpace(cancellationType))
+                return null;
+
             switch (cancellationType)
             {
                 case "ON CALL":
@@ -59,8 +71,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public TrainCallType GetTrainCallType(string trainCallType)
+        public TrainCallType? GetTrainCallType(string trainCallType)
         {
+            if (string.IsNullOrWhiteSpace(trainCallType))
+                return null;
+
             switch (trainCallType)
             {
                 case "AUTOMATIC":
@@ -70,8 +85,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public Direction GetTrainDirection(string direction)
+        public Direction? GetTrainDirection(string direction)
         {
+            if (string.IsNullOrWhiteSpace(direction))
+                return null;
+
             switch (direction)
             {
                 case "UP":

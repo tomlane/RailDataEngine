@@ -9,8 +9,8 @@ namespace RailDataEngine.Domain.Entity.Schedule
         public TransactionType? TransactionType { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public Dictionary<Days, bool> RunningDays { get; set; }
-        public string BankHolidayRunning { get; set; }
+        public string RunningDays { get; set; }
+        public bool BankHolidayRunning { get; set; }
         public string TrainStatus { get; set; }
         public string TrainCategory { get; set; }
         public string SignallingId { get; set; }
@@ -23,11 +23,12 @@ namespace RailDataEngine.Domain.Entity.Schedule
         public TrainClass? TrainClass { get; set; }
         public Sleepers? Sleepers { get; set; }
         public Reservations? Reservations { get; set; }
-        public string CateringCode { get; set; }
+        public CateringCode? CateringCode { get; set; }
         public ServiceBrand? ServiceBrand { get; set; }
         public StpIndicator? StpIndicator { get; set; }
         public string UicCode { get; set; }
         public string AtocCode { get; set; }
         public bool? IsPerformanceMonitoringApplicable { get; set; }
+        public List<Location> Locations { get; set; }
     }
 }

@@ -56,8 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TJsonMovementMessageConversionService.cs" />
-    <Compile Include="TJsonMovementMessageDeserializationService.cs" />
+    <Compile Include="Schedule\TJsonScheduleMessageConversionService.cs" />
+    <Compile Include="Schedule\TJsonScheduleMessageDeserializationService.cs" />
+    <Compile Include="TrainMovements\TJsonMovementMessageConversionService.cs" />
+    <Compile Include="TrainMovements\TJsonMovementMessageDeserializationService.cs" />
     <Compile Include="TMessageValidationService.cs" />
     <Compile Include="TMovementInformationProvider.cs" />
   </ItemGroup>
@@ -78,6 +80,7 @@
       <Name>RailDataEngine.Services.MessageConversion</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

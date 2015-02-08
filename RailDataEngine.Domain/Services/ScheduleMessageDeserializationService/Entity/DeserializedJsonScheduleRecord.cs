@@ -44,6 +44,6 @@ namespace RailDataEngine.Domain.Services.ScheduleMessageDeserializationService.E
         public DeserializedJsonNewScheduleSegment NewScheduleSegment { get; set; }
         
         [JsonProperty("schedule_segment")]
-        public DeserializedJsonScheduleSegment JsonScheduleSegment { get; set; }
+        public DeserializedJsonScheduleSegment ScheduleSegment { get; set; }
     }
 }

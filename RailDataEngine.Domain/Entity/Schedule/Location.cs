@@ -6,11 +6,11 @@ namespace RailDataEngine.Domain.Entity.Schedule
     {
         public LocationType? LocationIdentity { get; set; }
         public string TiplocCode { get; set; }
-        public DateTime? Arrival { get; set; }
-        public DateTime? Departure { get; set; }
-        public DateTime? Pass { get; set; }
-        public DateTime? PublicArrival { get; set; }
-        public DateTime? PublicDeparture { get; set; }
+        public string Arrival { get; set; }
+        public string Departure { get; set; }
+        public string Pass { get; set; }
+        public string PublicArrival { get; set; }
+        public string PublicDeparture { get; set; }
         public string Platform { get; set; }
         public string Line { get; set; }
         public string Path { get; set; }

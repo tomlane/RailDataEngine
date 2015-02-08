@@ -13,19 +13,26 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
 {
     public class JsonScheduleMessageConversionService : IScheduleMessageConversionService
     {
-        private IMessageValidationService _messageValidationService;
-        private IScheduleInformationProvider _scheduleInformationProvider;
-        private ITimeConversionService _timeConversionService;
+        private readonly IMessageValidationService _messageValidationService;
+        private readonly IScheduleInformationProvider _scheduleInformationProvider;
+        private readonly ITimeConversionService _timeConversionService;
+        private readonly ITrainInformationProvider _trainInformationProvider;
 
-        public JsonScheduleMessageConversionService(IMessageValidationService messageValidationService, IScheduleInformationProvider scheduleInformationProvider, ITimeConversionService timeConversionService)
+        public JsonScheduleMessageConversionService(
+            IMessageValidationService messageValidationService, 
+            IScheduleInformationProvider scheduleInformationProvider, 
+            ITimeConversionService timeConversionService,
+            ITrainInformationProvider trainInformationProvider)
         {
             if (messageValidationService == null) throw new ArgumentNullException("messageValidationService");
             if (scheduleInformationProvider == null) throw new ArgumentNullException("scheduleInformationProvider");
             if (timeConversionService == null) throw new ArgumentNullException("timeConversionService");
+            if (trainInformationProvider == null) throw new ArgumentNullException("trainInformationProvider");
 
             _messageValidationService = messageValidationService;
             _scheduleInformationProvider = scheduleInformationProvider;
             _timeConversionService = timeConversionService;
+            _trainInformationProvider = trainInformationProvider;
         }
 
         public ScheduleMessageConversionResponse ConvertScheduleMessages(ScheduleMessageConversionRequest request)
@@ -116,7 +123,65 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
 
         private Record ConvertScheduleRecord(DeserializedJsonScheduleRecord jsonScheduleRecord)
         {
-            throw new NotImplementedException();
+            return new Record
+            {
+                AtocCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.AtocCode),
+                BankHolidayRunning = _timeConversionService.ParseBankHolidayRunning(jsonScheduleRecord.Schedule.BankHolidayRunning),
+                BusinessSector = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.BusinessSector),
+                CateringCode = _trainInformationProvider.GetCateringCode(jsonScheduleRecord.Schedule.ScheduleSegment.CateringCode),
+                EndDate = _timeConversionService.ParseDateTime(jsonScheduleRecord.Schedule.ScheduleEndDate),
+                IsPerformanceMonitoringApplicable = null,
+                Locations = ConvertScheduleLocations(jsonScheduleRecord.Schedule.ScheduleSegment.ScheduleLocation),
+                OperatingCharacteristics = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.OperatingCharateristics),
+                PowerType = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.PowerType),
+                Reservations = _trainInformationProvider.GetTrainResevationDetails(jsonScheduleRecord.Schedule.ScheduleSegment.Reservations),
+                RunningDays = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.RunDays),
+                ServiceBrand = _trainInformationProvider.GetTrainServiceBrand(jsonScheduleRecord.Schedule.ScheduleSegment.ServiceBranding),
+                SignallingId = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.SignallingId),
+                Sleepers = _trainInformationProvider.GetTrainSleeperDetails(jsonScheduleRecord.Schedule.ScheduleSegment.Sleepers),
+                Speed = _messageValidationService.ParseInt(jsonScheduleRecord.Schedule.ScheduleSegment.Speed),
+                StartDate = _timeConversionService.ParseDateTime(jsonScheduleRecord.Schedule.ScheduleStartDate),
+                StpIndicator = _scheduleInformationProvider.GetStpIndicator(jsonScheduleRecord.Schedule.StpIndicator),
+                TimingLoad = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TimingLoad),
+                TrainCategory = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TrainCategory),
+                TrainClass = _trainInformationProvider.GetTrainClass(jsonScheduleRecord.Schedule.ScheduleSegment.TrainClass),
+                TrainServiceCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TrainServiceCode),
+                TrainStatus = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.TrainStatus),
+                TrainUid = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.TrainUid),
+                TransactionType = _scheduleInformationProvider.GetTransactionType(jsonScheduleRecord.Schedule.TransactionType),
+                UicCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.NewScheduleSegment.UicCode)
+            };
+        }
+
+        private List<Location> ConvertScheduleLocations(DeserilaizedJsonLocation[] scheduleLocation)
+        {
+            var response = new List<Location>();
+
+            if (scheduleLocation == null)
+                return response;
+
+            foreach (var jsonLocation in scheduleLocation)
+            {
+                response.Add(new Location
+                {
+                    Arrival = _messageValidationService.ValidateString(jsonLocation.Arrival),
+                    Departure = _messageValidationService.ValidateString(jsonLocation.Departure),
+                    EngineeringAllowance = _timeConversionService.ParseRailwayMinutes(jsonLocation.EngineeringAllowance),
+                    Line = _messageValidationService.ValidateString(jsonLocation.Line),
+                    LocationIdentity = _scheduleInformationProvider.GetLocationType(jsonLocation.LocationType),
+                    LocationType = _scheduleInformationProvider.GetLocationType(jsonLocation.LocationType),
+                    Pass = _messageValidationService.ValidateString(jsonLocation.Pass),
+                    Path = _messageValidationService.ValidateString(jsonLocation.Path),
+                    PathingAllowance = _timeConversionService.ParseRailwayMinutes(jsonLocation.PathingAllowance),
+                    PerformanceAllowance = _timeConversionService.ParseRailwayMinutes(jsonLocation.PerformanceAllowance),
+                    Platform = _messageValidationService.ValidateString(jsonLocation.Platform),
+                    PublicArrival = _messageValidationService.ValidateString(jsonLocation.PublicArrival),
+                    PublicDeparture = _messageValidationService.ValidateString(jsonLocation.PublicDeparture),
+                    TiplocCode = _messageValidationService.ValidateString(jsonLocation.TiplocCode)
+                });
+            }
+
+            return response;
         }
 
         private Tiploc ConvertTiploc(DeserializedJsonTiploc jsonTiploc)

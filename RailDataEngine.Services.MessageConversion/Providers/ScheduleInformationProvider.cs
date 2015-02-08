@@ -2,12 +2,15 @@
 using RailDataEngine.Domain.Entity.TrainMovements;
 using RailDataEngine.Domain.Providers;
 
-namespace RailDataEngine.Services.MessageConversion
+namespace RailDataEngine.Services.MessageConversion.Providers
 {
     public class ScheduleInformationProvider : IScheduleInformationProvider
     {
-        public Category GetAssociationCategory(string associationType)
+        public Category? GetAssociationCategory(string associationType)
         {
+            if (string.IsNullOrWhiteSpace(associationType))
+                return null;
+
             switch (associationType)
             {
                 case "JJ":
@@ -19,8 +22,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public TrainCallMode GetTrainCallMode(string trainCallMode)
+        public TrainCallMode? GetTrainCallMode(string trainCallMode)
         {
+            if (string.IsNullOrWhiteSpace(trainCallMode))
+                return null;
+
             switch (trainCallMode)
             {
                 case "NORMAL":
@@ -30,8 +36,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public ScheduleType GetScheduleType(string scheduleType)
+        public ScheduleType? GetScheduleType(string scheduleType)
         {
+            if (string.IsNullOrWhiteSpace(scheduleType))
+                return null;
+
             switch (scheduleType)
             {
                 case "C":
@@ -45,8 +54,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public ScheduleSource GetScheduleSource(string scheduleSource)
+        public ScheduleSource? GetScheduleSource(string scheduleSource)
         {
+            if (string.IsNullOrWhiteSpace(scheduleSource))
+                return null;
+
             switch (scheduleSource)
             {
                 case "C":
@@ -56,8 +68,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public StpIndicator GetStpIndicator(string stpIndicator)
+        public StpIndicator? GetStpIndicator(string stpIndicator)
         {
+            if (string.IsNullOrWhiteSpace(stpIndicator))
+                return null;
+
             switch (stpIndicator)
             {
                 case "C":
@@ -71,8 +86,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public TransactionType GetTransactionType(string transactionType)
+        public TransactionType? GetTransactionType(string transactionType)
         {
+            if (string.IsNullOrWhiteSpace(transactionType))
+                return null;
+
             switch (transactionType)
             {
                 case "update":
@@ -84,8 +102,11 @@ namespace RailDataEngine.Services.MessageConversion
             }
         }
 
-        public DateIndicator GetDateIndicator(string dateIndicator)
+        public DateIndicator? GetDateIndicator(string dateIndicator)
         {
+            if (string.IsNullOrWhiteSpace(dateIndicator))
+                return null;
+
             switch (dateIndicator)
             {
                 case "N":
@@ -94,6 +115,22 @@ namespace RailDataEngine.Services.MessageConversion
                     return DateIndicator.PreviousNight;
                 default:
                     return DateIndicator.Standard;
+            }
+        }
+
+        public LocationType? GetLocationType(string locationType)
+        {
+            if (string.IsNullOrWhiteSpace(locationType))
+                return null;
+
+            switch (locationType)
+            {
+                case "LT":
+                    return LocationType.Terminating;
+                case "LI":
+                    return LocationType.Intermediate;
+                default:
+                    return LocationType.Originating;
             }
         }
     }

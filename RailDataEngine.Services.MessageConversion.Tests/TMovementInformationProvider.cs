@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Providers;
+using RailDataEngine.Services.MessageConversion.Providers;
 
 namespace RailDataEngine.Services.MessageConversion.Tests
 {
