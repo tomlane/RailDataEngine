@@ -43,11 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonMovementMessageConversionService.cs" />
-    <Compile Include="JsonMovementMessageDeserializationService.cs" />
+    <Compile Include="Schedule\JsonScheduleMessageConversionService.cs" />
+    <Compile Include="TrainMovements\JsonMovementMessageConversionService.cs" />
+    <Compile Include="TrainMovements\JsonMovementMessageDeserializationService.cs" />
+    <Compile Include="Schedule\JsonScheduleMessageDeserializationService.cs" />
     <Compile Include="MessageValidationService.cs" />
     <Compile Include="MovementInformationProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleInformationProvider.cs" />
     <Compile Include="TimeConversionService.cs" />
   </ItemGroup>
   <ItemGroup>

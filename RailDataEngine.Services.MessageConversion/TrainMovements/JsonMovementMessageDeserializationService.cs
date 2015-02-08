@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService.Entity;
 
-namespace RailDataEngine.Services.MessageConversion
+namespace RailDataEngine.Services.MessageConversion.TrainMovements
 {
     public class JsonMovementMessageDeserializationService : IMovementMessageDeserializationService
     {

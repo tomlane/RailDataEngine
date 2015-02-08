@@ -10,7 +10,7 @@ namespace RailDataEngine.Domain.Entity.Schedule
         public string TrainUid { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public Dictionary<Days, bool> Days { get; set; }
+        public string Days { get; set; }
         public Category? Category { get; set; }
         public DateIndicator? DateIndicator { get; set; }
         public string Location { get; set; }

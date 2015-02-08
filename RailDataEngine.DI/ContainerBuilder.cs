@@ -21,6 +21,7 @@ using RailDataEngine.Services.DarwinStationBoard;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
 using RailDataEngine.Services.FeedListener;
 using RailDataEngine.Services.MessageConversion;
+using RailDataEngine.Services.MessageConversion.TrainMovements;
 
 namespace RailDataEngine.DI
 {

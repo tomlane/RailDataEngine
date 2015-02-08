@@ -3,6 +3,7 @@
     public enum TransactionType
     {
         Create,
-        Delete
+        Delete,
+        Update
     }
 }

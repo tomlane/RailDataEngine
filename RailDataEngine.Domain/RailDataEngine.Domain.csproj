@@ -125,6 +125,7 @@
     <Compile Include="Interactor\StationBoardInteractor\StationBoardServiceDetailsInteractorResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\IMovementInformationProvider.cs" />
+    <Compile Include="Providers\IScheduleInformationProvider.cs" />
     <Compile Include="Services\FeedListener\ITrainMovementListener.cs" />
     <Compile Include="Services\MessageValidationService\IMessageValidationService.cs" />
     <Compile Include="Services\MovementMessageConversionService\IMovementMessageConversionService.cs" />
@@ -136,6 +137,19 @@
     <Compile Include="Services\MovementMessageDeserializationService\IMovementMessageDeserializationService.cs" />
     <Compile Include="Services\MovementMessageDeserializationService\MovementMessageDeserializationRequest.cs" />
     <Compile Include="Services\MovementMessageDeserializationService\MovementMessageDeserializationResponse.cs" />
+    <Compile Include="Services\ScheduleMessageConversionService\IScheduleMessageConversionService.cs" />
+    <Compile Include="Services\ScheduleMessageConversionService\ScheduleMessageConversionRequest.cs" />
+    <Compile Include="Services\ScheduleMessageConversionService\ScheduleMessageConversionResponse.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\Entity\DeserializedJsonAssociation.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\Entity\DeserializedJsonNewScheduleSegment.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\Entity\DeserializedJsonScheduleHeader.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\Entity\DeserializedJsonScheduleRecord.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\Entity\DeserializedJsonScheduleSegment.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\Entity\DeserializedJsonTiploc.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\Entity\DeserilaizedJsonLocation.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\IScheduleMessageDeserializationService.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\ScheduleMessageDeserializationRequest.cs" />
+    <Compile Include="Services\ScheduleMessageDeserializationService\ScheduleMessageDeserializationResponse.cs" />
     <Compile Include="Services\StationBoardService\IStationBoardService.cs" />
     <Compile Include="Services\StationBoardService\ServiceDetailsRequest.cs" />
     <Compile Include="Services\StationBoardService\ServiceDetailsResponse.cs" />

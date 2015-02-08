@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using NUnit.Framework;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
+using RailDataEngine.Services.MessageConversion.TrainMovements;
 
 namespace RailDataEngine.Services.MessageConversion.Tests
 {
