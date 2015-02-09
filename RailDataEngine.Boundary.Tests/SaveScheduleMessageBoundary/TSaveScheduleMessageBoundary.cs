@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
@@ -39,7 +40,10 @@ namespace RailDataEngine.Boundary.Tests.SaveScheduleMessageBoundary
 
                 boundary.Invoke(new SaveScheduleBoundaryRequest
                 {
-                    MessageToSave = "{ json }"
+                    MessagesToSave = new List<string>
+                    {
+                        "hello"
+                    }
                 });
 
                 interactorMock.Verify(m => m.SaveScheduleMessages(It.IsAny<SaveScheduleMessageInteractorRequest>()), Times.Once);

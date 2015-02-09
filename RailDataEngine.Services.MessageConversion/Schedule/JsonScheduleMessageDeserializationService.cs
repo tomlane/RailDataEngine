@@ -12,7 +12,7 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
     {
         public ScheduleMessageDeserializationResponse DeserializeScheduleMessages(ScheduleMessageDeserializationRequest request)
         {
-            if (request == null || request.MessageToDeserialize == null)
+            if (request == null || request.MessagesToDeserialize == null)
                 throw new ArgumentNullException("request");
 
             var response = new ScheduleMessageDeserializationResponse
@@ -23,7 +23,7 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
                 Tiplocs = new List<DeserializedJsonTiploc>()
             };
 
-            foreach (var line in request.MessageToDeserialize)
+            foreach (var line in request.MessagesToDeserialize)
             {
                 JObject jsonObject = JObject.Parse(line);
 

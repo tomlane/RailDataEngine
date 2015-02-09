@@ -123,7 +123,7 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
 
         private Record ConvertScheduleRecord(DeserializedJsonScheduleRecord jsonScheduleRecord)
         {
-            return new Record
+            var record = new Record
             {
                 AtocCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.AtocCode),
                 BankHolidayRunning = _timeConversionService.ParseBankHolidayRunning(jsonScheduleRecord.Schedule.BankHolidayRunning),
@@ -148,9 +148,14 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
                 TrainServiceCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TrainServiceCode),
                 TrainStatus = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.TrainStatus),
                 TrainUid = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.TrainUid),
-                TransactionType = _scheduleInformationProvider.GetTransactionType(jsonScheduleRecord.Schedule.TransactionType),
-                UicCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.NewScheduleSegment.UicCode)
+                TransactionType = _scheduleInformationProvider.GetTransactionType(jsonScheduleRecord.Schedule.TransactionType)
             };
+
+            if (jsonScheduleRecord.Schedule.NewScheduleSegment != null)
+                record.UicCode =
+                    _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.NewScheduleSegment.UicCode);
+
+            return record;
         }
 
         private List<Location> ConvertScheduleLocations(DeserilaizedJsonLocation[] scheduleLocation)

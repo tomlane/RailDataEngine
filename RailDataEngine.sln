@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.Mes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.Services.MessageConversion.Tests", "RailDataEngine.Services.MessageConversion.Tests\RailDataEngine.Services.MessageConversion.Tests.csproj", "{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailDataEngine.ScheduleConsole", "RailDataEngine.ScheduleConsole\RailDataEngine.ScheduleConsole.csproj", "{204AAA7D-F75C-4B87-8752-42DD9A781075}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204AAA7D-F75C-4B87-8752-42DD9A781075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204AAA7D-F75C-4B87-8752-42DD9A781075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204AAA7D-F75C-4B87-8752-42DD9A781075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204AAA7D-F75C-4B87-8752-42DD9A781075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,5 +192,6 @@ Global
 		{DECD4DB5-0C05-4655-8419-25C44AEE727B} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
 		{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F} = {FB6E0059-5489-45F7-8063-660768540EE8}
 		{82DF8E68-9094-40CE-BD3F-A3B3AEFA8F27} = {7E48C769-EB88-4BDD-A76E-5F2D7061F3A4}
+		{204AAA7D-F75C-4B87-8752-42DD9A781075} = {C39619C1-C512-4DF2-90A4-884436E42B0C}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,9 @@
-﻿namespace RailDataEngine.Domain.Services.ScheduleMessageDeserializationService
+﻿using System.Collections.Generic;
+
+namespace RailDataEngine.Domain.Services.ScheduleMessageDeserializationService
 {
     public class ScheduleMessageDeserializationRequest
     {
-        public string[] MessageToDeserialize { get; set; }
+        public List<string> MessagesToDeserialize { get; set; }
     }
 }

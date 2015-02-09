@@ -1,7 +1,9 @@
-﻿namespace RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary
+﻿using System.Collections.Generic;
+
+namespace RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary
 {
     public class SaveScheduleBoundaryRequest
     {
-        public string MessageToSave { get; set; }
+        public List<string> MessagesToSave { get; set; }
     }
 }

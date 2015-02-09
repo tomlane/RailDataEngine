@@ -18,7 +18,7 @@ namespace RailDataEngine.Boundary.Implementations.Schedule
         {
             _interactor.SaveScheduleMessages(new SaveScheduleMessageInteractorRequest
             {
-                MessageToSave = request.MessageToSave
+                MessagesToSave = request.MessagesToSave
             });
         }
     }
