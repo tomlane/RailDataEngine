@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveMovementMessageBoundary\TSaveMovementMessageBoundary.cs" />
     <Compile Include="StationBoard\TStationBoardArrivalsBoundary.cs" />
     <Compile Include="StationBoard\TStationBoardDeparturesBoundary.cs" />
     <Compile Include="StationBoard\TStationBoardServiceDetailsBoundary.cs" />

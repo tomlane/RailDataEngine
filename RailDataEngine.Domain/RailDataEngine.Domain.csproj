@@ -117,6 +117,8 @@
     <Compile Include="Gateway\IStorageGateway.cs" />
     <Compile Include="Gateway\ITrainDescriberContainer.cs" />
     <Compile Include="Gateway\ITrainMovementGatewayContainer.cs" />
+    <Compile Include="Interactor\SaveMovementMessageInteractor\ISaveMovementMessageInteractor.cs" />
+    <Compile Include="Interactor\SaveMovementMessageInteractor\SaveMovementMessageInteractorRequest.cs" />
     <Compile Include="Interactor\StationBoardInteractor\IStationBoardInteractor.cs" />
     <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorRequest.cs" />
     <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorResponse.cs" />

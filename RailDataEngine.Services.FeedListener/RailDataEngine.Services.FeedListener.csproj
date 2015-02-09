@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Apache.NMS">
-      <HintPath>..\..\RailDataFeeds\RailDataFeeds.Listener\bin\Apache.NMS.dll</HintPath>
+      <HintPath>..\RailDataEngine.Listener.TrainMovements\bin\Apache.NMS.dll</HintPath>
     </Reference>
     <Reference Include="Apache.NMS.Stomp">
-      <HintPath>..\..\RailDataFeeds\RailDataFeeds.Listener\bin\Apache.NMS.Stomp.dll</HintPath>
+      <HintPath>..\RailDataEngine.Listener.TrainMovements\bin\Apache.NMS.Stomp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

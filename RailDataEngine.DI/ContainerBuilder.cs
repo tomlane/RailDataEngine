@@ -8,6 +8,7 @@ using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 using RailDataEngine.Domain.Providers;
 using RailDataEngine.Domain.Services.FeedListener;
@@ -51,6 +52,7 @@ namespace RailDataEngine.DI
             container.RegisterType<LDBServiceSoap, LDBServiceSoapClient>(new InjectionConstructor());
 
             container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
+            container.RegisterType<ISaveMovementMessageInteractor, SaveMovementMessageInteractor>();
 
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
             container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
