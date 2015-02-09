@@ -1,11 +1,11 @@
-﻿using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Berth;
-using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Signal;
+﻿using RailDataEngine.Domain.Entity.TrainDescriber.Berth;
+using RailDataEngine.Domain.Entity.TrainDescriber.Signal;
 
 namespace RailDataEngine.Domain.Gateway
 {
     public interface ITrainDescriberContainer
     {
-        IStorageGateway<BerthMessageEntity> BerthGateway { get; set; }
-        IStorageGateway<SignalMessageEntity> SignalGateway { get; set; }
+        IStorageGateway<BerthMessage> BerthGateway { get; set; }
+        IStorageGateway<SignalMessage> SignalGateway { get; set; }
     }
 }

@@ -3,9 +3,9 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Entity.TrainDescriber.Berth;
+using RailDataEngine.Domain.Entity.TrainDescriber.Signal;
 using RailDataEngine.Domain.Gateway;
-using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Berth;
-using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Signal;
 using RailDataEngine.Gateway.EF.Containers;
 
 namespace RailDataEngine.Gateway.EF.Tests.Containers
@@ -16,8 +16,8 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
         [Test]
         public void throws_when_dependencies_are_null()
         {
-            var berthGateway = new Mock<IStorageGateway<BerthMessageEntity>>();
-            var signalGateway = new Mock<IStorageGateway<SignalMessageEntity>>();
+            var berthGateway = new Mock<IStorageGateway<BerthMessage>>();
+            var signalGateway = new Mock<IStorageGateway<SignalMessage>>();
 
             Assert.Throws<ArgumentNullException>(() => new TrainDescriberGatewayContainer(null, signalGateway.Object));
             Assert.Throws<ArgumentNullException>(() => new TrainDescriberGatewayContainer(berthGateway.Object, null));

@@ -3,8 +3,8 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Entity.Schedule;
 using RailDataEngine.Domain.Gateway;
-using RailDataEngine.Domain.Gateway.Entity.Schedule;
 using RailDataEngine.Gateway.EF.Containers;
 
 namespace RailDataEngine.Gateway.EF.Tests.Containers
@@ -15,11 +15,11 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
         [Test]
         public void throws_when_dependencies_are_null()
         {
-            var associationGateway = new Mock<IStorageGateway<AssociationEntity>>();
-            var headerGateway = new Mock<IStorageGateway<HeaderEntity>>();
-            var locationGateway = new Mock<IStorageGateway<LocationEntity>>();
-            var recordGateway = new Mock<IStorageGateway<RecordEntity>>();
-            var tiplocGateway = new Mock<IStorageGateway<TiplocEntity>>();
+            var associationGateway = new Mock<IStorageGateway<Association>>();
+            var headerGateway = new Mock<IStorageGateway<Header>>();
+            var locationGateway = new Mock<IStorageGateway<Location>>();
+            var recordGateway = new Mock<IStorageGateway<Record>>();
+            var tiplocGateway = new Mock<IStorageGateway<Tiploc>>();
 
             Assert.Throws<ArgumentNullException>(() => new ScheduleGatewayContainer(null, headerGateway.Object, locationGateway.Object, recordGateway.Object, tiplocGateway.Object));
             Assert.Throws<ArgumentNullException>(() => new ScheduleGatewayContainer(associationGateway.Object, null, locationGateway.Object, recordGateway.Object, tiplocGateway.Object));

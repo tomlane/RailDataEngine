@@ -102,16 +102,6 @@
     <Compile Include="Entity\TrainMovements\TrainMovement.cs" />
     <Compile Include="Entity\TrainMovements\VariationStatus.cs" />
     <Compile Include="Exception\NullServiceResultException.cs" />
-    <Compile Include="Gateway\Entity\Schedule\AssociationEntity.cs" />
-    <Compile Include="Gateway\Entity\Schedule\HeaderEntity.cs" />
-    <Compile Include="Gateway\Entity\Schedule\LocationEntity.cs" />
-    <Compile Include="Gateway\Entity\Schedule\RecordEntity.cs" />
-    <Compile Include="Gateway\Entity\Schedule\TiplocEntity.cs" />
-    <Compile Include="Gateway\Entity\TrainDescriber\Berth\BerthMessageEntity.cs" />
-    <Compile Include="Gateway\Entity\TrainDescriber\Signal\SignalMessageEntity.cs" />
-    <Compile Include="Gateway\Entity\TrainMovements\TrainActivationEntity.cs" />
-    <Compile Include="Gateway\Entity\TrainMovements\TrainCancellationEntity.cs" />
-    <Compile Include="Gateway\Entity\TrainMovements\TrainMovementEntity.cs" />
     <Compile Include="Gateway\IIdentifyable.cs" />
     <Compile Include="Gateway\IScheduleGatewayContainer.cs" />
     <Compile Include="Gateway\IStorageGateway.cs" />

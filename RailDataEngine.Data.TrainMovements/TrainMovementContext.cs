@@ -1,15 +1,15 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using RailDataEngine.Data.Common;
-using RailDataEngine.Domain.Gateway.Entity.TrainMovements;
+using RailDataEngine.Domain.Entity.TrainMovements;
 
 namespace RailDataEngine.Data.TrainMovements
 {
     public class TrainMovementContext : ContextBase, ITrainMovementContext
     {
-        public DbSet<TrainMovementEntity> Movements { get; set; } 
-        public DbSet<TrainActivationEntity> Activations { get; set; } 
-        public DbSet<TrainCancellationEntity> Cancellations { get; set; } 
+        public DbSet<TrainMovement> Movements { get; set; } 
+        public DbSet<TrainActivation> Activations { get; set; } 
+        public DbSet<TrainCancellation> Cancellations { get; set; } 
 
         public TrainMovementContext(string connectionString)
             : base(connectionString)
@@ -23,9 +23,9 @@ namespace RailDataEngine.Data.TrainMovements
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Entity<TrainMovementEntity>().ToTable("TrainMovement", schema);
-            modelBuilder.Entity<TrainActivationEntity>().ToTable("TrainActivation", schema);
-            modelBuilder.Entity<TrainCancellationEntity>().ToTable("TrainCancellation", schema);
+            modelBuilder.Entity<TrainMovement>().ToTable("TrainMovement", schema);
+            modelBuilder.Entity<TrainActivation>().ToTable("TrainActivation", schema);
+            modelBuilder.Entity<TrainCancellation>().ToTable("TrainCancellation", schema);
         }
     }
 }

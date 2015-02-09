@@ -1,19 +1,19 @@
 ﻿using System;
+using RailDataEngine.Domain.Entity.TrainMovements;
 using RailDataEngine.Domain.Gateway;
-using RailDataEngine.Domain.Gateway.Entity.TrainMovements;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {
     public class TrainMovementGatewayContainer : ITrainMovementGatewayContainer
     {
-        public IStorageGateway<TrainActivationEntity> ActivationGateway { get; set; }
-        public IStorageGateway<TrainCancellationEntity> CancellationGateway { get; set; }
-        public IStorageGateway<TrainMovementEntity> MovementGateway { get; set; }
+        public IStorageGateway<TrainActivation> ActivationGateway { get; set; }
+        public IStorageGateway<TrainCancellation> CancellationGateway { get; set; }
+        public IStorageGateway<TrainMovement> MovementGateway { get; set; }
 
         public TrainMovementGatewayContainer(
-            IStorageGateway<TrainActivationEntity> activationGateway, 
-            IStorageGateway<TrainCancellationEntity> cancellationGateway,
-            IStorageGateway<TrainMovementEntity> movementGateway)
+            IStorageGateway<TrainActivation> activationGateway, 
+            IStorageGateway<TrainCancellation> cancellationGateway,
+            IStorageGateway<TrainMovement> movementGateway)
         {
             if (activationGateway == null) throw new ArgumentNullException("activationGateway");
             if (cancellationGateway == null) throw new ArgumentNullException("cancellationGateway");

@@ -3,8 +3,8 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Entity.TrainMovements;
 using RailDataEngine.Domain.Gateway;
-using RailDataEngine.Domain.Gateway.Entity.TrainMovements;
 using RailDataEngine.Gateway.EF.Containers;
 
 namespace RailDataEngine.Gateway.EF.Tests.Containers
@@ -15,9 +15,9 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
         [Test]
         public void throws_when_dependencies_are_null()
         {
-            var activationGateway = new Mock<IStorageGateway<TrainActivationEntity>>();
-            var cancellationGateway = new Mock<IStorageGateway<TrainCancellationEntity>>();
-            var movementGateway = new Mock<IStorageGateway<TrainMovementEntity>>();
+            var activationGateway = new Mock<IStorageGateway<TrainActivation>>();
+            var cancellationGateway = new Mock<IStorageGateway<TrainCancellation>>();
+            var movementGateway = new Mock<IStorageGateway<TrainMovement>>();
 
             Assert.Throws<ArgumentNullException>(() => new TrainMovementGatewayContainer(null, cancellationGateway.Object, movementGateway.Object));
             Assert.Throws<ArgumentNullException>(() => new TrainMovementGatewayContainer(activationGateway.Object, null, movementGateway.Object));

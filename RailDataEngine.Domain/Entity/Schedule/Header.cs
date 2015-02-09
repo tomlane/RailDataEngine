@@ -1,9 +1,11 @@
 ﻿using System;
+using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Domain.Entity.Schedule
 {
-    public class Header
+    public class Header : IIdentifyable
     {
+        public int Id { get; set; }
         public string Classification { get; set; }
         public DateTime? Timestamp { get; set; }
         public string Owner { get; set; }

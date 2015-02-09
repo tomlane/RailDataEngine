@@ -1,7 +1,10 @@
-﻿namespace RailDataEngine.Domain.Entity.Schedule
+﻿using RailDataEngine.Domain.Gateway;
+
+namespace RailDataEngine.Domain.Entity.Schedule
 {
-    public class Tiploc
+    public class Tiploc : IIdentifyable
     {
+        public int Id { get; set; }
         public TransactionType? TransactionType { get; set; }
         public string TiplocCode { get; set; }
         public string Nalco { get; set; }

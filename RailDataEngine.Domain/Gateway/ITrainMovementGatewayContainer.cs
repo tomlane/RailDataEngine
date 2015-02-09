@@ -1,11 +1,11 @@
-﻿using RailDataEngine.Domain.Gateway.Entity.TrainMovements;
+﻿using RailDataEngine.Domain.Entity.TrainMovements;
 
 namespace RailDataEngine.Domain.Gateway
 {
     public interface ITrainMovementGatewayContainer
     {
-        IStorageGateway<TrainActivationEntity> ActivationGateway { get; set; }
-        IStorageGateway<TrainCancellationEntity> CancellationGateway { get; set; }
-        IStorageGateway<TrainMovementEntity> MovementGateway { get; set; }
+        IStorageGateway<TrainActivation> ActivationGateway { get; set; }
+        IStorageGateway<TrainCancellation> CancellationGateway { get; set; }
+        IStorageGateway<TrainMovement> MovementGateway { get; set; }
     }
 }

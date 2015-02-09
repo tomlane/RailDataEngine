@@ -1,9 +1,11 @@
 ﻿using System;
+using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Domain.Entity.TrainMovements
 {
-    public class TrainCancellation
+    public class TrainCancellation : IIdentifyable
     {
+        public int Id { get; set; }
         public string TrainId { get; set; }
         public string OriginalLocationStanox { get; set; }
         public DateTime? OriginalLocationTimestamp { get; set; }

@@ -1,13 +1,13 @@
-﻿using RailDataEngine.Domain.Gateway.Entity.Schedule;
+﻿using RailDataEngine.Domain.Entity.Schedule;
 
 namespace RailDataEngine.Domain.Gateway
 {
     public interface IScheduleGatewayContainer
     {
-        IStorageGateway<AssociationEntity> AssociationGateway { get; set; }
-        IStorageGateway<HeaderEntity> HeaderGateway { get; set; }
-        IStorageGateway<LocationEntity> LocationGateway { get; set; }
-        IStorageGateway<RecordEntity> RecordGateway { get; set; }
-        IStorageGateway<TiplocEntity> TiplocGateway { get; set; }
+        IStorageGateway<Association> AssociationGateway { get; set; }
+        IStorageGateway<Header> HeaderGateway { get; set; }
+        IStorageGateway<Location> LocationGateway { get; set; }
+        IStorageGateway<Record> RecordGateway { get; set; }
+        IStorageGateway<Tiploc> TiplocGateway { get; set; }
     }
 }

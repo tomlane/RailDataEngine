@@ -1,9 +1,11 @@
 ﻿using System;
+using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Domain.Entity.TrainDescriber.Berth
 {
-    public class BerthMessage
+    public class BerthMessage : IIdentifyable
     {
+        public int Id { get; set; }
         public DateTime? TimeStamp { get; set; }
         public string AreaId { get; set; }
         public BerthMessageType? MessageType { get; set; }

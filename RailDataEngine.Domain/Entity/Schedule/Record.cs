@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Domain.Entity.Schedule
 {
-    public class Record
+    public class Record : IIdentifyable
     {
+        public int Id { get; set; }
         public string TrainUid { get; set; }
         public TransactionType? TransactionType { get; set; }
         public DateTime? StartDate { get; set; }

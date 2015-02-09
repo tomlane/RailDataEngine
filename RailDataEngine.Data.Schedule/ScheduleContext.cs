@@ -1,17 +1,17 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using RailDataEngine.Data.Common;
-using RailDataEngine.Domain.Gateway.Entity.Schedule;
+using RailDataEngine.Domain.Entity.Schedule;
 
 namespace RailDataEngine.Data.Schedule
 {
     public class ScheduleContext : ContextBase, IScheduleContext
     {
-        public DbSet<RecordEntity> ScheduleRecords { get; set; }
-        public DbSet<AssociationEntity> AssociationRecords { get; set; }
-        public DbSet<TiplocEntity> TipLocs { get; set; }
-        public DbSet<HeaderEntity> ScheduleHeaders { get; set; }
-        public DbSet<LocationEntity> ScheduleLocations { get; set; } 
+        public DbSet<Record> ScheduleRecords { get; set; }
+        public DbSet<Association> AssociationRecords { get; set; }
+        public DbSet<Tiploc> TipLocs { get; set; }
+        public DbSet<Header> ScheduleHeaders { get; set; }
+        public DbSet<Location> ScheduleLocations { get; set; } 
         
 
     public ScheduleContext(string connectionString)
@@ -26,11 +26,11 @@ namespace RailDataEngine.Data.Schedule
 
         modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-        modelBuilder.Entity<RecordEntity>().ToTable("Schedule", schema);
-        modelBuilder.Entity<AssociationEntity>().ToTable("Association", schema);
-        modelBuilder.Entity<TiplocEntity>().ToTable("Tiploc", schema);
-        modelBuilder.Entity<HeaderEntity>().ToTable("Meta", schema);
-        modelBuilder.Entity<LocationEntity>().ToTable("Location", schema);
+        modelBuilder.Entity<Record>().ToTable("Schedule", schema);
+        modelBuilder.Entity<Association>().ToTable("Association", schema);
+        modelBuilder.Entity<Tiploc>().ToTable("Tiploc", schema);
+        modelBuilder.Entity<Header>().ToTable("Meta", schema);
+        modelBuilder.Entity<Location>().ToTable("Location", schema);
     }
 }
 

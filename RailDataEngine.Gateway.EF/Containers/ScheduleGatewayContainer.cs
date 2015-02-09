@@ -1,23 +1,23 @@
 ﻿using System;
+using RailDataEngine.Domain.Entity.Schedule;
 using RailDataEngine.Domain.Gateway;
-using RailDataEngine.Domain.Gateway.Entity.Schedule;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {
     public class ScheduleGatewayContainer : IScheduleGatewayContainer
     {
-        public IStorageGateway<AssociationEntity> AssociationGateway { get; set; }
-        public IStorageGateway<HeaderEntity> HeaderGateway { get; set; }
-        public IStorageGateway<LocationEntity> LocationGateway { get; set; }
-        public IStorageGateway<RecordEntity> RecordGateway { get; set; }
-        public IStorageGateway<TiplocEntity> TiplocGateway { get; set; }
+        public IStorageGateway<Association> AssociationGateway { get; set; }
+        public IStorageGateway<Header> HeaderGateway { get; set; }
+        public IStorageGateway<Location> LocationGateway { get; set; }
+        public IStorageGateway<Record> RecordGateway { get; set; }
+        public IStorageGateway<Tiploc> TiplocGateway { get; set; }
 
         public ScheduleGatewayContainer(
-            IStorageGateway<AssociationEntity> associationGateway,
-            IStorageGateway<HeaderEntity> headerGateway,
-            IStorageGateway<LocationEntity> locationGateway,
-            IStorageGateway<RecordEntity> recordGateway,
-            IStorageGateway<TiplocEntity> tiplocGateway
+            IStorageGateway<Association> associationGateway,
+            IStorageGateway<Header> headerGateway,
+            IStorageGateway<Location> locationGateway,
+            IStorageGateway<Record> recordGateway,
+            IStorageGateway<Tiploc> tiplocGateway
             )
         {
             if (associationGateway == null) throw new ArgumentNullException("associationGateway");

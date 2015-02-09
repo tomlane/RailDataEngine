@@ -1,15 +1,15 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using RailDataEngine.Data.Common;
-using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Berth;
-using RailDataEngine.Domain.Gateway.Entity.TrainDescriber.Signal;
+using RailDataEngine.Domain.Entity.TrainDescriber.Berth;
+using RailDataEngine.Domain.Entity.TrainDescriber.Signal;
 
 namespace RailDataEngine.Data.TrainDescriber
 {
     public class TrainDescriberContext : ContextBase, ITrainDescriberContext
     {
-        public DbSet<BerthMessageEntity> BerthMessages { get; set; }
-        public DbSet<SignalMessageEntity> SignalMessages { get; set; }
+        public DbSet<BerthMessage> BerthMessages { get; set; }
+        public DbSet<SignalMessage> SignalMessages { get; set; }
 
     public TrainDescriberContext(string connectionString)
         : base(connectionString)
@@ -23,8 +23,8 @@ namespace RailDataEngine.Data.TrainDescriber
 
         modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-        modelBuilder.Entity<BerthMessageEntity>().ToTable("BerthMessage", schema);
-        modelBuilder.Entity<SignalMessageEntity>().ToTable("SignalMessage", schema);
+        modelBuilder.Entity<BerthMessage>().ToTable("BerthMessage", schema);
+        modelBuilder.Entity<SignalMessage>().ToTable("SignalMessage", schema);
     }
     }
 }
