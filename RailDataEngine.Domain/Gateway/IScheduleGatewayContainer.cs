@@ -4,10 +4,10 @@ namespace RailDataEngine.Domain.Gateway
 {
     public interface IScheduleGatewayContainer
     {
-        IStorageGateway<Association> AssociationGateway { get; set; }
-        IStorageGateway<Header> HeaderGateway { get; set; }
-        IStorageGateway<Location> LocationGateway { get; set; }
-        IStorageGateway<Record> RecordGateway { get; set; }
-        IStorageGateway<Tiploc> TiplocGateway { get; set; }
+        IScheduleStorageGateway<Association> AssociationGateway { get; set; }
+        IScheduleStorageGateway<Header> HeaderGateway { get; set; }
+        IScheduleStorageGateway<Location> LocationGateway { get; set; }
+        IScheduleStorageGateway<Record> RecordGateway { get; set; }
+        IScheduleStorageGateway<Tiploc> TiplocGateway { get; set; }
     }
 }

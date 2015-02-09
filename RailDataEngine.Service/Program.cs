@@ -40,7 +40,6 @@ namespace RailDataEngine.Service
                 // running as console app
                 Start(args);
 
-                Console.WriteLine("Press any key to stop...");
                 Console.ReadKey(true);
 
                 Stop();

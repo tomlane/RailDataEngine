@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace RailDataEngine.Domain.Gateway
 {
-    public interface IStorageGateway<T>
+    public interface ITrainMovementStorageGateway<T>
     {
         void Create(List<T> entities);
         List<T> Read(Expression<Func<T, bool>> criteria);

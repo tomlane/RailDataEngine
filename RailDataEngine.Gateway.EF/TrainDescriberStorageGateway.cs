@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using RailDataEngine.Data.Schedule;
+using RailDataEngine.Data.TrainDescriber;
 using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Gateway.EF
 {
-    public class StorageGateway<T> : IStorageGateway<T> where T : class, IIdentifyable
+    public class TrainDescriberStorageGateway<T> : ITrainDescriberStorageGateway<T> where T : class, IIdentifyable
     {
-        private readonly IScheduleContext _context;
+        private ITrainDescriberContext _context;
 
-        public StorageGateway(IScheduleDatabase database)
+        public TrainDescriberStorageGateway(ITrainDescriberDatabase database)
         {
-            if (database == null)
-                throw new ArgumentNullException("database");
-
+            if (database == null) throw new ArgumentNullException("database");
             _context = database.BuildContext();
         }
 

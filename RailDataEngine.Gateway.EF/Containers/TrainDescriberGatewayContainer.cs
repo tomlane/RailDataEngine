@@ -5,14 +5,14 @@ using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {
-    public class TrainDescriberGatewayContainer : ITrainDescriberContainer
+    public class TrainDescriberGatewayContainer : ITrainDescriberGatewayContainer
     {
-        public IStorageGateway<BerthMessage> BerthGateway { get; set; }
-        public IStorageGateway<SignalMessage> SignalGateway { get; set; }
+        public ITrainDescriberStorageGateway<BerthMessage> BerthGateway { get; set; }
+        public ITrainDescriberStorageGateway<SignalMessage> SignalGateway { get; set; }
 
         public TrainDescriberGatewayContainer(
-            IStorageGateway<BerthMessage> berthGateway,
-            IStorageGateway<SignalMessage> signalGateway)
+            ITrainDescriberStorageGateway<BerthMessage> berthGateway,
+            ITrainDescriberStorageGateway<SignalMessage> signalGateway)
         {
             if (berthGateway == null) throw new ArgumentNullException("berthGateway");
             if (signalGateway == null) throw new ArgumentNullException("signalGateway");

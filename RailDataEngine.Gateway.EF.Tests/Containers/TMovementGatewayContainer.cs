@@ -15,9 +15,9 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
         [Test]
         public void throws_when_dependencies_are_null()
         {
-            var activationGateway = new Mock<IStorageGateway<TrainActivation>>();
-            var cancellationGateway = new Mock<IStorageGateway<TrainCancellation>>();
-            var movementGateway = new Mock<IStorageGateway<TrainMovement>>();
+            var activationGateway = new Mock<ITrainMovementStorageGateway<TrainActivation>>();
+            var cancellationGateway = new Mock<ITrainMovementStorageGateway<TrainCancellation>>();
+            var movementGateway = new Mock<ITrainMovementStorageGateway<TrainMovement>>();
 
             Assert.Throws<ArgumentNullException>(() => new TrainMovementGatewayContainer(null, cancellationGateway.Object, movementGateway.Object));
             Assert.Throws<ArgumentNullException>(() => new TrainMovementGatewayContainer(activationGateway.Object, null, movementGateway.Object));

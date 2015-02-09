@@ -12,22 +12,22 @@ using RailDataEngine.Tests.Common;
 namespace RailDataEngine.Gateway.EF.Tests
 {
     [TestFixture]
-    class TStorageGateway
+    class TScheduleStorageGateway
     {
         [Test]
         public void throws_when_dependencies_are_null()
         {
             var database = new Mock<IScheduleDatabase>();
 
-            Assert.Throws<ArgumentNullException>(() => new StorageGateway<Association>(null));
+            Assert.Throws<ArgumentNullException>(() => new ScheduleStorageGateway<Association>(null));
         }
 
         [Test]
         public void can_be_built_from_static_container()
         {
             var container = ContainerBuilder.Build();
-            var gateway = container.Resolve<IStorageGateway<Association>>();
-            Assert.IsInstanceOf<StorageGateway<Association>>(gateway);
+            var gateway = container.Resolve<IScheduleStorageGateway<Association>>();
+            Assert.IsInstanceOf<ScheduleStorageGateway<Association>>(gateway);
         }
 
         [TestFixture]
@@ -37,7 +37,7 @@ namespace RailDataEngine.Gateway.EF.Tests
             public void throws_when_argument_is_null()
             {
                 var database = new Mock<IScheduleDatabase>();
-                var gateway = new StorageGateway<Association>(database.Object);
+                var gateway = new ScheduleStorageGateway<Association>(database.Object);
 
                 Assert.Throws<ArgumentNullException>(() => gateway.Create(null));
             }
@@ -54,7 +54,7 @@ namespace RailDataEngine.Gateway.EF.Tests
 
                 database.Setup(m => m.BuildContext()).Returns(context.Object);
 
-                var gateway = new StorageGateway<Association>(database.Object);
+                var gateway = new ScheduleStorageGateway<Association>(database.Object);
 
                 gateway.Create(entitySet);
 
@@ -69,7 +69,7 @@ namespace RailDataEngine.Gateway.EF.Tests
             public void throws_when_argument_is_null()
             {
                 var database = new Mock<IScheduleDatabase>();
-                var gateway = new StorageGateway<Association>(database.Object);
+                var gateway = new ScheduleStorageGateway<Association>(database.Object);
 
                 Assert.Throws<ArgumentNullException>(() => gateway.Read(null));
             }
@@ -98,7 +98,7 @@ namespace RailDataEngine.Gateway.EF.Tests
 
                 database.Setup(m => m.BuildContext()).Returns(context.Object);
 
-                var gateway = new StorageGateway<Association>(database.Object);
+                var gateway = new ScheduleStorageGateway<Association>(database.Object);
 
                 var result = gateway.Read(x => x.Id == 5);
 
@@ -114,7 +114,7 @@ namespace RailDataEngine.Gateway.EF.Tests
             public void throws_when_argument_is_null()
             {
                 var database = new Mock<IScheduleDatabase>();
-                var gateway = new StorageGateway<Association>(database.Object);
+                var gateway = new ScheduleStorageGateway<Association>(database.Object);
 
                 Assert.Throws<ArgumentNullException>(() => gateway.Destroy(null));
             }
@@ -131,7 +131,7 @@ namespace RailDataEngine.Gateway.EF.Tests
 
                 database.Setup(m => m.BuildContext()).Returns(context.Object);
 
-                var gateway = new StorageGateway<Association>(database.Object);
+                var gateway = new ScheduleStorageGateway<Association>(database.Object);
 
                 gateway.Destroy(entitySet);
 

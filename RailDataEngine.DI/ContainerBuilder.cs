@@ -4,6 +4,8 @@ using RailDataEngine.Boundary.Implementations.StationBoard;
 using RailDataEngine.Boundary.Implementations.TrainMovements;
 using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
+using RailDataEngine.Data.TrainDescriber;
+using RailDataEngine.Data.TrainMovements;
 using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
@@ -44,12 +46,16 @@ namespace RailDataEngine.DI
             container.RegisterType<IConnectionStringProvider, ConfigConnectionStringProvider>();
 
             container.RegisterType<IScheduleDatabase, ScheduleDatabase>();
+            container.RegisterType<ITrainMovementDatabase, TrainMovementDatabase>();
+            container.RegisterType<ITrainDescriberDatabase, TrainDescriberDatabase>();
 
-            container.RegisterType(typeof (IStorageGateway<>), typeof (StorageGateway<>));
+            container.RegisterType(typeof (IScheduleStorageGateway<>), typeof (ScheduleStorageGateway<>));
+            container.RegisterType(typeof (ITrainMovementStorageGateway<>), typeof (TrainMovementStorageGateway<>));
+            container.RegisterType(typeof (ITrainDescriberStorageGateway<>), typeof (TrainDescriberStorageGateway<>));
             
             container.RegisterType<IScheduleGatewayContainer, ScheduleGatewayContainer>();
             container.RegisterType<ITrainMovementGatewayContainer, TrainMovementGatewayContainer>();
-            container.RegisterType<ITrainDescriberContainer, TrainDescriberGatewayContainer>();
+            container.RegisterType<ITrainDescriberGatewayContainer, TrainDescriberGatewayContainer>();
 
             container.RegisterType<IStationBoardService, DarwinBoardService>();
             container.RegisterType<LDBServiceSoap, LDBServiceSoapClient>(new InjectionConstructor());

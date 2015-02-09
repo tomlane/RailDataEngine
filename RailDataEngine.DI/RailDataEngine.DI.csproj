@@ -70,6 +70,14 @@
       <Project>{B5120532-0E7A-4DC8-BFDD-11703D161546}</Project>
       <Name>RailDataEngine.Data.Schedule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Data.TrainDescriber\RailDataEngine.Data.TrainDescriber.csproj">
+      <Project>{6D873303-E01A-4ECA-936E-5B597EE0B2DE}</Project>
+      <Name>RailDataEngine.Data.TrainDescriber</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Data.TrainMovements\RailDataEngine.Data.TrainMovements.csproj">
+      <Project>{8DE5FCE4-47B2-4740-BADF-C89DBC64E2BE}</Project>
+      <Name>RailDataEngine.Data.TrainMovements</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
       <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>
       <Name>RailDataEngine.Domain</Name>

@@ -6,18 +6,18 @@ namespace RailDataEngine.Gateway.EF.Containers
 {
     public class ScheduleGatewayContainer : IScheduleGatewayContainer
     {
-        public IStorageGateway<Association> AssociationGateway { get; set; }
-        public IStorageGateway<Header> HeaderGateway { get; set; }
-        public IStorageGateway<Location> LocationGateway { get; set; }
-        public IStorageGateway<Record> RecordGateway { get; set; }
-        public IStorageGateway<Tiploc> TiplocGateway { get; set; }
+        public IScheduleStorageGateway<Association> AssociationGateway { get; set; }
+        public IScheduleStorageGateway<Header> HeaderGateway { get; set; }
+        public IScheduleStorageGateway<Location> LocationGateway { get; set; }
+        public IScheduleStorageGateway<Record> RecordGateway { get; set; }
+        public IScheduleStorageGateway<Tiploc> TiplocGateway { get; set; }
 
         public ScheduleGatewayContainer(
-            IStorageGateway<Association> associationGateway,
-            IStorageGateway<Header> headerGateway,
-            IStorageGateway<Location> locationGateway,
-            IStorageGateway<Record> recordGateway,
-            IStorageGateway<Tiploc> tiplocGateway
+            IScheduleStorageGateway<Association> associationGateway,
+            IScheduleStorageGateway<Header> headerGateway,
+            IScheduleStorageGateway<Location> locationGateway,
+            IScheduleStorageGateway<Record> recordGateway,
+            IScheduleStorageGateway<Tiploc> tiplocGateway
             )
         {
             if (associationGateway == null) throw new ArgumentNullException("associationGateway");

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using RailDataEngine.Domain.Gateway;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
@@ -9,16 +11,20 @@ namespace RailDataEngine.Interactor.Implementations
     {
         private readonly IMovementMessageDeserializationService _messageDeserializationService;
         private readonly IMovementMessageConversionService _messageConversionService;
+        private readonly ITrainMovementGatewayContainer _movementGatewayContainer;
 
-        public SaveMovementMessageInteractor(IMovementMessageDeserializationService movementMessageDeserializationService, IMovementMessageConversionService movementMessageConversionService)
+        public SaveMovementMessageInteractor(IMovementMessageDeserializationService movementMessageDeserializationService, IMovementMessageConversionService movementMessageConversionService, ITrainMovementGatewayContainer gatewayContainer)
         {
             if (movementMessageDeserializationService == null)
                 throw new ArgumentNullException("movementMessageDeserializationService");
             if (movementMessageConversionService == null)
                 throw new ArgumentNullException("movementMessageConversionService");
+            if (gatewayContainer == null) 
+                throw new ArgumentNullException("gatewayContainer");
 
             _messageDeserializationService = movementMessageDeserializationService;
             _messageConversionService = movementMessageConversionService;
+            _movementGatewayContainer = gatewayContainer;
         }
 
         public void SaveMovementMessages(SaveMovementMessageInteractorRequest request)
@@ -39,6 +45,15 @@ namespace RailDataEngine.Interactor.Implementations
                     Cancellations = deserializedMessages.Cancellations,
                     Movements = deserializedMessages.Movements
                 });
+
+            if (convertedMessages.Activations.Any())
+                _movementGatewayContainer.ActivationGateway.Create(convertedMessages.Activations);
+
+            if (convertedMessages.Cancellations.Any())
+                _movementGatewayContainer.CancellationGateway.Create(convertedMessages.Cancellations);
+            
+            if (convertedMessages.Movements.Any())
+                _movementGatewayContainer.MovementGateway.Create(convertedMessages.Movements);
         }
     }
 }

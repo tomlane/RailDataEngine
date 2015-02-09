@@ -16,8 +16,8 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
         [Test]
         public void throws_when_dependencies_are_null()
         {
-            var berthGateway = new Mock<IStorageGateway<BerthMessage>>();
-            var signalGateway = new Mock<IStorageGateway<SignalMessage>>();
+            var berthGateway = new Mock<ITrainDescriberStorageGateway<BerthMessage>>();
+            var signalGateway = new Mock<ITrainDescriberStorageGateway<SignalMessage>>();
 
             Assert.Throws<ArgumentNullException>(() => new TrainDescriberGatewayContainer(null, signalGateway.Object));
             Assert.Throws<ArgumentNullException>(() => new TrainDescriberGatewayContainer(berthGateway.Object, null));
@@ -27,7 +27,7 @@ namespace RailDataEngine.Gateway.EF.Tests.Containers
         public void can_be_built_from_static_container()
         {
             var container = ContainerBuilder.Build();
-            var gatewayContainer = container.Resolve<ITrainDescriberContainer>();
+            var gatewayContainer = container.Resolve<ITrainDescriberGatewayContainer>();
             Assert.IsInstanceOf<TrainDescriberGatewayContainer>(gatewayContainer);
         }
     }

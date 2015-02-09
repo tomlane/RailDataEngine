@@ -104,9 +104,11 @@
     <Compile Include="Exception\NullServiceResultException.cs" />
     <Compile Include="Gateway\IIdentifyable.cs" />
     <Compile Include="Gateway\IScheduleGatewayContainer.cs" />
-    <Compile Include="Gateway\IStorageGateway.cs" />
-    <Compile Include="Gateway\ITrainDescriberContainer.cs" />
+    <Compile Include="Gateway\IScheduleStorageGateway.cs" />
+    <Compile Include="Gateway\ITrainDescriberGatewayContainer.cs" />
+    <Compile Include="Gateway\ITrainDescriberStorageGateway.cs" />
     <Compile Include="Gateway\ITrainMovementGatewayContainer.cs" />
+    <Compile Include="Gateway\ITrainMovementStorageGateway.cs" />
     <Compile Include="Interactor\SaveMovementMessageInteractor\ISaveMovementMessageInteractor.cs" />
     <Compile Include="Interactor\SaveMovementMessageInteractor\SaveMovementMessageInteractorRequest.cs" />
     <Compile Include="Interactor\SaveScheduleMessageInteractor\ISaveScheduleMessagesInteractor.cs" />

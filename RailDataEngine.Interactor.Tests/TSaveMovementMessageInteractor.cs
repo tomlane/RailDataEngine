@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Gateway;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
@@ -18,9 +19,11 @@ namespace RailDataEngine.Interactor.Tests
         {
             var deserializationMock = new Mock<IMovementMessageDeserializationService>();
             var conversionMock = new Mock<IMovementMessageConversionService>();
+            var gatewayContainerMock = new Mock<ITrainMovementGatewayContainer>();
 
-            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(null, conversionMock.Object));
-            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, null));
+            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(null, conversionMock.Object, gatewayContainerMock.Object));
+            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, null, gatewayContainerMock.Object));
+            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, null));
         }
 
         [Test]
@@ -39,8 +42,9 @@ namespace RailDataEngine.Interactor.Tests
             {
                 var deserializationMock = new Mock<IMovementMessageDeserializationService>();
                 var conversionMock = new Mock<IMovementMessageConversionService>();
+                var gatewayContainerMock = new Mock<ITrainMovementGatewayContainer>();
 
-                var interactor = new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object);
+                var interactor = new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, gatewayContainerMock.Object);
 
                 Assert.Throws<ArgumentNullException>(() => interactor.SaveMovementMessages(null));
                 Assert.Throws<ArgumentNullException>(() => interactor.SaveMovementMessages(new SaveMovementMessageInteractorRequest
