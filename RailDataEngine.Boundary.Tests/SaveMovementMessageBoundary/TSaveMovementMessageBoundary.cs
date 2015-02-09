@@ -27,5 +27,24 @@ namespace RailDataEngine.Boundary.Tests.SaveMovementMessageBoundary
             var boundary = container.Resolve<ISaveMovementMessageBoundary>();
             Assert.IsInstanceOf<Implementations.TrainMovements.SaveMovementMessageBoundary>(boundary);
         }
+
+        [TestFixture]
+        class Invoke
+        {
+            [Test]
+            public void calls_interactor()
+            {
+                var interactorMock = new Mock<ISaveMovementMessageInteractor>();
+
+                var boundary = new Implementations.TrainMovements.SaveMovementMessageBoundary(interactorMock.Object);
+
+                boundary.Invoke(new SaveMovementMessageBoundaryRequest
+                {
+                    MessageToSave = "{ JSON }"
+                });
+
+                interactorMock.Verify(m => m.SaveMovementMessages(It.IsAny<SaveMovementMessageInteractorRequest>()), Times.Once());
+            }
+        }
     }
 }

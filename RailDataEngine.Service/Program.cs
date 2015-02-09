@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ServiceProcess;
+using Microsoft.Practices.Unity;
 using RailDataEngine.DI;
+using RailDataEngine.Domain.Services.FeedListener;
 
 namespace RailDataEngine.Service
 {
@@ -28,8 +30,6 @@ namespace RailDataEngine.Service
 
         static void Main(string[] args)
         {
-            var container = ContainerBuilder.Build();
-
             if (!Environment.UserInteractive)
                 // running as service
                 using (var service = new Service())
@@ -48,12 +48,16 @@ namespace RailDataEngine.Service
 
         private static void Start(string[] args)
         {
-            // start feed listners
+            var container = ContainerBuilder.Build();
+            Console.WriteLine("DI Container Built.");
+
+            var movementListener = container.Resolve<ITrainMovementListener>();
+
+            movementListener.Listen();
         }
 
         private static void Stop()
         {
-            // stop feed listeners
         }
     }
 }

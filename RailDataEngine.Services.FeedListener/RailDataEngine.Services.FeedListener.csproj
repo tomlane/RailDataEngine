@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Apache.NMS">
-      <HintPath>..\RailDataEngine.Listener.TrainMovements\bin\Apache.NMS.dll</HintPath>
+    <Reference Include="Apache.NMS, Version=1.5.0.2194, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd Party\Apache.NMS.dll</HintPath>
     </Reference>
-    <Reference Include="Apache.NMS.Stomp">
-      <HintPath>..\RailDataEngine.Listener.TrainMovements\bin\Apache.NMS.Stomp.dll</HintPath>
+    <Reference Include="Apache.NMS.Stomp, Version=1.5.2.2508, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd Party\Apache.NMS.Stomp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

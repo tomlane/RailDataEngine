@@ -31,7 +31,8 @@ namespace RailDataEngine.Services.FeedListener
 
                 using (ISession session = connection.CreateSession())
                 {
-                    IDestination movementDestination = session.GetDestination(ConfigurationManager.AppSettings["MovementFeedTopic"]);
+                    IDestination movementDestination =
+                        session.GetDestination(ConfigurationManager.AppSettings["MovementFeedTopic"]);
                     IMessageConsumer movementConsumer = session.CreateConsumer(movementDestination);
                     movementConsumer.Listener += new MessageListener(OnMovementMessage);
 
@@ -45,20 +46,13 @@ namespace RailDataEngine.Services.FeedListener
 
         private void OnMovementMessage(IMessage message)
         {
-            try
+            ITextMessage msg = (ITextMessage)message;
+            msg.Acknowledge();
+            _boundary.Invoke(new SaveMovementMessageBoundaryRequest
             {
-                ITextMessage msg = (ITextMessage)message;
-                msg.Acknowledge();
-                _boundary.Invoke(new SaveMovementMessageBoundaryRequest
-                {
-                    MessageToSave = msg.Text
-                });
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
+                MessageToSave = msg.Text
+            });
         }
     }
 }
+
