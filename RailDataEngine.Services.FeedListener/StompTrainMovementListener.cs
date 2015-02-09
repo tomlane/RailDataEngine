@@ -36,7 +36,7 @@ namespace RailDataEngine.Services.FeedListener
                     IMessageConsumer movementConsumer = session.CreateConsumer(movementDestination);
                     movementConsumer.Listener += new MessageListener(OnMovementMessage);
 
-                    Console.WriteLine("Consumer started, waiting for messages... (Press ENTER to stop.)");
+                    Console.WriteLine("Movement message listener started.");
 
                     Console.ReadLine();
                     connection.Close();

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaveMovementMessageInteractor.cs" />
+    <Compile Include="SaveScheduleMessageInteractor.cs" />
     <Compile Include="StationBoardInteractor.cs" />
   </ItemGroup>
   <ItemGroup>

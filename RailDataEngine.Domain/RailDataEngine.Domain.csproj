@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\ISaveScheduleMessagesBoundary.cs" />
-    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\SaveSchedulesBoundaryRequest.cs" />
+    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\SaveScheduleBoundaryRequest.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\IStationBoardArrivalsBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\StationBoardArrivalsBoundaryRequest.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\StationBoardArrivalsBoundaryResponse.cs" />
@@ -119,6 +119,8 @@
     <Compile Include="Gateway\ITrainMovementGatewayContainer.cs" />
     <Compile Include="Interactor\SaveMovementMessageInteractor\ISaveMovementMessageInteractor.cs" />
     <Compile Include="Interactor\SaveMovementMessageInteractor\SaveMovementMessageInteractorRequest.cs" />
+    <Compile Include="Interactor\SaveScheduleMessageInteractor\ISaveScheduleMessagesInteractor.cs" />
+    <Compile Include="Interactor\SaveScheduleMessageInteractor\SaveScheduleMessageInteractorRequest.cs" />
     <Compile Include="Interactor\StationBoardInteractor\IStationBoardInteractor.cs" />
     <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorRequest.cs" />
     <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorResponse.cs" />

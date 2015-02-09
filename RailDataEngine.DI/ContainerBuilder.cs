@@ -1,14 +1,17 @@
 ﻿using Microsoft.Practices.Unity;
+using RailDataEngine.Boundary.Implementations.Schedule;
 using RailDataEngine.Boundary.Implementations.StationBoard;
 using RailDataEngine.Boundary.Implementations.TrainMovements;
 using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
+using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
+using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 using RailDataEngine.Domain.Providers;
 using RailDataEngine.Domain.Services.FeedListener;
@@ -53,11 +56,13 @@ namespace RailDataEngine.DI
 
             container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
             container.RegisterType<ISaveMovementMessageInteractor, SaveMovementMessageInteractor>();
+            container.RegisterType<ISaveScheduleMessagesInteractor, SaveScheduleMessageInteractor>();
 
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
             container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
             container.RegisterType<IStationBoardServiceDetailsBoundary, StationBoardServiceDetailsBoundary>();
             container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
+            container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
 
             container.RegisterType<ITrainMovementListener, StompTrainMovementListener>();
 

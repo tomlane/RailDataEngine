@@ -2,6 +2,6 @@
 {
     public interface ISaveScheduleMessagesBoundary
     {
-        void Invoke(SaveSchedulesBoundaryRequest request);
+        void Invoke(SaveScheduleBoundaryRequest request);
     }
 }

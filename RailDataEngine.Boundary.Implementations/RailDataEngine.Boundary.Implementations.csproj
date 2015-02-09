@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule\SaveScheduleMessageBoundary.cs" />
     <Compile Include="StationBoard\StationBoardArrivalsBoundary.cs" />
     <Compile Include="StationBoard\StationBoardDeparturesBoundary.cs" />
     <Compile Include="StationBoard\StationBoardServiceDetailsBoundary.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ServiceProcess;
+using System.Threading;
 using Microsoft.Practices.Unity;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Services.FeedListener;
@@ -49,11 +50,12 @@ namespace RailDataEngine.Service
         private static void Start(string[] args)
         {
             var container = ContainerBuilder.Build();
-            Console.WriteLine("DI Container Built.");
 
             var movementListener = container.Resolve<ITrainMovementListener>();
 
-            movementListener.Listen();
+            var movementListenerThread = new Thread(movementListener.Listen);
+
+            movementListenerThread.Start();
         }
 
         private static void Stop()
