@@ -11,26 +11,27 @@ namespace RailDataEngine.ScheduleConsole
     {
         static void Main(string[] args)
         {
+            const int lineCount = 100;
+
             var container = ContainerBuilder.Build();
             var boundary = container.Resolve<ISaveScheduleMessagesBoundary>();
-            var request = new SaveScheduleBoundaryRequest
-            {
-                MessagesToSave = new List<string>()
-            };
-
+            
             var reader = new StreamReader("schedule.json");
-            string line;
+            List<string> lines;
             int counter = 0;
-
-            while ((line = reader.ReadLine()) != null)
+            
+            while ((lines = reader.ReadLines(lineCount)) != null)
             {
-                request.MessagesToSave.Add(line);
-                counter++;
+                var request = new SaveScheduleBoundaryRequest
+                {
+                    MessagesToSave = lines
+                };
+                counter += lines.Count;
+                boundary.Invoke(request);
+                Console.WriteLine("{0} lines imported.", counter);
             }
 
-            boundary.Invoke(request);
-
-            Console.WriteLine("Schedule imported successfully. {0} records imported.", counter);
+            Console.WriteLine("Schedule imported successfully.");
         }
     }
 }
