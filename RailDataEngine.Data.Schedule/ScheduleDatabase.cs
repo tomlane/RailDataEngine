@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Configuration;
 using RailDataEngine.Data.Common;
 
 namespace RailDataEngine.Data.Schedule
 {
     public class ScheduleDatabase : IScheduleDatabase
     {
-        private IConnectionStringProvider _connectionStringProvider;
+        private readonly IConnectionStringProvider _connectionStringProvider;
 
         private IScheduleContext _context = null;
-        private const string ScheduleConnectionKey = "test";
+        private readonly string ScheduleConnectionKey = ConfigurationManager.AppSettings["ScheduleConnectionKey"];
 
         public IScheduleContext DbContext
         {

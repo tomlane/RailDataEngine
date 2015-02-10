@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Configuration;
 using RailDataEngine.Data.Common;
 
 namespace RailDataEngine.Data.TrainDescriber
 {
     public class TrainDescriberDatabase : ITrainDescriberDatabase
     {
-        private IConnectionStringProvider _connectionStringProvider;
+        private readonly IConnectionStringProvider _connectionStringProvider;
 
-        private ITrainDescriberContext _context = null;
-        private const string ScheduleConnectionKey = "test";
+        private ITrainDescriberContext _context;
+        private readonly string ScheduleConnectionKey = ConfigurationManager.AppSettings["TrainDescriberConnectionKey"];
 
         public ITrainDescriberContext DbContext
         {

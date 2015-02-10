@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Configuration;
 using RailDataEngine.Data.Common;
 
 namespace RailDataEngine.Data.TrainMovements
 {
 	public class TrainMovementDatabase : ITrainMovementDatabase
 	{
-		private IConnectionStringProvider _connectionStringProvider;
+		private readonly IConnectionStringProvider _connectionStringProvider;
 
 		private ITrainMovementContext _context = null;
-		private const string TrainMovementConnectionKey = "test";
+		private readonly string TrainMovementConnectionKey = ConfigurationManager.AppSettings["TrainMovementConnectionKey"];
 
 		public ITrainMovementContext DbContext
 		{
