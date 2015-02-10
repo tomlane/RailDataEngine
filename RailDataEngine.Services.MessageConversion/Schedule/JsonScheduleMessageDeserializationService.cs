@@ -25,6 +25,9 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
 
             foreach (var line in request.MessagesToDeserialize)
             {
+                if (string.IsNullOrEmpty(line))
+                    break;
+
                 JObject jsonObject = JObject.Parse(line);
 
                 IList<string> keys = jsonObject.Properties().Select(p => p.Name).ToList();

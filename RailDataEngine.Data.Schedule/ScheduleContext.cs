@@ -18,6 +18,8 @@ namespace RailDataEngine.Data.Schedule
         : base(connectionString)
     {
         Database.SetInitializer<ScheduleContext>(new NullDatabaseInitializer<ScheduleContext>());
+        Configuration.AutoDetectChangesEnabled = false;
+        Configuration.ValidateOnSaveEnabled = false;
     }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)

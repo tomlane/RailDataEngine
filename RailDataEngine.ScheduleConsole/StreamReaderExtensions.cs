@@ -12,7 +12,8 @@ namespace RailDataEngine.ScheduleConsole
 
             for (int i = 0; i < count; i++)
             {
-                stringList.Add(reader.ReadLine());
+                if ((reader.ReadLine()) != null)
+                    stringList.Add(reader.ReadLine());
             }
 
             return stringList;
