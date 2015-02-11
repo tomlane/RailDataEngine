@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.TrainMovements;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;

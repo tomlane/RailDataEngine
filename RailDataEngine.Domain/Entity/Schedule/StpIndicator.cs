@@ -1,10 +1,19 @@
-﻿namespace RailDataEngine.Domain.Entity.Schedule
+﻿using System.ComponentModel;
+
+namespace RailDataEngine.Domain.Entity.Schedule
 {
     public enum StpIndicator
     {
-        Cancellation,
-        New,
+        [Description("Permanent Schedule")]
+        Permanent,
+        
+        [Description("Overlay Schedule")]
         Overlay,
-        Permanent
+
+        [Description("New Schedule")]
+        New,
+
+        [Description("Schedule Cancellation")]
+        Cancellation
     }
 }

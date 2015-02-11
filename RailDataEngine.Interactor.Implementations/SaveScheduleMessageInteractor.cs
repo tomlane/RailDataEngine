@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;

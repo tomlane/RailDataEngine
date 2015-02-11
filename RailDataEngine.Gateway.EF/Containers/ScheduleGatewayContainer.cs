@@ -1,6 +1,7 @@
 ﻿using System;
 using RailDataEngine.Domain.Entity.Schedule;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Schedule;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {

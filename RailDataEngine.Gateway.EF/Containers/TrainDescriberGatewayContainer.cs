@@ -2,6 +2,7 @@
 using RailDataEngine.Domain.Entity.TrainDescriber.Berth;
 using RailDataEngine.Domain.Entity.TrainDescriber.Signal;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.TrainDescriber;
 
 namespace RailDataEngine.Gateway.EF.Containers
 {

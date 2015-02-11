@@ -1,10 +1,19 @@
-﻿namespace RailDataEngine.Domain.Entity.TrainMovements
+﻿using System.ComponentModel;
+
+namespace RailDataEngine.Domain.Entity.TrainMovements
 {
     public enum ScheduleType
     {
-        Cancellation,
-        New,
+        [Description("Permanent Schedule")]
+        Permanent,
+
+        [Description("Overlay Schedule")]
         Overlay,
-        Permanent
+
+        [Description("New Schedule")]
+        New,
+
+        [Description("Schedule Cancellation")]
+        Cancellation
     }
 }

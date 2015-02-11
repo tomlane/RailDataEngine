@@ -12,11 +12,14 @@ using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Schedule;
+using RailDataEngine.Domain.Gateway.TrainDescriber;
+using RailDataEngine.Domain.Gateway.TrainMovements;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 using RailDataEngine.Domain.Providers;
-using RailDataEngine.Domain.Services.FeedListener;
+using RailDataEngine.Domain.Services.FeedListenerService;
 using RailDataEngine.Domain.Services.MessageValidationService;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;

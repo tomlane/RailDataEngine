@@ -32,7 +32,7 @@ namespace RailDataEngine.Services.MessageConversion.Providers
                 case "NORMAL":
                     return TrainCallMode.Normal;
                 default:
-                    return TrainCallMode.OverNight;
+                    return TrainCallMode.Overnight;
             }
         }
 
