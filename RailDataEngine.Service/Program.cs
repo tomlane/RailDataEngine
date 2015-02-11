@@ -3,7 +3,7 @@ using System.ServiceProcess;
 using System.Threading;
 using Microsoft.Practices.Unity;
 using RailDataEngine.DI;
-using RailDataEngine.Domain.Services.FeedListener;
+using RailDataEngine.Domain.Services.FeedListenerService;
 
 namespace RailDataEngine.Service
 {

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B356C6C-5F4C-40D0-8416-CDC914B71062}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RailDataEngine.Core</RootNamespace>
+    <AssemblyName>RailDataEngine.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary.cs" />
+    <Compile Include="ContainerBuilder.cs" />
+    <Compile Include="Interactor\TrainMovements\SaveMovementMessageInteractor.cs" />
+    <Compile Include="Interactor\Schedule\SaveScheduleMessageInteractor.cs" />
+    <Compile Include="Interactor\StationBoard\StationBoardInteractor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RailDataEngine.Data.Common\RailDataEngine.Data.Common.csproj">
+      <Project>{C99687BD-0029-44FE-A008-CDBD1E2DCAF9}</Project>
+      <Name>RailDataEngine.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Data.Schedule\RailDataEngine.Data.Schedule.csproj">
+      <Project>{B5120532-0E7A-4DC8-BFDD-11703D161546}</Project>
+      <Name>RailDataEngine.Data.Schedule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Data.TrainDescriber\RailDataEngine.Data.TrainDescriber.csproj">
+      <Project>{6D873303-E01A-4ECA-936E-5B597EE0B2DE}</Project>
+      <Name>RailDataEngine.Data.TrainDescriber</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Data.TrainMovements\RailDataEngine.Data.TrainMovements.csproj">
+      <Project>{8DE5FCE4-47B2-4740-BADF-C89DBC64E2BE}</Project>
+      <Name>RailDataEngine.Data.TrainMovements</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
+      <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>
+      <Name>RailDataEngine.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Gateway.EF\RailDataEngine.Gateway.EF.csproj">
+      <Project>{C500900E-6B18-4E27-8684-949F72A98656}</Project>
+      <Name>RailDataEngine.Gateway.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj">
+      <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>
+      <Name>RailDataEngine.Services.DarwinStationBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.FeedListener\RailDataEngine.Services.FeedListener.csproj">
+      <Project>{CEC2184B-570D-4320-9617-1F1390F42F48}</Project>
+      <Name>RailDataEngine.Services.FeedListener</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.MessageConversion\RailDataEngine.Services.MessageConversion.csproj">
+      <Project>{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}</Project>
+      <Name>RailDataEngine.Services.MessageConversion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

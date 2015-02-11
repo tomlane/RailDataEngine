@@ -1,9 +1,16 @@
-﻿namespace RailDataEngine.Domain.Entity.TrainDescriber.Signal
+﻿using System.ComponentModel;
+
+namespace RailDataEngine.Domain.Entity.TrainDescriber.Signal
 {
     public enum SignalMessageType
     {
-        SignallingUpdate,
-        SignallingRefresh,
-        SignallingRefreshFinished
+        [Description("Signal Update")]
+        Update,
+
+        [Description("Signal Refesh")]
+        Refresh,
+
+        [Description("Signal Refresh Finished")]
+        RefreshFinished
     }
 }

@@ -46,7 +46,7 @@ namespace RailDataEngine.Services.MessageConversion.Providers
                 case "S":
                     return Reservations.PossibleFromAnyStation;
                 default:
-                    return Reservations.Reconmmended;
+                    return Reservations.Recommended;
             }
         }
 

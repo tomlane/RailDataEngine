@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.Schedule;
 
 namespace RailDataEngine.Gateway.EF
 {

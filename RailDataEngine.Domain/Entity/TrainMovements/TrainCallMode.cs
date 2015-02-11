@@ -1,8 +1,13 @@
-﻿namespace RailDataEngine.Domain.Entity.TrainMovements
+﻿using System.ComponentModel;
+
+namespace RailDataEngine.Domain.Entity.TrainMovements
 {
     public enum TrainCallMode
     {
+        [Description("Normal")]
         Normal,
-        OverNight
+
+        [Description("Overnight")]
+        Overnight
     }
 }

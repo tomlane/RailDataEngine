@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using RailDataEngine.Data.TrainMovements;
 using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Gateway.TrainMovements;
 
 namespace RailDataEngine.Gateway.EF
 {
