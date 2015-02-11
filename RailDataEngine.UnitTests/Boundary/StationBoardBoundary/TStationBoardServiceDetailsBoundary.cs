@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.Boundary.Implementations.StationBoard;
+using RailDataEngine.Core.Boundary.StationBoard;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;

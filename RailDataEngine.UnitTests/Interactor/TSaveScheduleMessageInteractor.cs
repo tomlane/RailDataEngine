@@ -2,12 +2,12 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
+using RailDataEngine.Core.Interactor.Schedule;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;
-using RailDataEngine.Interactor.Implementations;
 
 namespace RailDataEngine.UnitTests.Interactor
 {

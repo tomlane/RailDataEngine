@@ -68,9 +68,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RailDataEngine.DI\RailDataEngine.DI.csproj">
-      <Project>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</Project>
-      <Name>RailDataEngine.DI</Name>
+    <ProjectReference Include="..\RailDataEngine.Core\RailDataEngine.Core.csproj">
+      <Project>{3B356C6C-5F4C-40D0-8416-CDC914B71062}</Project>
+      <Name>RailDataEngine.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
       <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>

@@ -136,9 +136,9 @@
       <Project>{EFE98C51-9437-47C6-9E97-82350E9AFB63}</Project>
       <Name>RailDataEngine.Api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Boundary.Implementations\RailDataEngine.Boundary.Implementations.csproj">
-      <Project>{6575CB95-C880-484F-8589-6FAB5EC35888}</Project>
-      <Name>RailDataEngine.Boundary.Implementations</Name>
+    <ProjectReference Include="..\RailDataEngine.Core\RailDataEngine.Core.csproj">
+      <Project>{3B356C6C-5F4C-40D0-8416-CDC914B71062}</Project>
+      <Name>RailDataEngine.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Data.Common\RailDataEngine.Data.Common.csproj">
       <Project>{C99687BD-0029-44FE-A008-CDBD1E2DCAF9}</Project>
@@ -156,10 +156,6 @@
       <Project>{8DE5FCE4-47B2-4740-BADF-C89DBC64E2BE}</Project>
       <Name>RailDataEngine.Data.TrainMovements</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.DI\RailDataEngine.DI.csproj">
-      <Project>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</Project>
-      <Name>RailDataEngine.DI</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Domain\RailDataEngine.Domain.csproj">
       <Project>{2ABE2E53-FB17-4B5B-9C09-D3BF1B038A4B}</Project>
       <Name>RailDataEngine.Domain</Name>
@@ -167,10 +163,6 @@
     <ProjectReference Include="..\RailDataEngine.Gateway.EF\RailDataEngine.Gateway.EF.csproj">
       <Project>{C500900E-6B18-4E27-8684-949F72A98656}</Project>
       <Name>RailDataEngine.Gateway.EF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Interactor.Implementations\RailDataEngine.Interactor.Implementations.csproj">
-      <Project>{4BAF053C-BCAC-498E-BA28-1161620E0CD9}</Project>
-      <Name>RailDataEngine.Interactor.Implementations</Name>
     </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj">
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.Boundary.Implementations.StationBoard;
+using RailDataEngine.Core.Boundary.StationBoard;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Domain.Entity.StationBoard;

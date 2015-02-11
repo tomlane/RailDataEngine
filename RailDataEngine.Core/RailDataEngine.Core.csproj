@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3ADC542E-2F12-4F63-AB9B-8F3BBA11CE86}</ProjectGuid>
+    <ProjectGuid>{3B356C6C-5F4C-40D0-8416-CDC914B71062}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RailDataEngine.DI</RootNamespace>
-    <AssemblyName>RailDataEngine.DI</AssemblyName>
+    <RootNamespace>RailDataEngine.Core</RootNamespace>
+    <AssemblyName>RailDataEngine.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Configuration">
@@ -50,18 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary.cs" />
+    <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary.cs" />
     <Compile Include="ContainerBuilder.cs" />
+    <Compile Include="Interactor\TrainMovements\SaveMovementMessageInteractor.cs" />
+    <Compile Include="Interactor\Schedule\SaveScheduleMessageInteractor.cs" />
+    <Compile Include="Interactor\StationBoard\StationBoardInteractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RailDataEngine.Boundary.Implementations\RailDataEngine.Boundary.Implementations.csproj">
-      <Project>{6575CB95-C880-484F-8589-6FAB5EC35888}</Project>
-      <Name>RailDataEngine.Boundary.Implementations</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Data.Common\RailDataEngine.Data.Common.csproj">
       <Project>{C99687BD-0029-44FE-A008-CDBD1E2DCAF9}</Project>
       <Name>RailDataEngine.Data.Common</Name>
@@ -85,10 +87,6 @@
     <ProjectReference Include="..\RailDataEngine.Gateway.EF\RailDataEngine.Gateway.EF.csproj">
       <Project>{C500900E-6B18-4E27-8684-949F72A98656}</Project>
       <Name>RailDataEngine.Gateway.EF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Interactor.Implementations\RailDataEngine.Interactor.Implementations.csproj">
-      <Project>{4BAF053C-BCAC-498E-BA28-1161620E0CD9}</Project>
-      <Name>RailDataEngine.Interactor.Implementations</Name>
     </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj">
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>

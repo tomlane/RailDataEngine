@@ -2,7 +2,7 @@
 using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 
-namespace RailDataEngine.Boundary.Implementations.Schedule
+namespace RailDataEngine.Core.Boundary.Schedule
 {
     public class SaveScheduleMessageBoundary : ISaveScheduleMessagesBoundary
     {

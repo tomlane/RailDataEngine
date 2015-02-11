@@ -17,7 +17,7 @@ namespace RailDataEngine.UnitTests.Boundary.SaveScheduleMessageBoundary
         {
             var interactorMock = new Mock<ISaveScheduleMessagesInteractor>();
 
-            Assert.Throws<ArgumentNullException>(() => new RailDataEngine.Boundary.Implementations.Schedule.SaveScheduleMessageBoundary(null));
+            Assert.Throws<ArgumentNullException>(() => new Core.Boundary.Schedule.SaveScheduleMessageBoundary(null));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace RailDataEngine.UnitTests.Boundary.SaveScheduleMessageBoundary
         {
             var container = ContainerBuilder.Build();
             var boundary = container.Resolve<ISaveScheduleMessagesBoundary>();
-            Assert.IsInstanceOf<RailDataEngine.Boundary.Implementations.Schedule.SaveScheduleMessageBoundary>(boundary);
+            Assert.IsInstanceOf<Core.Boundary.Schedule.SaveScheduleMessageBoundary>(boundary);
         }
 
         [TestFixture]
@@ -36,7 +36,7 @@ namespace RailDataEngine.UnitTests.Boundary.SaveScheduleMessageBoundary
             {
                 var interactorMock = new Mock<ISaveScheduleMessagesInteractor>();
 
-                var boundary = new RailDataEngine.Boundary.Implementations.Schedule.SaveScheduleMessageBoundary(interactorMock.Object);
+                var boundary = new Core.Boundary.Schedule.SaveScheduleMessageBoundary(interactorMock.Object);
 
                 boundary.Invoke(new SaveScheduleBoundaryRequest
                 {

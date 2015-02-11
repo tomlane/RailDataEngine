@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
+using RailDataEngine.Core.Interactor.StationBoard;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Entity.StationBoard;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
@@ -18,7 +19,7 @@ namespace RailDataEngine.UnitTests.Interactor
         {
             var stationBoardMock = new Mock<IStationBoardService>();
 
-            Assert.Throws<ArgumentNullException>(() => new RailDataEngine.Interactor.Implementations.StationBoardInteractor(null));
+            Assert.Throws<ArgumentNullException>(() => new StationBoardInteractor(null));
         }
 
         [Test]
@@ -26,7 +27,7 @@ namespace RailDataEngine.UnitTests.Interactor
         {
             var container = ContainerBuilder.Build();
             var interactor = container.Resolve<IStationBoardInteractor>();
-            Assert.IsInstanceOf<RailDataEngine.Interactor.Implementations.StationBoardInteractor>(interactor);
+            Assert.IsInstanceOf<StationBoardInteractor>(interactor);
         }
 
         [TestFixture]
@@ -40,7 +41,7 @@ namespace RailDataEngine.UnitTests.Interactor
                 stationBoardMock.Setup(m => m.GetArrivals(It.IsAny<StationBoardRequest>()))
                     .Returns(new StationArrivalResponse());
 
-                var interactor = new RailDataEngine.Interactor.Implementations.StationBoardInteractor(stationBoardMock.Object);
+                var interactor = new StationBoardInteractor(stationBoardMock.Object);
 
                 interactor.GetArrivals(new StationBoardArrivalsInteractorRequest
                 {
@@ -76,7 +77,7 @@ namespace RailDataEngine.UnitTests.Interactor
 
                 stationBoardMock.Setup(m => m.GetArrivals(It.IsAny<StationBoardRequest>())).Returns(mockStationArrival);
 
-                var interactor = new RailDataEngine.Interactor.Implementations.StationBoardInteractor(stationBoardMock.Object);
+                var interactor = new StationBoardInteractor(stationBoardMock.Object);
 
                 var response = interactor.GetArrivals(new StationBoardArrivalsInteractorRequest
                 {
@@ -99,7 +100,7 @@ namespace RailDataEngine.UnitTests.Interactor
                 stationBoardMock.Setup(m => m.GetDepartures(It.IsAny<StationBoardRequest>()))
                     .Returns(new StationDepartureResponse());
 
-                var interactor = new RailDataEngine.Interactor.Implementations.StationBoardInteractor(stationBoardMock.Object);
+                var interactor = new StationBoardInteractor(stationBoardMock.Object);
 
                 interactor.GetDepartures(new StationBoardDeparturesInteractorRequest
                 {
@@ -135,7 +136,7 @@ namespace RailDataEngine.UnitTests.Interactor
 
                 stationBoardMock.Setup(m => m.GetDepartures(It.IsAny<StationBoardRequest>())).Returns(mockStationDeparture);
 
-                var interactor = new RailDataEngine.Interactor.Implementations.StationBoardInteractor(stationBoardMock.Object);
+                var interactor = new StationBoardInteractor(stationBoardMock.Object);
 
                 var response = interactor.GetDepartures(new StationBoardDeparturesInteractorRequest
                 {
@@ -158,7 +159,7 @@ namespace RailDataEngine.UnitTests.Interactor
                 stationBoardMock.Setup(m => m.GetServiceDetails(It.IsAny<ServiceDetailsRequest>()))
                     .Returns(new ServiceDetailsResponse());
 
-                var interactor = new RailDataEngine.Interactor.Implementations.StationBoardInteractor(stationBoardMock.Object);
+                var interactor = new StationBoardInteractor(stationBoardMock.Object);
 
                 interactor.GetServiceDetails(new StationBoardServiceDetailsInteractorRequest
                 {
@@ -178,7 +179,7 @@ namespace RailDataEngine.UnitTests.Interactor
                 stationBoardMock.Setup(m => m.GetServiceDetails(It.IsAny<ServiceDetailsRequest>()))
                     .Returns(mockServiceDetails);
 
-                var interactor = new RailDataEngine.Interactor.Implementations.StationBoardInteractor(stationBoardMock.Object);
+                var interactor = new StationBoardInteractor(stationBoardMock.Object);
 
                 var response = interactor.GetServiceDetails(new StationBoardServiceDetailsInteractorRequest
                 {

@@ -2,7 +2,7 @@
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 
-namespace RailDataEngine.Boundary.Implementations.StationBoard
+namespace RailDataEngine.Core.Boundary.StationBoard
 {
     public class StationBoardServiceDetailsBoundary : IStationBoardServiceDetailsBoundary
     {

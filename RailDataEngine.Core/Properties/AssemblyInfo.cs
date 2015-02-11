@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RailDataEngine.Boundary.Implementations")]
+[assembly: AssemblyTitle("RailDataEngine.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RailDataEngine.Boundary.Implementations")]
+[assembly: AssemblyProduct("RailDataEngine.Core")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7dc9b4e3-9643-49b9-bd7c-1a569c02a5c6")]
+[assembly: Guid("4aed3277-d265-446f-8084-693c9ae80716")]
 
 // Version information for an assembly consists of the following four values:
 //

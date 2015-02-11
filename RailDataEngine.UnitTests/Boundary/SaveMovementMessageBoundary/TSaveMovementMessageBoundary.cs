@@ -17,7 +17,7 @@ namespace RailDataEngine.UnitTests.Boundary.SaveMovementMessageBoundary
             var interactorMock = new Mock<ISaveMovementMessageInteractor>();
 
             Assert.Throws<ArgumentNullException>(
-                () => new RailDataEngine.Boundary.Implementations.TrainMovements.SaveMovementMessageBoundary(null));
+                () => new Core.Boundary.TrainMovements.SaveMovementMessageBoundary(null));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace RailDataEngine.UnitTests.Boundary.SaveMovementMessageBoundary
         {
             var container = ContainerBuilder.Build();
             var boundary = container.Resolve<ISaveMovementMessageBoundary>();
-            Assert.IsInstanceOf<RailDataEngine.Boundary.Implementations.TrainMovements.SaveMovementMessageBoundary>(boundary);
+            Assert.IsInstanceOf<Core.Boundary.TrainMovements.SaveMovementMessageBoundary>(boundary);
         }
 
         [TestFixture]
@@ -36,7 +36,7 @@ namespace RailDataEngine.UnitTests.Boundary.SaveMovementMessageBoundary
             {
                 var interactorMock = new Mock<ISaveMovementMessageInteractor>();
 
-                var boundary = new RailDataEngine.Boundary.Implementations.TrainMovements.SaveMovementMessageBoundary(interactorMock.Object);
+                var boundary = new Core.Boundary.TrainMovements.SaveMovementMessageBoundary(interactorMock.Object);
 
                 boundary.Invoke(new SaveMovementMessageBoundaryRequest
                 {

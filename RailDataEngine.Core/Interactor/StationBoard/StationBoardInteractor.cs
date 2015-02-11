@@ -2,7 +2,7 @@
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 using RailDataEngine.Domain.Services.StationBoardService;
 
-namespace RailDataEngine.Interactor.Implementations
+namespace RailDataEngine.Core.Interactor.StationBoard
 {
     public class StationBoardInteractor : IStationBoardInteractor
     {

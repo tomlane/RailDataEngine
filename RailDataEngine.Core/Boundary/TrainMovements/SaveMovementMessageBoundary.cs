@@ -2,7 +2,7 @@
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 
-namespace RailDataEngine.Boundary.Implementations.TrainMovements
+namespace RailDataEngine.Core.Boundary.TrainMovements
 {
     public class SaveMovementMessageBoundary : ISaveMovementMessageBoundary
     {

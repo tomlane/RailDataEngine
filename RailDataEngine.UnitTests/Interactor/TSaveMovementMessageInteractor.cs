@@ -2,12 +2,12 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
+using RailDataEngine.Core.Interactor.TrainMovements;
 using RailDataEngine.DI;
 using RailDataEngine.Domain.Gateway.TrainMovements;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
-using RailDataEngine.Interactor.Implementations;
 
 namespace RailDataEngine.UnitTests.Interactor
 {
