@@ -15,30 +15,29 @@ namespace RailDataEngine.ScheduleConsole
 
         static void Main(string[] args)
         {
-            _container = ContainerBuilder.Build(); 
-
-            HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
+            _container = ContainerBuilder.Build();
 
             var reader = new StreamReader("schedule.json");
             List<string> lines = reader.ReadLines(1000000);
 
             Parallel.ForEach(lines, SaveMessage);
-            
+
             Console.WriteLine("Schedule imported successfully.");
+            Console.ReadLine();
         }
-            
+
         private static void SaveMessage(string message)
-            {
+        {
             _counter++;
             var boundary = _container.Resolve<ISaveScheduleMessagesBoundary>();
-                var request = new SaveScheduleBoundaryRequest
-                {
+            var request = new SaveScheduleBoundaryRequest
+            {
                 MessagesToSave = new List<string>
                 {
                     message
                 }
-                };
-                boundary.Invoke(request);
+            };
+            boundary.Invoke(request);
             Console.WriteLine("{0} records saved.", _counter);
         }
     }
