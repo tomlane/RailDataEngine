@@ -491,6 +491,13 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:RailDataEngine.Api.Controllers.ScheduleController.Records(System.String)">
+            <summary>
+            Returns a list of schedule records from the datastore.
+            </summary>
+            <param name="trainUid">The train identifier of the schedule set.</param>
+            <returns></returns>
+        </member>
         <member name="M:RailDataEngine.Api.Controllers.StationBoardController.Arrivals(System.String)">
             <summary>
             Returns a list of arrivals for a station.

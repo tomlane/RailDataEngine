@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boundary\Schedule\FetchScheduleMessageBoundary\FetchScheduleMessageBoundaryRequest.cs" />
+    <Compile Include="Boundary\Schedule\FetchScheduleMessageBoundary\FetchScheduleMessageBoundaryResponse.cs" />
+    <Compile Include="Boundary\Schedule\FetchScheduleMessageBoundary\IFetchScheduleMessagesBoundary.cs" />
     <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\ISaveScheduleMessagesBoundary.cs" />
     <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\SaveScheduleBoundaryRequest.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\IStationBoardArrivalsBoundary.cs" />

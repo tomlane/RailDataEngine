@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\Controllers\THomeController.cs" />
+    <Compile Include="Api\Controllers\TScheduleController.cs" />
     <Compile Include="Api\Controllers\TStationBoardController.cs" />
     <Compile Include="Boundary\SaveMovementMessageBoundary\TSaveMovementMessageBoundary.cs" />
     <Compile Include="Boundary\SaveScheduleMessageBoundary\TSaveScheduleMessageBoundary.cs" />

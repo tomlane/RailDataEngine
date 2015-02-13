@@ -9,6 +9,7 @@ using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Data.TrainDescriber;
 using RailDataEngine.Data.TrainMovements;
+using RailDataEngine.Domain.Boundary.Schedule.FetchScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
@@ -73,6 +74,7 @@ namespace RailDataEngine.DI
             container.RegisterType<IStationBoardServiceDetailsBoundary, StationBoardServiceDetailsBoundary>();
             container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
             container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
+            container.RegisterType<IFetchScheduleMessagesBoundary, FetchScheduleMessagesBoundary>();
 
             container.RegisterType<ITrainMovementListener, StompTrainMovementListener>();
 
