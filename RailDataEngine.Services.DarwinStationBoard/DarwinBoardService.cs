@@ -56,7 +56,8 @@ namespace RailDataEngine.Services.DarwinStationBoard
                         ScheduledArrival = trainService.sta,
                         EstimatedArrival = trainService.eta,
                         Platform = trainService.platform,
-                        ServiceId = trainService.serviceID
+                        ServiceId = trainService.serviceID,
+                        Type = ServiceType.Train
                     });
                 }    
             }
