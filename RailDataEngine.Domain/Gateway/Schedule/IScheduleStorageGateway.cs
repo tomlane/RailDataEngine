@@ -8,6 +8,6 @@ namespace RailDataEngine.Domain.Gateway.Schedule
     {
         void Create(List<T> entities);
         List<T> Read(Expression<Func<T, bool>> criteria);
-        void Destroy(List<T> entities);
+        void Destroy(Expression<Func<T, bool>> criteria);
     }
 }

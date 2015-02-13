@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
@@ -44,17 +43,7 @@ namespace RailDataEngine.Core.Interactor.Schedule
                     Tiplocs = deserializedMessages.Tiplocs
                 });
 
-            if (convertedMessages.Associations.Any())
-                _scheduleGatewayContainer.AssociationGateway.Create(convertedMessages.Associations);
-
-            if (convertedMessages.Headers.Any())
-                _scheduleGatewayContainer.HeaderGateway.Create(convertedMessages.Headers);
-
-            if (convertedMessages.Records.Any())
-                _scheduleGatewayContainer.RecordGateway.Create(convertedMessages.Records);
-
-            if (convertedMessages.Tiplocs.Any())
-                _scheduleGatewayContainer.TiplocGateway.Create(convertedMessages.Tiplocs);
+            throw new NotImplementedException();
         }
     }
 }

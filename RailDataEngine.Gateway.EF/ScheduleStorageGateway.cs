@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Linq.Expressions;
 using RailDataEngine.Data.Schedule;
@@ -43,14 +44,6 @@ namespace RailDataEngine.Gateway.EF
             _context.Set<T>().AddRange(entities);
 
             _context.SaveChanges();
-
-            ResetContext();
-        }
-
-        private void ResetContext()
-        {
-            _context.Dispose();
-            _context = _database.BuildContext() as ScheduleContext;
         }
 
         public List<T> Read(Expression<Func<T, bool>> criteria)
@@ -61,12 +54,17 @@ namespace RailDataEngine.Gateway.EF
             return _context.GetSet<T>().Where(criteria).ToList();
         }
 
-        public void Destroy(List<T> entities)
+        public void Destroy(Expression<Func<T, bool>> criteria)
         {
-            if (entities == null)
-                throw new ArgumentNullException("entities");
+            if (criteria == null)
+                throw new ArgumentNullException("criteria");
 
-            foreach (var entity in entities)
+            var entites = _context.GetSet<T>().Where(criteria).ToList();
+
+            if (!entites.Any()) 
+                throw new EntityException("No entites found to delete");
+            
+            foreach (var entity in entites)
             {
                 _context.GetSet<T>().Remove(entity);
             }

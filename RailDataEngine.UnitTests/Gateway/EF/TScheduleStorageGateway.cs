@@ -134,7 +134,7 @@ namespace RailDataEngine.UnitTests.Gateway.EF
 
                 var gateway = new ScheduleStorageGateway<Association>(database.Object);
 
-                gateway.Destroy(entitySet);
+                gateway.Destroy(x => x.TrainUid == "lalala");
 
                 context.Verify(m => m.SaveChanges(), Times.Once);
             }

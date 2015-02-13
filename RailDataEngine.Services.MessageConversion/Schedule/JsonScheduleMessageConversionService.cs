@@ -127,33 +127,36 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
             {
                 AtocCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.AtocCode),
                 BankHolidayRunning = _timeConversionService.ParseBankHolidayRunning(jsonScheduleRecord.Schedule.BankHolidayRunning),
-                BusinessSector = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.BusinessSector),
-                CateringCode = _trainInformationProvider.GetCateringCode(jsonScheduleRecord.Schedule.ScheduleSegment.CateringCode),
                 EndDate = _timeConversionService.ParseDateTime(jsonScheduleRecord.Schedule.ScheduleEndDate),
-                IsPerformanceMonitoringApplicable = null,
-                Locations = ConvertScheduleLocations(jsonScheduleRecord.Schedule.ScheduleSegment.ScheduleLocation),
-                OperatingCharacteristics = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.OperatingCharateristics),
-                PowerType = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.PowerType),
-                Reservations = _trainInformationProvider.GetTrainResevationDetails(jsonScheduleRecord.Schedule.ScheduleSegment.Reservations),
                 RunningDays = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.RunDays),
-                ServiceBrand = _trainInformationProvider.GetTrainServiceBrand(jsonScheduleRecord.Schedule.ScheduleSegment.ServiceBranding),
-                SignallingId = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.SignallingId),
-                Sleepers = _trainInformationProvider.GetTrainSleeperDetails(jsonScheduleRecord.Schedule.ScheduleSegment.Sleepers),
-                Speed = _messageValidationService.ParseInt(jsonScheduleRecord.Schedule.ScheduleSegment.Speed),
                 StartDate = _timeConversionService.ParseDateTime(jsonScheduleRecord.Schedule.ScheduleStartDate),
                 StpIndicator = _scheduleInformationProvider.GetStpIndicator(jsonScheduleRecord.Schedule.StpIndicator),
-                TimingLoad = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TimingLoad),
-                TrainCategory = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TrainCategory),
-                TrainClass = _trainInformationProvider.GetTrainClass(jsonScheduleRecord.Schedule.ScheduleSegment.TrainClass),
-                TrainServiceCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TrainServiceCode),
                 TrainStatus = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.TrainStatus),
                 TrainUid = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.TrainUid),
                 TransactionType = _scheduleInformationProvider.GetTransactionType(jsonScheduleRecord.Schedule.TransactionType)
             };
 
+            if (jsonScheduleRecord.Schedule.ScheduleSegment != null)
+            {
+                record.BusinessSector = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.BusinessSector);
+                record.CateringCode = _trainInformationProvider.GetCateringCode(jsonScheduleRecord.Schedule.ScheduleSegment.CateringCode);
+                record.Locations = ConvertScheduleLocations(jsonScheduleRecord.Schedule.ScheduleSegment.ScheduleLocation);
+                record.OperatingCharacteristics = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.OperatingCharateristics);
+                record.PowerType = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.PowerType);
+                record.Reservations = _trainInformationProvider.GetTrainResevationDetails(jsonScheduleRecord.Schedule.ScheduleSegment.Reservations);
+                record.ServiceBrand = _trainInformationProvider.GetTrainServiceBrand(jsonScheduleRecord.Schedule.ScheduleSegment.ServiceBranding);
+                record.SignallingId = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.SignallingId);
+                record.Sleepers = _trainInformationProvider.GetTrainSleeperDetails(jsonScheduleRecord.Schedule.ScheduleSegment.Sleepers);
+                record.Speed = _messageValidationService.ParseInt(jsonScheduleRecord.Schedule.ScheduleSegment.Speed);
+                record.TimingLoad = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TimingLoad);
+                record.TrainCategory = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TrainCategory);
+                record.TrainClass = _trainInformationProvider.GetTrainClass(jsonScheduleRecord.Schedule.ScheduleSegment.TrainClass);
+                record.TrainServiceCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.ScheduleSegment.TrainServiceCode);
+            }
+                
+
             if (jsonScheduleRecord.Schedule.NewScheduleSegment != null)
-                record.UicCode =
-                    _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.NewScheduleSegment.UicCode);
+                record.UicCode = _messageValidationService.ValidateString(jsonScheduleRecord.Schedule.NewScheduleSegment.UicCode);
 
             return record;
         }
