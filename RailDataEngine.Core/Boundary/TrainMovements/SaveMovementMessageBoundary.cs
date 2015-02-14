@@ -1,4 +1,5 @@
 ﻿using System;
+using Exceptionless;
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 
@@ -18,10 +19,23 @@ namespace RailDataEngine.Core.Boundary.TrainMovements
 
         public void Invoke(SaveMovementMessageBoundaryRequest request)
         {
-            _interactor.SaveMovementMessages(new SaveMovementMessageInteractorRequest
+            try
             {
-                MessageToSave = request.MessageToSave
-            });
+                _interactor.SaveMovementMessages(new SaveMovementMessageInteractorRequest
+                {
+                    MessageToSave = request.MessageToSave
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.ToExceptionless().AddObject(request).AddTags(new[]
+                {
+                    "Incoming message",
+                    "Movement message"
+                }).Submit();
+            }
+
+            
         }
     }
 }

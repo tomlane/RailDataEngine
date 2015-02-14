@@ -1,4 +1,5 @@
 ﻿using System;
+using Exceptionless;
 using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 
@@ -16,10 +17,21 @@ namespace RailDataEngine.Core.Boundary.Schedule
 
         public void Invoke(SaveScheduleBoundaryRequest request)
         {
-            _interactor.SaveScheduleMessages(new SaveScheduleMessageInteractorRequest
+            try
             {
-                MessagesToSave = request.MessagesToSave
-            });
+                _interactor.SaveScheduleMessages(new SaveScheduleMessageInteractorRequest
+                {
+                    MessagesToSave = request.MessagesToSave
+                });
+            }
+            catch (Exception ex)
+            {
+                ex.ToExceptionless().AddObject(request).AddTags(new[]
+                {
+                    "Incoming message",
+                    "Schedule message"
+                }).Submit();
+            }
         }
     }
 }
