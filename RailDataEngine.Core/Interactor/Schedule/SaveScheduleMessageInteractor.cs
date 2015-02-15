@@ -1,8 +1,8 @@
 ﻿using System;
-using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;
+using RailDataEngine.Domain.Services.ScheduleMessageStorageService;
 
 namespace RailDataEngine.Core.Interactor.Schedule
 {
@@ -10,17 +10,17 @@ namespace RailDataEngine.Core.Interactor.Schedule
     {
         private readonly IScheduleMessageDeserializationService _messageDeserializationService;
         private readonly IScheduleMessageConversionService _messageConversionService;
-        private readonly IScheduleGatewayContainer _scheduleGatewayContainer;
+        private readonly IScheduleMessageStorageService _messageStorageService;
 
-        public SaveScheduleMessageInteractor(IScheduleMessageDeserializationService messageDeserializationService, IScheduleMessageConversionService messageConversionService, IScheduleGatewayContainer scheduleGatewayContainer)
+        public SaveScheduleMessageInteractor(IScheduleMessageDeserializationService messageDeserializationService, IScheduleMessageConversionService messageConversionService, IScheduleMessageStorageService messageStorageService)
         {
             if (messageDeserializationService == null) throw new ArgumentNullException("messageDeserializationService");
             if (messageConversionService == null) throw new ArgumentNullException("messageConversionService");
-            if (scheduleGatewayContainer == null) throw new ArgumentNullException("scheduleGatewayContainer");
+            if (messageStorageService== null) throw new ArgumentNullException("messageStorageService");
 
             _messageDeserializationService = messageDeserializationService;
             _messageConversionService = messageConversionService;
-            _scheduleGatewayContainer = scheduleGatewayContainer;
+            _messageStorageService = messageStorageService;
         }
 
         public void SaveScheduleMessages(SaveScheduleMessageInteractorRequest request)
@@ -43,7 +43,14 @@ namespace RailDataEngine.Core.Interactor.Schedule
                     Tiplocs = deserializedMessages.Tiplocs
                 });
 
-            throw new NotImplementedException();
+            _messageStorageService.SaveScheduleMessages(new SaveScheduleMessagesRequest
+            {
+                Associations = convertedMessages.Associations,
+                Headers = convertedMessages.Headers,
+                Records = convertedMessages.Records,
+                Tiplocs = convertedMessages.Tiplocs
+            });
+
         }
     }
 }

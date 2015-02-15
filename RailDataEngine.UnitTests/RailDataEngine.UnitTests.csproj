@@ -131,6 +131,7 @@
     <Compile Include="Services\MessageConversion\TMovementInformationProvider.cs" />
     <Compile Include="Services\MessageConversion\TrainMovements\TJsonMovementMessageConversionService.cs" />
     <Compile Include="Services\MessageConversion\TrainMovements\TJsonMovementMessageDeserializationService.cs" />
+    <Compile Include="Services\MessageStorage\TScheduleMessageStorageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RailDataEngine.Api\RailDataEngine.Api.csproj">
@@ -177,11 +178,16 @@
       <Project>{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}</Project>
       <Name>RailDataEngine.Services.MessageConversion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.MessageStorage\RailDataEngine.Services.MessageStorage.csproj">
+      <Project>{C147FB69-402C-4D2B-A17C-1C6ACF731446}</Project>
+      <Name>RailDataEngine.Services.MessageStorage</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

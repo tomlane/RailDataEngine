@@ -107,6 +107,10 @@
       <Project>{D92BEBA5-E4F2-4BC9-9BA1-A764E659E17F}</Project>
       <Name>RailDataEngine.Services.MessageConversion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.MessageStorage\RailDataEngine.Services.MessageStorage.csproj">
+      <Project>{C147FB69-402C-4D2B-A17C-1C6ACF731446}</Project>
+      <Name>RailDataEngine.Services.MessageStorage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

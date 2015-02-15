@@ -93,9 +93,9 @@ namespace RailDataEngine.Services.MessageConversion.Providers
 
             switch (transactionType)
             {
-                case "update":
+                case "Update":
                     return TransactionType.Update;
-                case "delete":
+                case "Delete":
                     return TransactionType.Delete;
                 default:
                     return TransactionType.Create;

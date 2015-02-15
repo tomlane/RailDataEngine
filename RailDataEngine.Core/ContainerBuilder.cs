@@ -28,6 +28,7 @@ using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;
+using RailDataEngine.Domain.Services.ScheduleMessageStorageService;
 using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Domain.Services.TimeConversionService;
 using RailDataEngine.Gateway.EF;
@@ -39,6 +40,7 @@ using RailDataEngine.Services.MessageConversion;
 using RailDataEngine.Services.MessageConversion.Providers;
 using RailDataEngine.Services.MessageConversion.Schedule;
 using RailDataEngine.Services.MessageConversion.TrainMovements;
+using RailDataEngine.Services.MessageStorage;
 
 namespace RailDataEngine.DI
 {
@@ -84,6 +86,7 @@ namespace RailDataEngine.DI
             container.RegisterType<IScheduleMessageConversionService, JsonScheduleMessageConversionService>();
             container.RegisterType<IMessageValidationService, MessageValidationService>();
             container.RegisterType<ITimeConversionService, TimeConversionService>();
+            container.RegisterType<IScheduleMessageStorageService, ScheduleMessageStorageService>();
 
             container.RegisterType<IMovementInformationProvider, MovementInformationProvider>();
             container.RegisterType<IScheduleInformationProvider, ScheduleInformationProvider>();

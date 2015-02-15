@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Core;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,27 +11,13 @@ namespace RailDataEngine.Gateway.EF
 {
     public class ScheduleStorageGateway<T> : IScheduleStorageGateway<T> where T : class, IIdentifyable
     {
-        private readonly IScheduleDatabase _database;
-
-        private ScheduleContext _context;
-        private ScheduleContext Context
-        {
-            get
-            {
-                if (_context == null)
-                    return _database.BuildContext() as ScheduleContext;
-
-                return _context;
-            }
-            set { _context = value; }
-        }
-
+        private readonly ScheduleContext _context;
+        
         public ScheduleStorageGateway(IScheduleDatabase database)
         {
             if (database == null)
                 throw new ArgumentNullException("database");
 
-            _database = database;
             _context = database.BuildContext() as ScheduleContext;
         }
 

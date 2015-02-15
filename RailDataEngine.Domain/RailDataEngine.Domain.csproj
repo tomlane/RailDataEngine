@@ -148,6 +148,8 @@
     <Compile Include="Services\ScheduleMessageDeserializationService\IScheduleMessageDeserializationService.cs" />
     <Compile Include="Services\ScheduleMessageDeserializationService\ScheduleMessageDeserializationRequest.cs" />
     <Compile Include="Services\ScheduleMessageDeserializationService\ScheduleMessageDeserializationResponse.cs" />
+    <Compile Include="Services\ScheduleMessageStorageService\IScheduleMessageStorageService.cs" />
+    <Compile Include="Services\ScheduleMessageStorageService\SaveScheduleMessagesRequest.cs" />
     <Compile Include="Services\StationBoardService\IStationBoardService.cs" />
     <Compile Include="Services\StationBoardService\ServiceDetailsRequest.cs" />
     <Compile Include="Services\StationBoardService\ServiceDetailsResponse.cs" />
