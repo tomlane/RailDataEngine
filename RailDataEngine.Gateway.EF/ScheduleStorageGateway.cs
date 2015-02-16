@@ -56,5 +56,12 @@ namespace RailDataEngine.Gateway.EF
 
             _context.SaveChanges();
         }
+
+        public int GetScheduleVersion()
+        {
+            var header = _context.ScheduleHeaders.OrderByDescending(x => x.Timestamp).Take(1).ToList();
+
+            return int.Parse(header[0].MetaData.Sequence);
+        }
     }
 }

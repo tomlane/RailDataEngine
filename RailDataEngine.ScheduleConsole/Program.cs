@@ -17,10 +17,12 @@ namespace RailDataEngine.ScheduleConsole
         {
             _container = ContainerBuilder.Build();
 
-            var reader = new StreamReader("schedule.json");
-            List<string> lines = reader.ReadLines(1000000);
+            var lines = File.ReadAllLines("schedule.json");
 
-            Parallel.ForEach(lines, SaveMessage);
+            foreach (var line in lines)
+            {
+                SaveMessage(line);
+            }
 
             Console.WriteLine("Schedule imported successfully.");
             Console.ReadLine();

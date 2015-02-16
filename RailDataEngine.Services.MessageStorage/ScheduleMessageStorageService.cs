@@ -70,5 +70,10 @@ namespace RailDataEngine.Services.MessageStorage
         {
             _scheduleGatewayContainer.TiplocGateway.Create(tiplocs);
         }
+
+        public int GetScheduleVersion()
+        {
+            return _scheduleGatewayContainer.HeaderGateway.GetScheduleVersion();
+        }
     }
 }
