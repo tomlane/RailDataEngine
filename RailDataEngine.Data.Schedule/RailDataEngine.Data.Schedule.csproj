@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201502091928180_InitialMigration.Designer.cs">
       <DependentUpon>201502091928180_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502191753324_LocationsRelationship.cs" />
+    <Compile Include="Migrations\201502191753324_LocationsRelationship.Designer.cs">
+      <DependentUpon>201502191753324_LocationsRelationship.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleContext.cs" />
@@ -76,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502091928180_InitialMigration.resx">
       <DependentUpon>201502091928180_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502191753324_LocationsRelationship.resx">
+      <DependentUpon>201502191753324_LocationsRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

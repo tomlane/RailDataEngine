@@ -33,6 +33,8 @@ namespace RailDataEngine.Data.Schedule
         modelBuilder.Entity<Tiploc>().ToTable("Tiploc", schema);
         modelBuilder.Entity<Header>().ToTable("Meta", schema);
         modelBuilder.Entity<Location>().ToTable("Location", schema);
+
+        modelBuilder.Entity<Record>().HasMany(r => r.Locations).WithOptional().WillCascadeOnDelete();
     }
 }
 

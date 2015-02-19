@@ -31,6 +31,6 @@ namespace RailDataEngine.Domain.Entity.Schedule
         public string UicCode { get; set; }
         public string AtocCode { get; set; }
         public bool? IsPerformanceMonitoringApplicable { get; set; }
-        public List<Location> Locations { get; set; }
+        public virtual List<Location> Locations { get; set; }
     }
 }

@@ -68,12 +68,21 @@ namespace RailDataEngine.Services.MessageStorage
 
         private void SaveTiplocs(List<Tiploc> tiplocs)
         {
-            _scheduleGatewayContainer.TiplocGateway.Create(tiplocs);
-        }
-
-        public int GetScheduleVersion()
-        {
-            return _scheduleGatewayContainer.HeaderGateway.GetScheduleVersion();
+            foreach (var tiploc in tiplocs)
+            {
+                switch (tiploc.TransactionType)
+                {
+                    case TransactionType.Delete:
+                        _scheduleGatewayContainer.TiplocGateway.Destroy(x => x.TiplocCode == tiploc.TiplocCode);
+                        break;
+                    default:
+                        _scheduleGatewayContainer.TiplocGateway.Create(new List<Tiploc>
+                        {
+                            tiploc
+                        });
+                        break;
+                }
+            }
         }
     }
 }
