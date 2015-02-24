@@ -136,6 +136,8 @@
     <Compile Include="Services\MovementMessageDeserializationService\IMovementMessageDeserializationService.cs" />
     <Compile Include="Services\MovementMessageDeserializationService\MovementMessageDeserializationRequest.cs" />
     <Compile Include="Services\MovementMessageDeserializationService\MovementMessageDeserializationResponse.cs" />
+    <Compile Include="Services\MovementMessageStorageService\IMovementMessageStorageService.cs" />
+    <Compile Include="Services\MovementMessageStorageService\SaveMovementMessagesRequest.cs" />
     <Compile Include="Services\ScheduleMessageConversionService\IScheduleMessageConversionService.cs" />
     <Compile Include="Services\ScheduleMessageConversionService\ScheduleMessageConversionRequest.cs" />
     <Compile Include="Services\ScheduleMessageConversionService\ScheduleMessageConversionResponse.cs" />

@@ -105,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\Controllers\THomeController.cs" />
-    <Compile Include="Api\Controllers\TScheduleController.cs" />
     <Compile Include="Api\Controllers\TStationBoardController.cs" />
     <Compile Include="Boundary\SaveMovementMessageBoundary\TSaveMovementMessageBoundary.cs" />
     <Compile Include="Boundary\SaveScheduleMessageBoundary\TSaveScheduleMessageBoundary.cs" />
@@ -131,6 +130,7 @@
     <Compile Include="Services\MessageConversion\TMovementInformationProvider.cs" />
     <Compile Include="Services\MessageConversion\TrainMovements\TJsonMovementMessageConversionService.cs" />
     <Compile Include="Services\MessageConversion\TrainMovements\TJsonMovementMessageDeserializationService.cs" />
+    <Compile Include="Services\MessageStorage\TMovementMessageStorageService.cs" />
     <Compile Include="Services\MessageStorage\TScheduleMessageStorageService.cs" />
   </ItemGroup>
   <ItemGroup>

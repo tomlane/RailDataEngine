@@ -3,7 +3,9 @@ using System.Data.Entity;
 using System.Linq;
 using Moq;
 using RailDataEngine.Domain.Entity.Schedule;
+using RailDataEngine.Domain.Entity.TrainMovements;
 using RailDataEngine.Domain.Gateway.Schedule;
+using RailDataEngine.Domain.Gateway.TrainMovements;
 
 namespace RailDataEngine.UnitTests.Common
 {
@@ -37,6 +39,21 @@ namespace RailDataEngine.UnitTests.Common
             gatewayContainer.Setup(m => m.LocationGateway).Returns(locationGateway.Object);
             gatewayContainer.Setup(m => m.RecordGateway).Returns(recordGateway.Object);
             gatewayContainer.Setup(m => m.TiplocGateway).Returns(tiplocGateway.Object);
+
+            return gatewayContainer;
+        }
+
+        public static Mock<ITrainMovementGatewayContainer> BuildMovementGatewayContainer()
+        {
+            var activationGateway = new Mock<ITrainMovementStorageGateway<TrainActivation>>();
+            var cancellationGateway = new Mock<ITrainMovementStorageGateway<TrainCancellation>>();
+            var movementGateway = new Mock<ITrainMovementStorageGateway<TrainMovement>>();
+
+            var gatewayContainer = new Mock<ITrainMovementGatewayContainer>();
+
+            gatewayContainer.Setup(m => m.ActivationGateway).Returns(activationGateway.Object);
+            gatewayContainer.Setup(m => m.CancellationGateway).Returns(cancellationGateway.Object);
+            gatewayContainer.Setup(m => m.MovementGateway).Returns(movementGateway.Object);
 
             return gatewayContainer;
         }

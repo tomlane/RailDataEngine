@@ -26,6 +26,7 @@ using RailDataEngine.Domain.Services.FeedListenerService;
 using RailDataEngine.Domain.Services.MessageValidationService;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
+using RailDataEngine.Domain.Services.MovementMessageStorageService;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;
 using RailDataEngine.Domain.Services.ScheduleMessageStorageService;
@@ -86,6 +87,7 @@ namespace RailDataEngine.Core
             container.RegisterType<IMessageValidationService, MessageValidationService>();
             container.RegisterType<ITimeConversionService, TimeConversionService>();
             container.RegisterType<IScheduleMessageStorageService, ScheduleMessageStorageService>();
+            container.RegisterType<IMovementMessageStorageService, MovementMessageStorageService>();
 
             container.RegisterType<IMovementInformationProvider, MovementInformationProvider>();
             container.RegisterType<IScheduleInformationProvider, ScheduleInformationProvider>();
