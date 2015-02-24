@@ -4,6 +4,7 @@ using RailDataEngine.Domain.Gateway.TrainMovements;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
+using RailDataEngine.Domain.Services.MovementMessageStorageService;
 
 namespace RailDataEngine.Core.Interactor.TrainMovements
 {
@@ -11,20 +12,20 @@ namespace RailDataEngine.Core.Interactor.TrainMovements
     {
         private readonly IMovementMessageDeserializationService _messageDeserializationService;
         private readonly IMovementMessageConversionService _messageConversionService;
-        private readonly ITrainMovementGatewayContainer _movementGatewayContainer;
+        private readonly IMovementMessageStorageService _messageStorageService;
 
-        public SaveMovementMessageInteractor(IMovementMessageDeserializationService movementMessageDeserializationService, IMovementMessageConversionService movementMessageConversionService, ITrainMovementGatewayContainer gatewayContainer)
+        public SaveMovementMessageInteractor(IMovementMessageDeserializationService movementMessageDeserializationService, IMovementMessageConversionService movementMessageConversionService, IMovementMessageStorageService movementMessageStorageService)
         {
             if (movementMessageDeserializationService == null)
                 throw new ArgumentNullException("movementMessageDeserializationService");
             if (movementMessageConversionService == null)
                 throw new ArgumentNullException("movementMessageConversionService");
-            if (gatewayContainer == null) 
-                throw new ArgumentNullException("gatewayContainer");
+            if (movementMessageStorageService == null) 
+                throw new ArgumentNullException("movementMessageStorageService");
 
             _messageDeserializationService = movementMessageDeserializationService;
             _messageConversionService = movementMessageConversionService;
-            _movementGatewayContainer = gatewayContainer;
+            _messageStorageService = movementMessageStorageService;
         }
 
         public void SaveMovementMessages(SaveMovementMessageInteractorRequest request)
@@ -46,14 +47,12 @@ namespace RailDataEngine.Core.Interactor.TrainMovements
                     Movements = deserializedMessages.Movements
                 });
 
-            if (convertedMessages.Activations.Any())
-                _movementGatewayContainer.ActivationGateway.Create(convertedMessages.Activations);
-
-            if (convertedMessages.Cancellations.Any())
-                _movementGatewayContainer.CancellationGateway.Create(convertedMessages.Cancellations);
-            
-            if (convertedMessages.Movements.Any())
-                _movementGatewayContainer.MovementGateway.Create(convertedMessages.Movements);
+            _messageStorageService.SaveMovementMessages(new SaveMovementMessagesRequest
+            {
+                Activations = convertedMessages.Activations,
+                Cancellations = convertedMessages.Cancellations,
+                Movements = convertedMessages.Movements
+            });
         }
     }
 }

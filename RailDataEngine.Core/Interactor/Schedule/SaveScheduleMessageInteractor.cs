@@ -50,7 +50,6 @@ namespace RailDataEngine.Core.Interactor.Schedule
                 Records = convertedMessages.Records,
                 Tiplocs = convertedMessages.Tiplocs
             });
-
         }
     }
 }
