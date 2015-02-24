@@ -1,23 +1,14 @@
 ﻿using System;
 using System.Configuration;
 using Apache.NMS;
-using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Queue;
 using RailDataEngine.Domain.Services.FeedListenerService;
 
 namespace RailDataEngine.Services.FeedListener
 {
     public class StompTrainMovementListener : ITrainMovementListener
     {
-        private readonly ISaveMovementMessageBoundary _boundary;
-
-        public StompTrainMovementListener(ISaveMovementMessageBoundary boundary)
-        {
-            if (boundary == null)
-                throw new ArgumentNullException("boundary");
-
-            _boundary = boundary;
-        }
-
         public void Listen()
         {
             IConnectionFactory factory = new NMSConnectionFactory(new Uri(ConfigurationManager.AppSettings["FeedUri"]));
@@ -34,7 +25,7 @@ namespace RailDataEngine.Services.FeedListener
                     IDestination movementDestination =
                         session.GetDestination(ConfigurationManager.AppSettings["MovementFeedTopic"]);
                     IMessageConsumer movementConsumer = session.CreateConsumer(movementDestination);
-                    movementConsumer.Listener += new MessageListener(OnMovementMessage);
+                    movementConsumer.Listener += OnMovementMessage;
 
                     Console.WriteLine("Movement message listener started.");
 
@@ -48,10 +39,23 @@ namespace RailDataEngine.Services.FeedListener
         {
             ITextMessage msg = (ITextMessage)message;
             msg.Acknowledge();
-            _boundary.Invoke(new SaveMovementMessageBoundaryRequest
-            {
-                MessageToSave = msg.Text
-            });
+
+            AddToQueue(msg.Text);
+        }
+
+        private void AddToQueue(string text)
+        {
+            CloudStorageAccount storageAccount =
+                CloudStorageAccount.Parse(ConfigurationManager.AppSettings["MessagesStorageAccount"]);
+
+            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+
+            CloudQueue queue = queueClient.GetQueueReference(ConfigurationManager.AppSettings["MovementMessageQueue"]);
+
+            queue.CreateIfNotExists();
+
+            CloudQueueMessage message = new CloudQueueMessage(text);
+            queue.AddMessage(message);
         }
     }
 }

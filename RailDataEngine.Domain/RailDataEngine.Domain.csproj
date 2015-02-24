@@ -160,6 +160,9 @@
     <Compile Include="Services\StationBoardService\StationBoardRequest.cs" />
     <Compile Include="Services\StationBoardService\StationDepartureResponse.cs" />
     <Compile Include="Services\TimeConversionService\ITimeConversionService.cs" />
+    <Compile Include="Services\TwitterService\ITwitterService.cs" />
+    <Compile Include="Services\TwitterService\LateServiceTweetInfo.cs" />
+    <Compile Include="Services\TwitterService\LateTrainTweetRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
