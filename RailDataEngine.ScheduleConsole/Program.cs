@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 
 namespace RailDataEngine.ScheduleConsole

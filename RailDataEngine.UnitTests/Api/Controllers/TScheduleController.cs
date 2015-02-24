@@ -4,7 +4,7 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.Api.Controllers;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Boundary.Schedule.FetchScheduleMessageBoundary;
 
 namespace RailDataEngine.UnitTests.Api.Controllers

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Practices.Unity;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Services.FeedListenerService;
 
 namespace RailDataEngine.ListenerJob

@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Exception;
 using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Services.DarwinStationBoard;

@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 

@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Entity.TrainDescriber.Berth;
 using RailDataEngine.Domain.Entity.TrainDescriber.Signal;
 using RailDataEngine.Domain.Gateway.TrainDescriber;

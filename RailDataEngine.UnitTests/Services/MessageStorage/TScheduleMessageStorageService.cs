@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Services.ScheduleMessageStorageService;
 using RailDataEngine.Services.MessageStorage;
 using RailDataEngine.UnitTests.Common;

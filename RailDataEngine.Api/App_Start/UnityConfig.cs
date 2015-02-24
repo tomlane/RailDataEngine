@@ -1,6 +1,6 @@
 using System;
 using Microsoft.Practices.Unity;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 
 namespace RailDataEngine.Api
 {

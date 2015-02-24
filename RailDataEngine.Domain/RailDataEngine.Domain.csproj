@@ -101,6 +101,7 @@
     <Compile Include="Entity\TrainMovements\TrainCancellation.cs" />
     <Compile Include="Entity\TrainMovements\TrainMovement.cs" />
     <Compile Include="Entity\TrainMovements\VariationStatus.cs" />
+    <Compile Include="Exception\InvalidScheduleUpdateException.cs" />
     <Compile Include="Exception\NullServiceResultException.cs" />
     <Compile Include="Gateway\IIdentifyable.cs" />
     <Compile Include="Gateway\Schedule\IScheduleGatewayContainer.cs" />

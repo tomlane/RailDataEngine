@@ -2,8 +2,8 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
+using RailDataEngine.Core;
 using RailDataEngine.Core.Interactor.Schedule;
-using RailDataEngine.DI;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;

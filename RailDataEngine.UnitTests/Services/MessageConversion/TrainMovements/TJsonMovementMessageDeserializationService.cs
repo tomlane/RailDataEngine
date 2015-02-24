@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
 using NUnit.Framework;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
 using RailDataEngine.Services.MessageConversion.TrainMovements;
 

@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boundary\Schedule\FetchScheduleMessagesBoundary.cs" />
     <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary.cs" />

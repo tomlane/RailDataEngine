@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Entity.Schedule;
 using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Gateway.EF.Containers;

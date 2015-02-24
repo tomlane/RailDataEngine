@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
-using RailDataEngine.DI;
+using RailDataEngine.Core;
 using RailDataEngine.Domain.Providers;
 using RailDataEngine.Domain.Services.MessageValidationService;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;

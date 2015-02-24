@@ -42,7 +42,7 @@ using RailDataEngine.Services.MessageConversion.Schedule;
 using RailDataEngine.Services.MessageConversion.TrainMovements;
 using RailDataEngine.Services.MessageStorage;
 
-namespace RailDataEngine.DI
+namespace RailDataEngine.Core
 {
     public static class ContainerBuilder
     {
@@ -76,7 +76,6 @@ namespace RailDataEngine.DI
             container.RegisterType<IStationBoardServiceDetailsBoundary, StationBoardServiceDetailsBoundary>();
             container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
             container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
-            container.RegisterType<IFetchScheduleMessagesBoundary, FetchScheduleMessagesBoundary>();
 
             container.RegisterType<ITrainMovementListener, StompTrainMovementListener>();
 
