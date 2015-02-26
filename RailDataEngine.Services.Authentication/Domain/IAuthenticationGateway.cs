@@ -8,7 +8,7 @@ namespace RailDataEngine.Services.Authentication.Domain
 {
     public interface IAuthenticationGateway : IDisposable
     {
-        Task<IdentityResult> RegisterUser(UserModel user);
+        Task<IdentityResult> RegisterUser(User user);
         Task<IdentityUser> FindUser(string userName, string password);
     }
 }

@@ -32,6 +32,7 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="crs">The CRS code for the requested station.</param>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public StationBoardArrivalsViewModel Arrivals(string crs)
         {
             if (string.IsNullOrEmpty(crs))
@@ -63,6 +64,7 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="crs">The CRS code for the requested station.</param>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public StationBoardDeparturesViewModel Departures(string crs)
         {
             if (string.IsNullOrEmpty(crs))
@@ -94,6 +96,7 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="serviceId">The id of the service to be requested.</param>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public StationBoardServiceDetailsViewModel ServiceDetails(string serviceId)
         {
             if (string.IsNullOrEmpty(serviceId))

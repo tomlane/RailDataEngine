@@ -95,6 +95,10 @@
       <Project>{C500900E-6B18-4E27-8684-949F72A98656}</Project>
       <Name>RailDataEngine.Gateway.EF</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.Authentication\RailDataEngine.Services.Authentication.csproj">
+      <Project>{15271598-31F5-4F20-9EA9-8BC63660606C}</Project>
+      <Name>RailDataEngine.Services.Authentication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj">
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>
       <Name>RailDataEngine.Services.DarwinStationBoard</Name>

@@ -233,6 +233,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\ValidationActionFilter.cs" />
     <Compile Include="ViewModels\ScheduleRecordsViewModel.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="ViewModels\StationBoardArrivalsViewModel.cs" />
     <Compile Include="ViewModels\StationBoardDeparturesViewModel.cs" />
     <Compile Include="ViewModels\StationBoardServiceDetailsViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Documentation.xml" />

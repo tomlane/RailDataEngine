@@ -9,7 +9,6 @@ using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Data.TrainDescriber;
 using RailDataEngine.Data.TrainMovements;
-using RailDataEngine.Domain.Boundary.Schedule.FetchScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
@@ -34,6 +33,8 @@ using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Domain.Services.TimeConversionService;
 using RailDataEngine.Gateway.EF;
 using RailDataEngine.Gateway.EF.Containers;
+using RailDataEngine.Services.Authentication.Domain;
+using RailDataEngine.Services.Authentication.Gateway;
 using RailDataEngine.Services.DarwinStationBoard;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
 using RailDataEngine.Services.FeedListener;
@@ -60,6 +61,7 @@ namespace RailDataEngine.Core
             container.RegisterType(typeof (IScheduleStorageGateway<>), typeof (ScheduleStorageGateway<>));
             container.RegisterType(typeof (ITrainMovementStorageGateway<>), typeof (TrainMovementStorageGateway<>));
             container.RegisterType(typeof (ITrainDescriberStorageGateway<>), typeof (TrainDescriberStorageGateway<>));
+            container.RegisterType<IAuthenticationGateway, AuthenticationGateway>();
             
             container.RegisterType<IScheduleGatewayContainer, ScheduleGatewayContainer>();
             container.RegisterType<ITrainMovementGatewayContainer, TrainMovementGatewayContainer>();

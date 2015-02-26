@@ -93,8 +93,8 @@
     <Compile Include="Data\AuthenticationContext.cs" />
     <Compile Include="Domain\IAuthenticationGateway.cs" />
     <Compile Include="Entity\RailDataEngineUser.cs" />
-    <Compile Include="Entity\UserModel.cs" />
     <Compile Include="Gateway\AuthenticationGateway.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Migrations\201502252019103_InitialCreate.cs" />
     <Compile Include="Migrations\201502252019103_InitialCreate.Designer.cs">
       <DependentUpon>201502252019103_InitialCreate.cs</DependentUpon>

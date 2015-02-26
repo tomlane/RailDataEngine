@@ -18,7 +18,7 @@ namespace RailDataEngine.Services.Authentication.Gateway
             _userManager = new RailDataEngineUserManager(new UserStore<RailDataEngineUser>(_context));
         }
 
-        public async Task<IdentityResult> RegisterUser(UserModel userModel)
+        public async Task<IdentityResult> RegisterUser(User userModel)
         {
             RailDataEngineUser user = new RailDataEngineUser
             {
