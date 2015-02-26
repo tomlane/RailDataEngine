@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Web.Http;
-using System.Web.Mvc;
 using System.Web.Optimization;
-using System.Web.Routing;
 using Exceptionless;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
@@ -31,9 +29,6 @@ namespace RailDataEngine.Api
 
             ConfigureOAuth(app);
             WebApiConfig.Register(HttpConfiguration);
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             app.UseCors(CorsOptions.AllowAll);
