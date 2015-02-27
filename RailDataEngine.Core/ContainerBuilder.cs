@@ -22,6 +22,8 @@ using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Gateway.TrainDescriber;
 using RailDataEngine.Domain.Gateway.TrainMovements;
 using RailDataEngine.Domain.Interactor.FetchActivationsInteractor;
+using RailDataEngine.Domain.Interactor.FetchCancellationsInteractor;
+using RailDataEngine.Domain.Interactor.FetchServiceMovementsInteractor;
 using RailDataEngine.Domain.Interactor.FetchServiceScheduleInteractor;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
@@ -81,6 +83,8 @@ namespace RailDataEngine.Core
 
             container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
             container.RegisterType<IFetchActivationsInteractor, FetchActivationsInteractor>();
+            container.RegisterType<IFetchCancellationsInteractor, FetchCancellationsInteractor>();
+            container.RegisterType<IFetchServiceMovementsInteractor, FetchServiceMovementsInteractor>();
 
             container.RegisterType<IFetchServiceScheduleInteractor, FetchServiceScheduleInteractor>();
 

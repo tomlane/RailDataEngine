@@ -109,6 +109,8 @@
     <Compile Include="Api\Controllers\TStationBoardController.cs" />
     <Compile Include="Api\Controllers\TTrainMovementController.cs" />
     <Compile Include="Boundary\FetchActivationsBoundary\TFetchActivationsBoundary.cs" />
+    <Compile Include="Boundary\FetchCancellationsBoundary\TFetchCancellationsBoundary.cs" />
+    <Compile Include="Boundary\FetchServiceMovementsBoundary\TFetchServiceMovementsBoundary.cs" />
     <Compile Include="Boundary\FetchServiceScheduleBoundary\TFetchServiceScheduleBoundary.cs" />
     <Compile Include="Boundary\SaveMovementMessageBoundary\TSaveMovementMessageBoundary.cs" />
     <Compile Include="Boundary\SaveScheduleMessageBoundary\TSaveScheduleMessageBoundary.cs" />

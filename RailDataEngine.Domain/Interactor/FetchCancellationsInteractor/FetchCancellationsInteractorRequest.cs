@@ -4,6 +4,6 @@ namespace RailDataEngine.Domain.Interactor.FetchCancellationsInteractor
 {
     public class FetchCancellationsInteractorRequest
     {
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
     }
 }

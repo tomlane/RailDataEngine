@@ -13,5 +13,6 @@ namespace RailDataEngine.Domain.Providers
         TransactionType? GetTransactionType(string transactionType);
         DateIndicator? GetDateIndicator(string dateIndicator);
         LocationType? GetLocationType(string locationType);
+        string ConvertTiplocCasing(string tiploc);
     }
 }

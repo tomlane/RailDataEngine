@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using RailDataEngine.Domain.Entity.Schedule;
 using RailDataEngine.Domain.Providers;
@@ -201,7 +202,7 @@ namespace RailDataEngine.Services.MessageConversion.Schedule
                 Nalco = _messageValidationService.ValidateString(jsonTiploc.Tiploc.Nalco),
                 Stanox = _messageValidationService.ValidateString(jsonTiploc.Tiploc.Stanox),
                 TiplocCode = _messageValidationService.ValidateString(jsonTiploc.Tiploc.Code),
-                TpsDescription = _messageValidationService.ValidateString(jsonTiploc.Tiploc.TpsDescription),
+                TpsDescription = _scheduleInformationProvider.ConvertTiplocCasing(jsonTiploc.Tiploc.TpsDescription),
                 TransactionType = _scheduleInformationProvider.GetTransactionType(jsonTiploc.Tiploc.TransactionType)
             };
         }

@@ -1,4 +1,5 @@
-﻿using RailDataEngine.Domain.Entity.Schedule;
+﻿using System.Globalization;
+using RailDataEngine.Domain.Entity.Schedule;
 using RailDataEngine.Domain.Entity.TrainMovements;
 using RailDataEngine.Domain.Providers;
 
@@ -132,6 +133,16 @@ namespace RailDataEngine.Services.MessageConversion.Providers
                 default:
                     return LocationType.Originating;
             }
+        }
+
+        public string ConvertTiplocCasing(string tiploc)
+        {
+            if (string.IsNullOrWhiteSpace(tiploc))
+                return null;
+
+            var textInfo = new CultureInfo("en-GB", false).TextInfo;
+
+            return textInfo.ToTitleCase(tiploc.ToLower());
         }
     }
 }
