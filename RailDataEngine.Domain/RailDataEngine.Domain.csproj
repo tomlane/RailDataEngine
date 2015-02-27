@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boundary\Schedule\FetchScheduleMessageBoundary\FetchScheduleMessageBoundaryRequest.cs" />
-    <Compile Include="Boundary\Schedule\FetchScheduleMessageBoundary\FetchScheduleMessageBoundaryResponse.cs" />
-    <Compile Include="Boundary\Schedule\FetchScheduleMessageBoundary\IFetchScheduleMessagesBoundary.cs" />
+    <Compile Include="Boundary\Schedule\FetchServiceScheduleBoundary\FetchServiceScheduleBoundaryRequest.cs" />
+    <Compile Include="Boundary\Schedule\FetchServiceScheduleBoundary\FetchServiceScheduleBoundaryResponse.cs" />
+    <Compile Include="Boundary\Schedule\FetchServiceScheduleBoundary\IFetchServiceScheduleBoundary.cs" />
     <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\ISaveScheduleMessagesBoundary.cs" />
     <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\SaveScheduleBoundaryRequest.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\IStationBoardArrivalsBoundary.cs" />
@@ -110,6 +110,9 @@
     <Compile Include="Gateway\TrainDescriber\ITrainDescriberStorageGateway.cs" />
     <Compile Include="Gateway\TrainMovements\ITrainMovementGatewayContainer.cs" />
     <Compile Include="Gateway\TrainMovements\ITrainMovementStorageGateway.cs" />
+    <Compile Include="Interactor\FetchServiceScheduleInteractor\FetchServiceScheduleInteractorRequest.cs" />
+    <Compile Include="Interactor\FetchServiceScheduleInteractor\FetchServiceScheduleInteractorResponse.cs" />
+    <Compile Include="Interactor\FetchServiceScheduleInteractor\IFetchServiceScheduleInteractor.cs" />
     <Compile Include="Interactor\SaveMovementMessageInteractor\ISaveMovementMessageInteractor.cs" />
     <Compile Include="Interactor\SaveMovementMessageInteractor\SaveMovementMessageInteractorRequest.cs" />
     <Compile Include="Interactor\SaveScheduleMessageInteractor\ISaveScheduleMessagesInteractor.cs" />

@@ -9,6 +9,7 @@ using RailDataEngine.Data.Common;
 using RailDataEngine.Data.Schedule;
 using RailDataEngine.Data.TrainDescriber;
 using RailDataEngine.Data.TrainMovements;
+using RailDataEngine.Domain.Boundary.Schedule.FetchServiceScheduleBoundary;
 using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
@@ -17,6 +18,7 @@ using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Gateway.TrainDescriber;
 using RailDataEngine.Domain.Gateway.TrainMovements;
+using RailDataEngine.Domain.Interactor.FetchServiceScheduleInteractor;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
@@ -74,11 +76,15 @@ namespace RailDataEngine.Core
             container.RegisterType<ISaveMovementMessageInteractor, SaveMovementMessageInteractor>();
             container.RegisterType<ISaveScheduleMessagesInteractor, SaveScheduleMessageInteractor>();
 
+            container.RegisterType<IFetchServiceScheduleInteractor, FetchServiceScheduleInteractor>();
+
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
             container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
             container.RegisterType<IStationBoardServiceDetailsBoundary, StationBoardServiceDetailsBoundary>();
             container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
             container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
+
+            container.RegisterType<IFetchServiceScheduleBoundary, FetchServiceScheduleBoundary>();
 
             container.RegisterType<ITrainMovementListener, StompTrainMovementListener>();
 
