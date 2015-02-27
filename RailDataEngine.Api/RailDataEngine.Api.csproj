@@ -198,14 +198,22 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="ViewModels\ScheduleRecordsViewModel.cs" />
+    <Compile Include="Models\BerthMessagesResponseModel.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
+    <Compile Include="Models\SignalMessagesResponseModel.cs" />
+    <Compile Include="Controllers\TrainDescriberController.cs" />
+    <Compile Include="Models\ServiceScheduleResponseModel.cs" />
+    <Compile Include="Models\ActivationsResponseModel.cs" />
+    <Compile Include="Models\CancellationsResponseModel.cs" />
+    <Compile Include="Models\ServiceMovementResponseModel.cs" />
+    <Compile Include="Controllers\TrainMovementController.cs" />
     <Compile Include="Controllers\StationBoardController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\StationBoardArrivalsViewModel.cs" />
-    <Compile Include="ViewModels\StationBoardDeparturesViewModel.cs" />
-    <Compile Include="ViewModels\StationBoardServiceDetailsViewModel.cs" />
-    <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="Models\StationBoardArrivalsResponseModel.cs" />
+    <Compile Include="Models\StationBoardDeparturesResponseModel.cs" />
+    <Compile Include="Models\StationBoardServiceDetailsResponseModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

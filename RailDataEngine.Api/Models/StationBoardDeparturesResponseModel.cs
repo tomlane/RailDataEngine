@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using RailDataEngine.Domain.Entity.StationBoard;
 
-namespace RailDataEngine.Api.ViewModels
+namespace RailDataEngine.Api.Models
 {
-    public class StationBoardDeparturesViewModel
+    public class StationBoardDeparturesResponseModel
     {
         /// <summary>
         /// List of departures from the station board API.

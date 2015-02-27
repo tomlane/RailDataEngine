@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RailDataEngine.Api.ViewModels
+namespace RailDataEngine.Api.Models
 {
     public class UserViewModel
     {

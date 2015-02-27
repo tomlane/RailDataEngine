@@ -2,7 +2,7 @@
 using System.Net;
 using System.Web.Http;
 using Exceptionless;
-using RailDataEngine.Api.ViewModels;
+using RailDataEngine.Api.Models;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
@@ -32,8 +32,7 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="crs">The CRS code for the requested station.</param>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
-        public StationBoardArrivalsViewModel Arrivals(string crs)
+        public StationBoardArrivalsResponseModel Arrivals(string crs)
         {
             if (string.IsNullOrEmpty(crs))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -45,7 +44,7 @@ namespace RailDataEngine.Api.Controllers
                     Crs = crs
                 });
 
-                return new StationBoardArrivalsViewModel
+                return new StationBoardArrivalsResponseModel
                 {
                     Services = serviceResponse.Services,
                     StationName = serviceResponse.StationName
@@ -64,8 +63,7 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="crs">The CRS code for the requested station.</param>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
-        public StationBoardDeparturesViewModel Departures(string crs)
+        public StationBoardDeparturesResponseModel Departures(string crs)
         {
             if (string.IsNullOrEmpty(crs))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -77,7 +75,7 @@ namespace RailDataEngine.Api.Controllers
                     Crs = crs
                 });
 
-                return new StationBoardDeparturesViewModel
+                return new StationBoardDeparturesResponseModel
                 {
                     Services = serviceResponse.Services,
                     StationName = serviceResponse.StationName
@@ -96,8 +94,7 @@ namespace RailDataEngine.Api.Controllers
         /// <param name="serviceId">The id of the service to be requested.</param>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
-        public StationBoardServiceDetailsViewModel ServiceDetails(string serviceId)
+        public StationBoardServiceDetailsResponseModel ServiceDetails(string serviceId)
         {
             if (string.IsNullOrEmpty(serviceId))
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -109,7 +106,7 @@ namespace RailDataEngine.Api.Controllers
                     ServiceId = serviceId
                 });
 
-                return new StationBoardServiceDetailsViewModel
+                return new StationBoardServiceDetailsResponseModel
                 {
                     ServiceDetails = serviceResponse.ServiceDetails
                 };

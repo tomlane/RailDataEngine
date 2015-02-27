@@ -3,7 +3,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Results;
-using RailDataEngine.Api.ViewModels;
+using RailDataEngine.Api.Models;
 using RailDataEngine.Services.Authentication.Domain;
 using RailDataEngine.Services.Authentication.Entity;
 
@@ -11,7 +11,7 @@ namespace RailDataEngine.Api.Controllers
 {
     public class AccountController : ApiController
     {
-        private IAuthenticationGateway _authenticationGateway;
+        private readonly IAuthenticationGateway _authenticationGateway;
 
         public AccountController(IAuthenticationGateway authenticationGateway)
         {

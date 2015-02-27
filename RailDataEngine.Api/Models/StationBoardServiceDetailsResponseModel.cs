@@ -1,8 +1,8 @@
 ﻿using RailDataEngine.Domain.Entity.StationBoard;
 
-namespace RailDataEngine.Api.ViewModels
+namespace RailDataEngine.Api.Models
 {
-    public class StationBoardServiceDetailsViewModel
+    public class StationBoardServiceDetailsResponseModel
     {
         /// <summary>
         /// Details for a specific service.
