@@ -21,6 +21,7 @@ using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Gateway.TrainDescriber;
 using RailDataEngine.Domain.Gateway.TrainMovements;
+using RailDataEngine.Domain.Interactor.FetchActivationsInteractor;
 using RailDataEngine.Domain.Interactor.FetchServiceScheduleInteractor;
 using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
@@ -75,9 +76,11 @@ namespace RailDataEngine.Core
             container.RegisterType<IStationBoardService, DarwinBoardService>();
             container.RegisterType<LDBServiceSoap, LDBServiceSoapClient>(new InjectionConstructor());
 
-            container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
             container.RegisterType<ISaveMovementMessageInteractor, SaveMovementMessageInteractor>();
             container.RegisterType<ISaveScheduleMessagesInteractor, SaveScheduleMessageInteractor>();
+
+            container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
+            container.RegisterType<IFetchActivationsInteractor, FetchActivationsInteractor>();
 
             container.RegisterType<IFetchServiceScheduleInteractor, FetchServiceScheduleInteractor>();
 

@@ -66,6 +66,9 @@
     <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary.cs" />
     <Compile Include="ContainerBuilder.cs" />
     <Compile Include="Interactor\Schedule\FetchServiceScheduleInteractor.cs" />
+    <Compile Include="Interactor\TrainMovements\FetchActivationsInteractor.cs" />
+    <Compile Include="Interactor\TrainMovements\FetchCancellationsInteractor.cs" />
+    <Compile Include="Interactor\TrainMovements\FetchServiceMovementsInteractor.cs" />
     <Compile Include="Interactor\TrainMovements\SaveMovementMessageInteractor.cs" />
     <Compile Include="Interactor\Schedule\SaveScheduleMessageInteractor.cs" />
     <Compile Include="Interactor\StationBoard\StationBoardInteractor.cs" />

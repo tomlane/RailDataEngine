@@ -116,6 +116,15 @@
     <Compile Include="Gateway\TrainDescriber\ITrainDescriberStorageGateway.cs" />
     <Compile Include="Gateway\TrainMovements\ITrainMovementGatewayContainer.cs" />
     <Compile Include="Gateway\TrainMovements\ITrainMovementStorageGateway.cs" />
+    <Compile Include="Interactor\FetchActivationsInteractor\FetchActivationsInteractorRequest.cs" />
+    <Compile Include="Interactor\FetchActivationsInteractor\FetchActivationsInteractorResponse.cs" />
+    <Compile Include="Interactor\FetchActivationsInteractor\IFetchActivationsInteractor.cs" />
+    <Compile Include="Interactor\FetchCancellationsInteractor\FetchCancellationsInteractorRequest.cs" />
+    <Compile Include="Interactor\FetchCancellationsInteractor\FetchCancellationsInteractorResponse.cs" />
+    <Compile Include="Interactor\FetchCancellationsInteractor\IFetchCancellationsInteractor.cs" />
+    <Compile Include="Interactor\FetchServiceMovementsInteractor\FetchServiceMovementsInteractorRequest.cs" />
+    <Compile Include="Interactor\FetchServiceMovementsInteractor\FetchServiceMovementsInteractorResponse.cs" />
+    <Compile Include="Interactor\FetchServiceMovementsInteractor\IFetchServiceMovementsInteractor.cs" />
     <Compile Include="Interactor\FetchServiceScheduleInteractor\FetchServiceScheduleInteractorRequest.cs" />
     <Compile Include="Interactor\FetchServiceScheduleInteractor\FetchServiceScheduleInteractorResponse.cs" />
     <Compile Include="Interactor\FetchServiceScheduleInteractor\IFetchServiceScheduleInteractor.cs" />
