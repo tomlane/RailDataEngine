@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using RailDataEngine.Domain.Entity.TrainMovements;
 
-namespace RailDataEngine.Domain.Boundary.TrainMovements.FetchMovementMessageBoundary
+namespace RailDataEngine.Domain.Boundary.TrainMovements.FetchServiceMovementsBoundary
 {
-    public class FetchMovementMessagesBoundaryResponse
+    public class FetchServiceMovementsBoundaryResponse
     {
         public TrainActivation Activation { get; set; }
         public TrainCancellation Cancellation { get; set; }

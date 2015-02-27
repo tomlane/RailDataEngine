@@ -46,6 +46,12 @@ namespace RailDataEngine.UnitTests.Api.Controllers
             {
                 var boundaryMock = new Mock<IFetchServiceScheduleBoundary>();
 
+                boundaryMock.Setup(m => m.Invoke(It.IsAny<FetchServiceScheduleBoundaryRequest>()))
+                    .Returns(new FetchServiceScheduleBoundaryResponse
+                    {
+                        Record = new Record()
+                    });
+
                 var controller = new ScheduleController(boundaryMock.Object);
 
                 controller.ServiceSchedule("trainUid", new DateTime(2015, 02, 27, 14, 30, 0));

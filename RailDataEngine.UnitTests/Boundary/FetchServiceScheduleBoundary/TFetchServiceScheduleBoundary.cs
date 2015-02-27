@@ -37,6 +37,12 @@ namespace RailDataEngine.UnitTests.Boundary.FetchServiceScheduleBoundary
                 var interactorMock = new Mock<IFetchServiceScheduleInteractor>();
                 var boundary = new Core.Boundary.Schedule.FetchServiceScheduleBoundary(interactorMock.Object);
 
+                interactorMock.Setup(m => m.FetchServiceSchedule(It.IsAny<FetchServiceScheduleInteractorRequest>()))
+                    .Returns(new FetchServiceScheduleInteractorResponse
+                    {
+                        Record = new Record()
+                    });
+
                 boundary.Invoke(new FetchServiceScheduleBoundaryRequest
                 {
                     Date = new DateTime(2015, 02, 27, 14, 30, 0),

@@ -14,6 +14,9 @@ using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
+using RailDataEngine.Domain.Boundary.TrainMovements.FetchActivationsBoundary;
+using RailDataEngine.Domain.Boundary.TrainMovements.FetchCancellationsBoundary;
+using RailDataEngine.Domain.Boundary.TrainMovements.FetchServiceMovementsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Gateway.TrainDescriber;
@@ -78,11 +81,16 @@ namespace RailDataEngine.Core
 
             container.RegisterType<IFetchServiceScheduleInteractor, FetchServiceScheduleInteractor>();
 
+            container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
+            container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
+
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
             container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
             container.RegisterType<IStationBoardServiceDetailsBoundary, StationBoardServiceDetailsBoundary>();
-            container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
-            container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
+
+            container.RegisterType<IFetchActivationsBoundary, FetchActivationsBoundary>();
+            container.RegisterType<IFetchCancellationsBoundary, FetchCancellationsBoundary>();
+            container.RegisterType<IFetchServiceMovementsBoundary, FetchServiceMovementsBoundary>();
 
             container.RegisterType<IFetchServiceScheduleBoundary, FetchServiceScheduleBoundary>();
 

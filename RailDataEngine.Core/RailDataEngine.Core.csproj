@@ -60,6 +60,9 @@
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\FetchActivationsBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\FetchCancellationsBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\FetchServiceMovementsBoundary.cs" />
     <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary.cs" />
     <Compile Include="ContainerBuilder.cs" />
     <Compile Include="Interactor\Schedule\FetchServiceScheduleInteractor.cs" />
