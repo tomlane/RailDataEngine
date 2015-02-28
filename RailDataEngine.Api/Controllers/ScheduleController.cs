@@ -18,14 +18,13 @@ namespace RailDataEngine.Api.Controllers
         }
 
         [HttpGet]
-        public ServiceScheduleResponseModel ServiceSchedule(string trainUid, DateTime? date)
+        public ServiceScheduleResponseModel ServiceSchedule(string trainUid)
         {
             if (string.IsNullOrEmpty(trainUid))
                 throw new ArgumentNullException("trainUid");
 
             var result = _boundary.Invoke(new FetchServiceScheduleBoundaryRequest
             {
-                Date = date,
                 TrainUid = trainUid
             });
 

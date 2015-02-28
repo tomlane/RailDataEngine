@@ -128,6 +128,7 @@
     <Compile Include="Interactor\TSaveScheduleMessageInteractor.cs" />
     <Compile Include="Interactor\TStationBoardInteractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Cloud\TAzureQueueService.cs" />
     <Compile Include="Services\DarwinStationBoard\TDarwinBoardService.cs" />
     <Compile Include="Services\MessageConversion\Schedule\TJsonScheduleMessageConversionService.cs" />
     <Compile Include="Services\MessageConversion\Schedule\TJsonScheduleMessageDeserializationService.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Services\MessageConversion\TrainMovements\TJsonMovementMessageDeserializationService.cs" />
     <Compile Include="Services\MessageStorage\TMovementMessageStorageService.cs" />
     <Compile Include="Services\MessageStorage\TScheduleMessageStorageService.cs" />
+    <Compile Include="Services\Social\TLinqTwitterService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RailDataEngine.Api\RailDataEngine.Api.csproj">
@@ -175,6 +177,10 @@
       <Project>{15271598-31F5-4F20-9EA9-8BC63660606C}</Project>
       <Name>RailDataEngine.Services.Authentication</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.Cloud\RailDataEngine.Services.Cloud.csproj">
+      <Project>{DF70C9C3-E257-4D8B-B9F3-FB608198E816}</Project>
+      <Name>RailDataEngine.Services.Cloud</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj">
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>
       <Name>RailDataEngine.Services.DarwinStationBoard</Name>
@@ -190,6 +196,10 @@
     <ProjectReference Include="..\RailDataEngine.Services.MessageStorage\RailDataEngine.Services.MessageStorage.csproj">
       <Project>{C147FB69-402C-4D2B-A17C-1C6ACF731446}</Project>
       <Name>RailDataEngine.Services.MessageStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.Social\RailDataEngine.Services.Social.csproj">
+      <Project>{F39C6FEA-7E59-487B-AFD3-DBEF8B6EE167}</Project>
+      <Name>RailDataEngine.Services.Social</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

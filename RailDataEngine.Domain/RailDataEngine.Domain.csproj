@@ -143,6 +143,7 @@
     <Compile Include="Providers\IMovementInformationProvider.cs" />
     <Compile Include="Providers\IScheduleInformationProvider.cs" />
     <Compile Include="Providers\ITrainInformationProvider.cs" />
+    <Compile Include="Services\CloudQueueService\ICloudQueueService.cs" />
     <Compile Include="Services\FeedListenerService\ITrainMovementListener.cs" />
     <Compile Include="Services\MessageValidationService\IMessageValidationService.cs" />
     <Compile Include="Services\MovementMessageConversionService\IMovementMessageConversionService.cs" />

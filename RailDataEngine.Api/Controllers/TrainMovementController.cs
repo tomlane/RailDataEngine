@@ -30,12 +30,9 @@ namespace RailDataEngine.Api.Controllers
         }
 
         [HttpGet]
-        public ActivationsResponseModel Activations(DateTime date)
+        public ActivationsResponseModel Activations()
         {
-            var result = _activationsBoundary.Invoke(new FetchActivationsBoundaryRequest
-            {
-                Date = date
-            });
+            var result = _activationsBoundary.Invoke(new FetchActivationsBoundaryRequest());
 
             return new ActivationsResponseModel
             {
@@ -44,12 +41,9 @@ namespace RailDataEngine.Api.Controllers
         }
 
         [HttpGet]
-        public CancellationsResponseModel Cancellations(DateTime date)
+        public CancellationsResponseModel Cancellations()
         {
-            var result = _cancellationsBoundary.Invoke(new FetchCancellationsBoundaryRequest
-            {
-                Date = date
-            });
+            var result = _cancellationsBoundary.Invoke(new FetchCancellationsBoundaryRequest());
 
             return new CancellationsResponseModel
             {
@@ -58,14 +52,13 @@ namespace RailDataEngine.Api.Controllers
         }
 
         [HttpGet]
-        public ServiceMovementResponseModel ServiceMovements(string trainId, DateTime? date)
+        public ServiceMovementResponseModel ServiceMovements(string trainId)
         {
             if (string.IsNullOrEmpty(trainId))
                 throw new ArgumentNullException("trainId");
 
             var result = _serviceMovementsBoundary.Invoke(new FetchServiceMovementsBoundaryRequest
             {
-                Date = date,
                 TrainId = trainId
             });
 

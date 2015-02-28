@@ -11,6 +11,7 @@ using RailDataEngine.Domain.Services.MovementMessageConversionService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService;
 using RailDataEngine.Domain.Services.MovementMessageDeserializationService.Entity;
 using RailDataEngine.Domain.Services.MovementMessageStorageService;
+using RailDataEngine.Domain.Services.TwitterService;
 
 namespace RailDataEngine.UnitTests.Interactor
 {
@@ -23,10 +24,12 @@ namespace RailDataEngine.UnitTests.Interactor
             var deserializationMock = new Mock<IMovementMessageDeserializationService>();
             var conversionMock = new Mock<IMovementMessageConversionService>();
             var storageMock = new Mock<IMovementMessageStorageService>();
+            var twitterMock = new Mock<ITwitterService>();
 
-            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(null, conversionMock.Object, storageMock.Object));
-            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, null, storageMock.Object));
-            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, null));
+            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(null, conversionMock.Object, storageMock.Object, twitterMock.Object));
+            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, null, storageMock.Object, twitterMock.Object));
+            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, null, twitterMock.Object));
+            Assert.Throws<ArgumentNullException>(() => new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, storageMock.Object, null));
         }
 
         [Test]
@@ -46,8 +49,9 @@ namespace RailDataEngine.UnitTests.Interactor
                 var deserializationMock = new Mock<IMovementMessageDeserializationService>();
                 var conversionMock = new Mock<IMovementMessageConversionService>();
                 var storageMock = new Mock<IMovementMessageStorageService>();
+                var twitterMock = new Mock<ITwitterService>();
 
-                var interactor = new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, storageMock.Object);
+                var interactor = new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, storageMock.Object, twitterMock.Object);
 
                 Assert.Throws<ArgumentNullException>(() => interactor.SaveMovementMessages(null));
                 Assert.Throws<ArgumentNullException>(() => interactor.SaveMovementMessages(new SaveMovementMessageInteractorRequest()));
@@ -59,6 +63,7 @@ namespace RailDataEngine.UnitTests.Interactor
                 var deserializationMock = new Mock<IMovementMessageDeserializationService>();
                 var conversionMock = new Mock<IMovementMessageConversionService>();
                 var storageMock = new Mock<IMovementMessageStorageService>();
+                var twitterMock = new Mock<ITwitterService>();
 
                 deserializationMock.Setup(
                     m => m.DeserializeMovementMessages(It.IsAny<MovementMessageDeserializationRequest>()))
@@ -77,7 +82,7 @@ namespace RailDataEngine.UnitTests.Interactor
                         Movements = new List<TrainMovement>()
                     });
 
-                var interactor = new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, storageMock.Object);
+                var interactor = new SaveMovementMessageInteractor(deserializationMock.Object, conversionMock.Object, storageMock.Object, twitterMock.Object);
 
                 interactor.SaveMovementMessages(new SaveMovementMessageInteractorRequest
                 {

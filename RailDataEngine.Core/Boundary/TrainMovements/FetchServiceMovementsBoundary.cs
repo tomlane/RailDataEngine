@@ -20,7 +20,8 @@ namespace RailDataEngine.Core.Boundary.TrainMovements
         {
             var result = _interactor.FetchServiceMovements(new FetchServiceMovementsInteractorRequest
             {
-                Date = request.Date
+                Date = request.Date,
+                TrainId = request.TrainId
             });
 
             return new FetchServiceMovementsBoundaryResponse

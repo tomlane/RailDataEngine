@@ -46,6 +46,7 @@
       <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -107,6 +108,10 @@
       <Project>{15271598-31F5-4F20-9EA9-8BC63660606C}</Project>
       <Name>RailDataEngine.Services.Authentication</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.Cloud\RailDataEngine.Services.Cloud.csproj">
+      <Project>{DF70C9C3-E257-4D8B-B9F3-FB608198E816}</Project>
+      <Name>RailDataEngine.Services.Cloud</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RailDataEngine.Services.DarwinStationBoard\RailDataEngine.Services.DarwinStationBoard.csproj">
       <Project>{D020080C-12D6-4AF8-9168-1B4342AB21BC}</Project>
       <Name>RailDataEngine.Services.DarwinStationBoard</Name>
@@ -123,8 +128,17 @@
       <Project>{C147FB69-402C-4D2B-A17C-1C6ACF731446}</Project>
       <Name>RailDataEngine.Services.MessageStorage</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RailDataEngine.Services.Social\RailDataEngine.Services.Social.csproj">
+      <Project>{F39C6FEA-7E59-487B-AFD3-DBEF8B6EE167}</Project>
+      <Name>RailDataEngine.Services.Social</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

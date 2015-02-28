@@ -29,6 +29,7 @@ using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 using RailDataEngine.Domain.Providers;
+using RailDataEngine.Domain.Services.CloudQueueService;
 using RailDataEngine.Domain.Services.FeedListenerService;
 using RailDataEngine.Domain.Services.MessageValidationService;
 using RailDataEngine.Domain.Services.MovementMessageConversionService;
@@ -39,10 +40,12 @@ using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;
 using RailDataEngine.Domain.Services.ScheduleMessageStorageService;
 using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Domain.Services.TimeConversionService;
+using RailDataEngine.Domain.Services.TwitterService;
 using RailDataEngine.Gateway.EF;
 using RailDataEngine.Gateway.EF.Containers;
 using RailDataEngine.Services.Authentication.Domain;
 using RailDataEngine.Services.Authentication.Gateway;
+using RailDataEngine.Services.Cloud;
 using RailDataEngine.Services.DarwinStationBoard;
 using RailDataEngine.Services.DarwinStationBoard.DarwinServiceReference;
 using RailDataEngine.Services.FeedListener;
@@ -51,6 +54,7 @@ using RailDataEngine.Services.MessageConversion.Providers;
 using RailDataEngine.Services.MessageConversion.Schedule;
 using RailDataEngine.Services.MessageConversion.TrainMovements;
 using RailDataEngine.Services.MessageStorage;
+using RailDataEngine.Services.Social;
 
 namespace RailDataEngine.Core
 {
@@ -111,6 +115,8 @@ namespace RailDataEngine.Core
             container.RegisterType<ITimeConversionService, TimeConversionService>();
             container.RegisterType<IScheduleMessageStorageService, ScheduleMessageStorageService>();
             container.RegisterType<IMovementMessageStorageService, MovementMessageStorageService>();
+            container.RegisterType<ICloudQueueService, AzureQueueService>();
+            container.RegisterType<ITwitterService, LinqTwitterService>();
 
             container.RegisterType<IMovementInformationProvider, MovementInformationProvider>();
             container.RegisterType<IScheduleInformationProvider, ScheduleInformationProvider>();
