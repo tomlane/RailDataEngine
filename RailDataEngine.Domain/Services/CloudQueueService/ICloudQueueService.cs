@@ -2,7 +2,7 @@
 {
     public interface ICloudQueueService
     {
-        void AddToQueue(string queueName, byte[] bytes);
         void AddToQueue(string queueName, string content);
+        void AddToMessageBusQueue(string queueName, string content);
     }
 }

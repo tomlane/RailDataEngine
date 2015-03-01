@@ -68,8 +68,8 @@
     <Compile Include="Boundary\TrainMovements\FetchServiceMovementsBoundary\FetchServiceMovementsBoundaryRequest.cs" />
     <Compile Include="Boundary\TrainMovements\FetchServiceMovementsBoundary\FetchServiceMovementsBoundaryResponse.cs" />
     <Compile Include="Boundary\TrainMovements\FetchServiceMovementsBoundary\IFetchServiceMovementsBoundary.cs" />
-    <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary\ISaveMovementMessageBoundary.cs" />
-    <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary\SaveMovementMessageBoundaryRequest.cs" />
+    <Compile Include="Boundary\TrainMovements\ProcessMovementMessageBoundary\IProcessMovementMessageBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\ProcessMovementMessageBoundary\ProcessMovementMessageBoundaryRequest.cs" />
     <Compile Include="Entity\Schedule\Association.cs" />
     <Compile Include="Entity\Schedule\Category.cs" />
     <Compile Include="Entity\Schedule\CateringCode.cs" />
@@ -128,8 +128,8 @@
     <Compile Include="Interactor\FetchServiceScheduleInteractor\FetchServiceScheduleInteractorRequest.cs" />
     <Compile Include="Interactor\FetchServiceScheduleInteractor\FetchServiceScheduleInteractorResponse.cs" />
     <Compile Include="Interactor\FetchServiceScheduleInteractor\IFetchServiceScheduleInteractor.cs" />
-    <Compile Include="Interactor\SaveMovementMessageInteractor\ISaveMovementMessageInteractor.cs" />
-    <Compile Include="Interactor\SaveMovementMessageInteractor\SaveMovementMessageInteractorRequest.cs" />
+    <Compile Include="Interactor\ProcessMovementMessageInteractor\IProcessMovementMessageInteractor.cs" />
+    <Compile Include="Interactor\ProcessMovementMessageInteractor\ProcessMovementMessageInteractorRequest.cs" />
     <Compile Include="Interactor\SaveScheduleMessageInteractor\ISaveScheduleMessagesInteractor.cs" />
     <Compile Include="Interactor\SaveScheduleMessageInteractor\SaveScheduleMessageInteractorRequest.cs" />
     <Compile Include="Interactor\StationBoardInteractor\IStationBoardInteractor.cs" />

@@ -17,7 +17,7 @@ using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoun
 using RailDataEngine.Domain.Boundary.TrainMovements.FetchActivationsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.FetchCancellationsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.FetchServiceMovementsBoundary;
-using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
+using RailDataEngine.Domain.Boundary.TrainMovements.ProcessMovementMessageBoundary;
 using RailDataEngine.Domain.Gateway.Schedule;
 using RailDataEngine.Domain.Gateway.TrainDescriber;
 using RailDataEngine.Domain.Gateway.TrainMovements;
@@ -25,7 +25,7 @@ using RailDataEngine.Domain.Interactor.FetchActivationsInteractor;
 using RailDataEngine.Domain.Interactor.FetchCancellationsInteractor;
 using RailDataEngine.Domain.Interactor.FetchServiceMovementsInteractor;
 using RailDataEngine.Domain.Interactor.FetchServiceScheduleInteractor;
-using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
+using RailDataEngine.Domain.Interactor.ProcessMovementMessageInteractor;
 using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 using RailDataEngine.Domain.Providers;
@@ -82,7 +82,7 @@ namespace RailDataEngine.Core
             container.RegisterType<IStationBoardService, DarwinBoardService>();
             container.RegisterType<LDBServiceSoap, LDBServiceSoapClient>(new InjectionConstructor());
 
-            container.RegisterType<ISaveMovementMessageInteractor, SaveMovementMessageInteractor>();
+            container.RegisterType<IProcessMovementMessageInteractor, ProcessMovementMessageInteractor>();
             container.RegisterType<ISaveScheduleMessagesInteractor, SaveScheduleMessageInteractor>();
 
             container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
@@ -92,7 +92,7 @@ namespace RailDataEngine.Core
 
             container.RegisterType<IFetchServiceScheduleInteractor, FetchServiceScheduleInteractor>();
 
-            container.RegisterType<ISaveMovementMessageBoundary, SaveMovementMessageBoundary>();
+            container.RegisterType<IProcessMovementMessageBoundary, ProcessMovementMessageBoundary>();
             container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
 
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();

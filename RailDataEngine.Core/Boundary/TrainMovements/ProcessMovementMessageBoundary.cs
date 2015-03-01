@@ -1,15 +1,15 @@
 ﻿using System;
 using Exceptionless;
-using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
-using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
+using RailDataEngine.Domain.Boundary.TrainMovements.ProcessMovementMessageBoundary;
+using RailDataEngine.Domain.Interactor.ProcessMovementMessageInteractor;
 
 namespace RailDataEngine.Core.Boundary.TrainMovements
 {
-    public class SaveMovementMessageBoundary : ISaveMovementMessageBoundary
+    public class ProcessMovementMessageBoundary : IProcessMovementMessageBoundary
     {
-        private readonly ISaveMovementMessageInteractor _interactor;
+        private readonly IProcessMovementMessageInteractor _interactor;
 
-        public SaveMovementMessageBoundary(ISaveMovementMessageInteractor interactor)
+        public ProcessMovementMessageBoundary(IProcessMovementMessageInteractor interactor)
         {
             if (interactor == null)
                 throw new ArgumentNullException("interactor");
@@ -17,11 +17,11 @@ namespace RailDataEngine.Core.Boundary.TrainMovements
             _interactor = interactor;
         }
 
-        public void Invoke(SaveMovementMessageBoundaryRequest request)
+        public void Invoke(ProcessMovementMessageBoundaryRequest request)
         {
             try
             {
-                _interactor.SaveMovementMessages(new SaveMovementMessageInteractorRequest
+                _interactor.SaveMovementMessages(new ProcessMovementMessageInteractorRequest
                 {
                     MessageToSave = request.MessageToSave
                 });
@@ -34,8 +34,6 @@ namespace RailDataEngine.Core.Boundary.TrainMovements
                     "Movement message"
                 }).Submit();
             }
-
-            
         }
     }
 }

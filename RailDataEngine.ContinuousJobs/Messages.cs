@@ -1,7 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs;
 using Microsoft.Practices.Unity;
 using RailDataEngine.Core;
-using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
+using RailDataEngine.Domain.Boundary.TrainMovements.ProcessMovementMessageBoundary;
 
 namespace RailDataEngine.ContinuousJobs
 {
@@ -11,9 +11,9 @@ namespace RailDataEngine.ContinuousJobs
         {
             var container = ContainerBuilder.Build();
 
-            var boundary = container.Resolve<ISaveMovementMessageBoundary>();
+            var boundary = container.Resolve<IProcessMovementMessageBoundary>();
 
-            boundary.Invoke(new SaveMovementMessageBoundaryRequest
+            boundary.Invoke(new ProcessMovementMessageBoundaryRequest
             {
                 MessageToSave = messageContent
             });

@@ -45,6 +45,10 @@
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
       <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -64,13 +68,13 @@
     <Compile Include="Boundary\TrainMovements\FetchActivationsBoundary.cs" />
     <Compile Include="Boundary\TrainMovements\FetchCancellationsBoundary.cs" />
     <Compile Include="Boundary\TrainMovements\FetchServiceMovementsBoundary.cs" />
-    <Compile Include="Boundary\TrainMovements\SaveMovementMessageBoundary.cs" />
+    <Compile Include="Boundary\TrainMovements\ProcessMovementMessageBoundary.cs" />
     <Compile Include="ContainerBuilder.cs" />
     <Compile Include="Interactor\Schedule\FetchServiceScheduleInteractor.cs" />
     <Compile Include="Interactor\TrainMovements\FetchActivationsInteractor.cs" />
     <Compile Include="Interactor\TrainMovements\FetchCancellationsInteractor.cs" />
     <Compile Include="Interactor\TrainMovements\FetchServiceMovementsInteractor.cs" />
-    <Compile Include="Interactor\TrainMovements\SaveMovementMessageInteractor.cs" />
+    <Compile Include="Interactor\TrainMovements\ProcessMovementMessageInteractor.cs" />
     <Compile Include="Interactor\Schedule\SaveScheduleMessageInteractor.cs" />
     <Compile Include="Interactor\StationBoard\StationBoardInteractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
