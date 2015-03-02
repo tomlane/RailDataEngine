@@ -4,8 +4,8 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.Core;
-using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
-using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
+using RailDataEngine.Domain.Boundary.Schedule.ProcessScheduleMessageBoundary;
+using RailDataEngine.Domain.Interactor.ProcessScheduleMessageInteractor;
 
 namespace RailDataEngine.UnitTests.Boundary.SaveScheduleMessageBoundary
 {
@@ -15,17 +15,17 @@ namespace RailDataEngine.UnitTests.Boundary.SaveScheduleMessageBoundary
         [Test]
         public void throws_when_dependencies_are_null()
         {
-            var interactorMock = new Mock<ISaveScheduleMessagesInteractor>();
+            var interactorMock = new Mock<IProcessScheduleMessageInteractor>();
 
-            Assert.Throws<ArgumentNullException>(() => new Core.Boundary.Schedule.SaveScheduleMessageBoundary(null));
+            Assert.Throws<ArgumentNullException>(() => new Core.Boundary.Schedule.ProcessScheduleMessageBoundary(null));
         }
 
         [Test]
         public void can_be_built_from_static_container()
         {
             var container = ContainerBuilder.Build();
-            var boundary = container.Resolve<ISaveScheduleMessagesBoundary>();
-            Assert.IsInstanceOf<Core.Boundary.Schedule.SaveScheduleMessageBoundary>(boundary);
+            var boundary = container.Resolve<IProcessScheduleMessageBoundary>();
+            Assert.IsInstanceOf<Core.Boundary.Schedule.ProcessScheduleMessageBoundary>(boundary);
         }
 
         [TestFixture]
@@ -34,11 +34,11 @@ namespace RailDataEngine.UnitTests.Boundary.SaveScheduleMessageBoundary
             [Test]
             public void calls_interactor()
             {
-                var interactorMock = new Mock<ISaveScheduleMessagesInteractor>();
+                var interactorMock = new Mock<IProcessScheduleMessageInteractor>();
 
-                var boundary = new Core.Boundary.Schedule.SaveScheduleMessageBoundary(interactorMock.Object);
+                var boundary = new Core.Boundary.Schedule.ProcessScheduleMessageBoundary(interactorMock.Object);
 
-                boundary.Invoke(new SaveScheduleBoundaryRequest
+                boundary.Invoke(new ProcessScheduleBoundaryRequest
                 {
                     MessagesToSave = new List<string>
                     {
@@ -46,7 +46,7 @@ namespace RailDataEngine.UnitTests.Boundary.SaveScheduleMessageBoundary
                     }
                 });
 
-                interactorMock.Verify(m => m.SaveScheduleMessages(It.IsAny<SaveScheduleMessageInteractorRequest>()), Times.Once);
+                interactorMock.Verify(m => m.ProcessScheduleMessages(It.IsAny<ProcessScheduleMessageInteractorRequest>()), Times.Once);
             }
         }
     }

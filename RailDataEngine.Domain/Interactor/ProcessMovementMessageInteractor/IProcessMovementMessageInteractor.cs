@@ -2,6 +2,6 @@
 {
     public interface IProcessMovementMessageInteractor
     {
-        void SaveMovementMessages(ProcessMovementMessageInteractorRequest request);
+        void ProcessMovementMessages(ProcessMovementMessageInteractorRequest request);
     }
 }

@@ -10,31 +10,19 @@ namespace RailDataEngine.Services.Cloud
 {
     public class AzureQueueService : ICloudQueueService
     {
-        public void AddToQueue(string queueName, string content)
+        public void AddToServiceBusQueue(CloudQueueServiceRequest request)
         {
-            if (string.IsNullOrWhiteSpace(content))
-                throw new ArgumentNullException("content");
-
-            var queue = GetQueue(queueName);
-
-            CloudQueueMessage message = new CloudQueueMessage(content);
-            queue.AddMessage(message);
+            throw new NotImplementedException();
         }
 
-        public void AddToMessageBusQueue(string queueName, string content)
+        public void AddToMessageQueue(CloudQueueServiceRequest request)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ServiceBus"].ConnectionString;
-
-            CheckServiceBusQueueExists(connectionString);
-
-            TopicClient client = TopicClient.CreateFromConnectionString(connectionString, "realtimeraildata");
-
-            client.Send(new BrokeredMessage(content));
+            throw new NotImplementedException();
         }
 
-        private static void CheckServiceBusQueueExists(string connectionString)
+        private static void ValidateServiceBusQueue(string connectionString, string queueName)
         {
-            TopicDescription topicDescription = new TopicDescription("realtimeraildata")
+            QueueDescription queueDescription = new QueueDescription(queueName)
             {
                 MaxSizeInMegabytes = 5120,
                 DefaultMessageTimeToLive = TimeSpan.FromSeconds(30)
@@ -42,18 +30,13 @@ namespace RailDataEngine.Services.Cloud
 
             var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
 
-            if (!namespaceManager.TopicExists("realtimeraildata"))
+            if (!namespaceManager.QueueExists(queueName))
             {
-                namespaceManager.CreateTopic(topicDescription);
-            }
-
-            if (!namespaceManager.SubscriptionExists("realtimeraildata", "AllMessages"))
-            {
-                namespaceManager.CreateSubscription("realtimeraildata", "AllMessages");
+                namespaceManager.CreateQueue(queueDescription);
             }
         }
 
-        private CloudQueue GetQueue(string queueName)
+        private CloudQueue ValidateStorageMessageQueue(string queueName)
         {
             if (string.IsNullOrWhiteSpace(queueName))
                 throw new ArgumentNullException("queueName");

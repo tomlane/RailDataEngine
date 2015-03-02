@@ -61,10 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boundary\Schedule\FetchServiceScheduleBoundary.cs" />
-    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary.cs" />
+    <Compile Include="Boundary\Schedule\ProcessScheduleMessageBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardDeparturesBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary.cs" />
+    <Compile Include="Boundary\TrainDescriber\ProcessDescriberMessageBoundary.cs" />
     <Compile Include="Boundary\TrainMovements\FetchActivationsBoundary.cs" />
     <Compile Include="Boundary\TrainMovements\FetchCancellationsBoundary.cs" />
     <Compile Include="Boundary\TrainMovements\FetchServiceMovementsBoundary.cs" />
@@ -75,7 +76,7 @@
     <Compile Include="Interactor\TrainMovements\FetchCancellationsInteractor.cs" />
     <Compile Include="Interactor\TrainMovements\FetchServiceMovementsInteractor.cs" />
     <Compile Include="Interactor\TrainMovements\ProcessMovementMessageInteractor.cs" />
-    <Compile Include="Interactor\Schedule\SaveScheduleMessageInteractor.cs" />
+    <Compile Include="Interactor\Schedule\ProcessScheduleMessageInteractor.cs" />
     <Compile Include="Interactor\StationBoard\StationBoardInteractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,10 +132,6 @@
     <ProjectReference Include="..\RailDataEngine.Services.MessageStorage\RailDataEngine.Services.MessageStorage.csproj">
       <Project>{C147FB69-402C-4D2B-A17C-1C6ACF731446}</Project>
       <Name>RailDataEngine.Services.MessageStorage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RailDataEngine.Services.Social\RailDataEngine.Services.Social.csproj">
-      <Project>{F39C6FEA-7E59-487B-AFD3-DBEF8B6EE167}</Project>
-      <Name>RailDataEngine.Services.Social</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

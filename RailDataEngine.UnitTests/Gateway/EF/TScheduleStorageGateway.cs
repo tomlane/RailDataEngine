@@ -48,7 +48,7 @@ namespace RailDataEngine.UnitTests.Gateway.EF
             {
                 var database = new Mock<IScheduleDatabase>();
                 var context = new Mock<IScheduleContext>();
-
+                
                 var entitySet = new List<Association>();
 
                 context.Setup(m => m.GetSet<Association>()).Returns(MockHelpers.BuildMockSet(entitySet).Object);
