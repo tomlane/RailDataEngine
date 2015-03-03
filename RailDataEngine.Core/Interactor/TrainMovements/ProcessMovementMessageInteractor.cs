@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Newtonsoft.Json;
 using RailDataEngine.Domain.Interactor.ProcessMovementMessageInteractor;
 using RailDataEngine.Domain.Services.CloudQueueService;
@@ -27,7 +28,7 @@ namespace RailDataEngine.Core.Interactor.TrainMovements
             _cloudQueueService = cloudQueueService;
         }
 
-        public void SaveMovementMessages(ProcessMovementMessageInteractorRequest request)
+        public void ProcessMovementMessages(ProcessMovementMessageInteractorRequest request)
         {
             if (request == null || string.IsNullOrWhiteSpace(request.MessageToSave))
                 throw new ArgumentNullException("request");
@@ -54,7 +55,10 @@ namespace RailDataEngine.Core.Interactor.TrainMovements
         {
             var messageContent = JsonConvert.SerializeObject(convertedMessages);
 
-            _cloudQueueService.AddToMessageBusQueue("MessageQueue", messageContent);
+            _cloudQueueService.AddToServiceBusQueue(new CloudQueueServiceRequest
+            {
+                MessageContent = messageContent
+            });
         }
     }
 }

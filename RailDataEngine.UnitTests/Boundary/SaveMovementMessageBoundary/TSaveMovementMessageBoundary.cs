@@ -3,8 +3,8 @@ using Microsoft.Practices.Unity;
 using Moq;
 using NUnit.Framework;
 using RailDataEngine.Core;
-using RailDataEngine.Domain.Boundary.TrainMovements.SaveMovementMessageBoundary;
-using RailDataEngine.Domain.Interactor.SaveMovementMessageInteractor;
+using RailDataEngine.Domain.Boundary.TrainMovements.ProcessMovementMessageBoundary;
+using RailDataEngine.Domain.Interactor.ProcessMovementMessageInteractor;
 
 namespace RailDataEngine.UnitTests.Boundary.SaveMovementMessageBoundary
 {
@@ -14,18 +14,18 @@ namespace RailDataEngine.UnitTests.Boundary.SaveMovementMessageBoundary
         [Test]
         public void throws_when_dependencies_are_null()
         {
-            var interactorMock = new Mock<ISaveMovementMessageInteractor>();
+            var interactorMock = new Mock<IProcessMovementMessageInteractor>();
 
             Assert.Throws<ArgumentNullException>(
-                () => new Core.Boundary.TrainMovements.SaveMovementMessageBoundary(null));
+                () => new Core.Boundary.TrainMovements.ProcessMovementMessageBoundary(null));
         }
 
         [Test]
         public void can_be_built_from_static_container()
         {
             var container = ContainerBuilder.Build();
-            var boundary = container.Resolve<ISaveMovementMessageBoundary>();
-            Assert.IsInstanceOf<Core.Boundary.TrainMovements.SaveMovementMessageBoundary>(boundary);
+            var boundary = container.Resolve<IProcessMovementMessageBoundary>();
+            Assert.IsInstanceOf<Core.Boundary.TrainMovements.ProcessMovementMessageBoundary>(boundary);
         }
 
         [TestFixture]
@@ -34,16 +34,16 @@ namespace RailDataEngine.UnitTests.Boundary.SaveMovementMessageBoundary
             [Test]
             public void calls_interactor()
             {
-                var interactorMock = new Mock<ISaveMovementMessageInteractor>();
+                var interactorMock = new Mock<IProcessMovementMessageInteractor>();
 
-                var boundary = new Core.Boundary.TrainMovements.SaveMovementMessageBoundary(interactorMock.Object);
+                var boundary = new Core.Boundary.TrainMovements.ProcessMovementMessageBoundary(interactorMock.Object);
 
-                boundary.Invoke(new SaveMovementMessageBoundaryRequest
+                boundary.Invoke(new ProcessMovementMessageBoundaryRequest
                 {
                     MessageToSave = "{ JSON }"
                 });
 
-                interactorMock.Verify(m => m.SaveMovementMessages(It.IsAny<SaveMovementMessageInteractorRequest>()), Times.Once());
+                interactorMock.Verify(m => m.ProcessMovementMessages(It.IsAny<ProcessMovementMessageInteractorRequest>()), Times.Once());
             }
         }
     }

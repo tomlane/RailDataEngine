@@ -55,9 +55,9 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new TrainMovementController(activationsBoundary.Object, cancellationsBoundary.Object, serviceMovementsBoundary.Object);
 
-                controller.Activations(new DateTime(2015, 02, 27, 14, 30, 0));
+                controller.Activations();
 
-                activationsBoundary.Verify(m => m.Invoke(It.Is<FetchActivationsBoundaryRequest>(x => x.Date == new DateTime(2015, 02, 27, 14, 30, 0))));
+                activationsBoundary.Verify(m => m.Invoke(It.IsAny<FetchActivationsBoundaryRequest>()));
             }
 
             [Test]
@@ -84,7 +84,7 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new TrainMovementController(activationsBoundary.Object, cancellationsBoundary.Object, serviceMovementsBoundary.Object);
 
-                var result = controller.Activations(new DateTime(2015, 02, 27, 14, 30, 0));
+                var result = controller.Activations();
 
                 Assert.AreEqual(fetchActivationsBoundaryResponse.Activations, result.Activations);
             }
@@ -108,9 +108,9 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new TrainMovementController(activationsBoundary.Object, cancellationsBoundary.Object, serviceMovementsBoundary.Object);
 
-                controller.Cancellations(new DateTime(2015, 02, 27, 14, 30, 0));
+                controller.Cancellations();
 
-                cancellationsBoundary.Verify(m => m.Invoke(It.Is<FetchCancellationsBoundaryRequest>(x => x.Date == new DateTime(2015, 02, 27, 14, 30, 0))));
+                cancellationsBoundary.Verify(m => m.Invoke(It.IsAny<FetchCancellationsBoundaryRequest>()));
             }
 
             [Test]
@@ -137,7 +137,7 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new TrainMovementController(activationsBoundary.Object, cancellationsBoundary.Object, serviceMovementsBoundary.Object);
 
-                var result = controller.Cancellations(new DateTime(2015, 02, 27, 14, 30, 0));
+                var result = controller.Cancellations();
 
                 Assert.AreEqual(fetchCanellcationsBoundaryResponse.Cancellations, result.Cancellations);
             }
@@ -155,7 +155,7 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new TrainMovementController(activationsBoundary.Object, cancellationsBoundary.Object, serviceMovementsBoundary.Object);
 
-                Assert.Throws<ArgumentNullException>(() => controller.ServiceMovements(null, null));
+                Assert.Throws<ArgumentNullException>(() => controller.ServiceMovements(null));
             }
 
             [Test]
@@ -175,9 +175,9 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new TrainMovementController(activationsBoundary.Object, cancellationsBoundary.Object, serviceMovementsBoundary.Object);
 
-                controller.ServiceMovements("trainId", null);
+                controller.ServiceMovements("trainId");
 
-                serviceMovementsBoundary.Verify(m => m.Invoke(It.Is<FetchServiceMovementsBoundaryRequest>(x => x.Date == null && x.TrainId == "trainId")));
+                serviceMovementsBoundary.Verify(m => m.Invoke(It.Is<FetchServiceMovementsBoundaryRequest>(x => x.TrainId == "trainId")));
             }
 
             [Test]
@@ -215,7 +215,7 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new TrainMovementController(activationsBoundary.Object, cancellationsBoundary.Object, serviceMovementsBoundary.Object);
 
-                var result  = controller.ServiceMovements("trainId", null);
+                var result  = controller.ServiceMovements("trainId");
 
                 Assert.AreEqual(fetchServiceMovementsBoundaryResponse.Activation, result.Activation);
                 Assert.AreEqual(fetchServiceMovementsBoundaryResponse.Cancellation, result.Cancellation);

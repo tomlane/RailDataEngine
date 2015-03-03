@@ -38,7 +38,7 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new ScheduleController(boundaryMock.Object);
 
-                Assert.Throws<ArgumentNullException>(() => controller.ServiceSchedule(null, null));
+                Assert.Throws<ArgumentNullException>(() => controller.ServiceSchedule(null));
             }
 
             [Test]
@@ -54,9 +54,9 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new ScheduleController(boundaryMock.Object);
 
-                controller.ServiceSchedule("trainUid", new DateTime(2015, 02, 27, 14, 30, 0));
+                controller.ServiceSchedule("trainUid");
 
-                boundaryMock.Verify(m => m.Invoke(It.Is<FetchServiceScheduleBoundaryRequest>(x => x.TrainUid == "trainUid" && x.Date == new DateTime(2015, 02, 27, 14, 30, 0))));
+                boundaryMock.Verify(m => m.Invoke(It.Is<FetchServiceScheduleBoundaryRequest>(x => x.TrainUid == "trainUid")));
             }
 
             [Test]
@@ -79,7 +79,7 @@ namespace RailDataEngine.UnitTests.Api.Controllers
 
                 var controller = new ScheduleController(boundaryMock.Object);
 
-                var result = controller.ServiceSchedule("trainUid", new DateTime(2015, 02, 27, 14, 30, 0));
+                var result = controller.ServiceSchedule("trainUid");
 
                 Assert.AreEqual(fetchServiceScheduleBoundaryResponse.Record.AtocCode, result.Record.AtocCode);
                 Assert.AreEqual(fetchServiceScheduleBoundaryResponse.Record.TrainUid, result.Record.TrainUid);

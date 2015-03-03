@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using RailDataEngine.Core.Boundary.Schedule;
 using RailDataEngine.Core.Boundary.StationBoard;
+using RailDataEngine.Core.Boundary.TrainDescriber;
 using RailDataEngine.Core.Boundary.TrainMovements;
 using RailDataEngine.Core.Interactor.Schedule;
 using RailDataEngine.Core.Interactor.StationBoard;
@@ -10,10 +11,11 @@ using RailDataEngine.Data.Schedule;
 using RailDataEngine.Data.TrainDescriber;
 using RailDataEngine.Data.TrainMovements;
 using RailDataEngine.Domain.Boundary.Schedule.FetchServiceScheduleBoundary;
-using RailDataEngine.Domain.Boundary.Schedule.SaveScheduleMessageBoundary;
+using RailDataEngine.Domain.Boundary.Schedule.ProcessScheduleMessageBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardArrivalsBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardDeparturesBoundary;
 using RailDataEngine.Domain.Boundary.StationBoard.StationBoardServiceDetailsBoundary;
+using RailDataEngine.Domain.Boundary.TrainDescriber.ProcessDescriberMessageBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.FetchActivationsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.FetchCancellationsBoundary;
 using RailDataEngine.Domain.Boundary.TrainMovements.FetchServiceMovementsBoundary;
@@ -26,7 +28,7 @@ using RailDataEngine.Domain.Interactor.FetchCancellationsInteractor;
 using RailDataEngine.Domain.Interactor.FetchServiceMovementsInteractor;
 using RailDataEngine.Domain.Interactor.FetchServiceScheduleInteractor;
 using RailDataEngine.Domain.Interactor.ProcessMovementMessageInteractor;
-using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
+using RailDataEngine.Domain.Interactor.ProcessScheduleMessageInteractor;
 using RailDataEngine.Domain.Interactor.StationBoardInteractor;
 using RailDataEngine.Domain.Providers;
 using RailDataEngine.Domain.Services.CloudQueueService;
@@ -40,7 +42,6 @@ using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;
 using RailDataEngine.Domain.Services.ScheduleMessageStorageService;
 using RailDataEngine.Domain.Services.StationBoardService;
 using RailDataEngine.Domain.Services.TimeConversionService;
-using RailDataEngine.Domain.Services.TwitterService;
 using RailDataEngine.Gateway.EF;
 using RailDataEngine.Gateway.EF.Containers;
 using RailDataEngine.Services.Authentication.Domain;
@@ -54,7 +55,6 @@ using RailDataEngine.Services.MessageConversion.Providers;
 using RailDataEngine.Services.MessageConversion.Schedule;
 using RailDataEngine.Services.MessageConversion.TrainMovements;
 using RailDataEngine.Services.MessageStorage;
-using RailDataEngine.Services.Social;
 
 namespace RailDataEngine.Core
 {
@@ -83,7 +83,7 @@ namespace RailDataEngine.Core
             container.RegisterType<LDBServiceSoap, LDBServiceSoapClient>(new InjectionConstructor());
 
             container.RegisterType<IProcessMovementMessageInteractor, ProcessMovementMessageInteractor>();
-            container.RegisterType<ISaveScheduleMessagesInteractor, SaveScheduleMessageInteractor>();
+            container.RegisterType<IProcessScheduleMessageInteractor, ProcessScheduleMessageInteractor>();
 
             container.RegisterType<IStationBoardInteractor, StationBoardInteractor>();
             container.RegisterType<IFetchActivationsInteractor, FetchActivationsInteractor>();
@@ -93,7 +93,8 @@ namespace RailDataEngine.Core
             container.RegisterType<IFetchServiceScheduleInteractor, FetchServiceScheduleInteractor>();
 
             container.RegisterType<IProcessMovementMessageBoundary, ProcessMovementMessageBoundary>();
-            container.RegisterType<ISaveScheduleMessagesBoundary, SaveScheduleMessageBoundary>();
+            container.RegisterType<IProcessScheduleMessageBoundary, ProcessScheduleMessageBoundary>();
+            container.RegisterType<IProcessDescriberMessageBoundary, ProcessDescriberMessageBoundary>();
 
             container.RegisterType<IStationBoardArrivalsBoundary, StationBoardArrivalsBoundary>();
             container.RegisterType<IStationBoardDeparturesBoundary, StationBoardDeparturesBoundary>();
@@ -105,7 +106,7 @@ namespace RailDataEngine.Core
 
             container.RegisterType<IFetchServiceScheduleBoundary, FetchServiceScheduleBoundary>();
 
-            container.RegisterType<ITrainMovementListener, StompTrainMovementListener>();
+            container.RegisterType<IMessageFeedListener, StompMessageFeedListener>();
 
             container.RegisterType<IMovementMessageDeserializationService, JsonMovementMessageDeserializationService>();
             container.RegisterType<IMovementMessageConversionService, JsonMovementMessageConversionService>();
@@ -116,7 +117,6 @@ namespace RailDataEngine.Core
             container.RegisterType<IScheduleMessageStorageService, ScheduleMessageStorageService>();
             container.RegisterType<IMovementMessageStorageService, MovementMessageStorageService>();
             container.RegisterType<ICloudQueueService, AzureQueueService>();
-            container.RegisterType<ITwitterService, LinqTwitterService>();
 
             container.RegisterType<IMovementInformationProvider, MovementInformationProvider>();
             container.RegisterType<IScheduleInformationProvider, ScheduleInformationProvider>();

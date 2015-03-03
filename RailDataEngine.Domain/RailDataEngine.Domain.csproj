@@ -46,8 +46,8 @@
     <Compile Include="Boundary\Schedule\FetchServiceScheduleBoundary\FetchServiceScheduleBoundaryRequest.cs" />
     <Compile Include="Boundary\Schedule\FetchServiceScheduleBoundary\FetchServiceScheduleBoundaryResponse.cs" />
     <Compile Include="Boundary\Schedule\FetchServiceScheduleBoundary\IFetchServiceScheduleBoundary.cs" />
-    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\ISaveScheduleMessagesBoundary.cs" />
-    <Compile Include="Boundary\Schedule\SaveScheduleMessageBoundary\SaveScheduleBoundaryRequest.cs" />
+    <Compile Include="Boundary\Schedule\ProcessScheduleMessageBoundary\IProcessScheduleMessageBoundary.cs" />
+    <Compile Include="Boundary\Schedule\ProcessScheduleMessageBoundary\ProcessScheduleBoundaryRequest.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\IStationBoardArrivalsBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\StationBoardArrivalsBoundaryRequest.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardArrivalsBoundary\StationBoardArrivalsBoundaryResponse.cs" />
@@ -57,8 +57,8 @@
     <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary\IStationBoardServiceDetailsBoundary.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary\StationBoardServiceDetailsBoundaryRequest.cs" />
     <Compile Include="Boundary\StationBoard\StationBoardServiceDetailsBoundary\StationBoardServiceDetailsBoundaryResponse.cs" />
-    <Compile Include="Boundary\TrainDescriber\SaveDescriberMessageBoundary\ISaveDescriberMessagesBoundary.cs" />
-    <Compile Include="Boundary\TrainDescriber\SaveDescriberMessageBoundary\SaveDescriberBoundaryRequest.cs" />
+    <Compile Include="Boundary\TrainDescriber\ProcessDescriberMessageBoundary\IProcessDescriberMessageBoundary.cs" />
+    <Compile Include="Boundary\TrainDescriber\ProcessDescriberMessageBoundary\ProcessDescriberMessageBoundaryRequest.cs" />
     <Compile Include="Boundary\TrainMovements\FetchActivationsBoundary\FetchActivationsBoundaryRequest.cs" />
     <Compile Include="Boundary\TrainMovements\FetchActivationsBoundary\FetchActivationsBoundaryResponse.cs" />
     <Compile Include="Boundary\TrainMovements\FetchActivationsBoundary\IFetchActivationsBoundary.cs" />
@@ -130,8 +130,8 @@
     <Compile Include="Interactor\FetchServiceScheduleInteractor\IFetchServiceScheduleInteractor.cs" />
     <Compile Include="Interactor\ProcessMovementMessageInteractor\IProcessMovementMessageInteractor.cs" />
     <Compile Include="Interactor\ProcessMovementMessageInteractor\ProcessMovementMessageInteractorRequest.cs" />
-    <Compile Include="Interactor\SaveScheduleMessageInteractor\ISaveScheduleMessagesInteractor.cs" />
-    <Compile Include="Interactor\SaveScheduleMessageInteractor\SaveScheduleMessageInteractorRequest.cs" />
+    <Compile Include="Interactor\ProcessScheduleMessageInteractor\IProcessScheduleMessageInteractor.cs" />
+    <Compile Include="Interactor\ProcessScheduleMessageInteractor\ProcessScheduleMessageInteractorRequest.cs" />
     <Compile Include="Interactor\StationBoardInteractor\IStationBoardInteractor.cs" />
     <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorRequest.cs" />
     <Compile Include="Interactor\StationBoardInteractor\StationBoardArrivalsInteractorResponse.cs" />
@@ -143,8 +143,9 @@
     <Compile Include="Providers\IMovementInformationProvider.cs" />
     <Compile Include="Providers\IScheduleInformationProvider.cs" />
     <Compile Include="Providers\ITrainInformationProvider.cs" />
+    <Compile Include="Services\CloudQueueService\CloudQueueServiceRequest.cs" />
     <Compile Include="Services\CloudQueueService\ICloudQueueService.cs" />
-    <Compile Include="Services\FeedListenerService\ITrainMovementListener.cs" />
+    <Compile Include="Services\FeedListenerService\IMessageFeedListener.cs" />
     <Compile Include="Services\MessageValidationService\IMessageValidationService.cs" />
     <Compile Include="Services\MovementMessageConversionService\IMovementMessageConversionService.cs" />
     <Compile Include="Services\MovementMessageConversionService\MovementMessageConversionRequest.cs" />

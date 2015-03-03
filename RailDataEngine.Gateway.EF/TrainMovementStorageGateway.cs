@@ -31,12 +31,22 @@ namespace RailDataEngine.Gateway.EF
             _context.SaveChanges();
         }
 
+        public List<T> Read()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<T> Read(Expression<Func<T, bool>> criteria)
         {
             if (criteria == null)
                 throw new ArgumentNullException("criteria");
 
             return _context.GetSet<T>().Where(criteria).ToList();
+        }
+
+        public List<T> Read(DateTime date)
+        {
+            throw new NotImplementedException();
         }
 
         public void Destroy(List<T> entities)

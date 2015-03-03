@@ -6,7 +6,7 @@ using NUnit.Framework;
 using RailDataEngine.Core;
 using RailDataEngine.Core.Interactor.Schedule;
 using RailDataEngine.Domain.Entity.Schedule;
-using RailDataEngine.Domain.Interactor.SaveScheduleMessageInteractor;
+using RailDataEngine.Domain.Interactor.ProcessScheduleMessageInteractor;
 using RailDataEngine.Domain.Services.ScheduleMessageConversionService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService;
 using RailDataEngine.Domain.Services.ScheduleMessageDeserializationService.Entity;
@@ -24,17 +24,17 @@ namespace RailDataEngine.UnitTests.Interactor
             var conversionService = new Mock<IScheduleMessageConversionService>();
             var scheduleStorageService = new Mock<IScheduleMessageStorageService>();
 
-            Assert.Throws<ArgumentNullException>(() => new SaveScheduleMessageInteractor(null, conversionService.Object, scheduleStorageService.Object));
-            Assert.Throws<ArgumentNullException>(() => new SaveScheduleMessageInteractor(deserializationService.Object, null, scheduleStorageService.Object));
-            Assert.Throws<ArgumentNullException>(() => new SaveScheduleMessageInteractor(deserializationService.Object, conversionService.Object, null));
+            Assert.Throws<ArgumentNullException>(() => new ProcessScheduleMessageInteractor(null, conversionService.Object, scheduleStorageService.Object));
+            Assert.Throws<ArgumentNullException>(() => new ProcessScheduleMessageInteractor(deserializationService.Object, null, scheduleStorageService.Object));
+            Assert.Throws<ArgumentNullException>(() => new ProcessScheduleMessageInteractor(deserializationService.Object, conversionService.Object, null));
         }
 
         [Test]
         public void can_be_built_from_static_container()
         {
             var container = ContainerBuilder.Build();
-            var interactor = container.Resolve<ISaveScheduleMessagesInteractor>();
-            Assert.IsInstanceOf<SaveScheduleMessageInteractor>(interactor);
+            var interactor = container.Resolve<IProcessScheduleMessageInteractor>();
+            Assert.IsInstanceOf<ProcessScheduleMessageInteractor>(interactor);
         }
 
         [TestFixture]
@@ -47,12 +47,12 @@ namespace RailDataEngine.UnitTests.Interactor
                 var conversionService = new Mock<IScheduleMessageConversionService>();
                 var scheduleStorageService = new Mock<IScheduleMessageStorageService>();
 
-                var interactor = new SaveScheduleMessageInteractor(deserializationService.Object,
+                var interactor = new ProcessScheduleMessageInteractor(deserializationService.Object,
                     conversionService.Object, scheduleStorageService.Object);
 
-                Assert.Throws<ArgumentNullException>(() => interactor.SaveScheduleMessages(null));
+                Assert.Throws<ArgumentNullException>(() => interactor.ProcessScheduleMessages(null));
                 Assert.Throws<ArgumentNullException>(
-                    () => interactor.SaveScheduleMessages(new SaveScheduleMessageInteractorRequest()));
+                    () => interactor.ProcessScheduleMessages(new ProcessScheduleMessageInteractorRequest()));
             }
 
             [Test]
@@ -81,10 +81,10 @@ namespace RailDataEngine.UnitTests.Interactor
                         Tiplocs = new List<Tiploc>()
                     });
 
-                var interactor = new SaveScheduleMessageInteractor(deserializationService.Object,
+                var interactor = new ProcessScheduleMessageInteractor(deserializationService.Object,
                     conversionService.Object, scheduleStorageService.Object);
 
-                interactor.SaveScheduleMessages(new SaveScheduleMessageInteractorRequest
+                interactor.ProcessScheduleMessages(new ProcessScheduleMessageInteractorRequest
                 {
                     MessagesToSave = new List<string>
                     {

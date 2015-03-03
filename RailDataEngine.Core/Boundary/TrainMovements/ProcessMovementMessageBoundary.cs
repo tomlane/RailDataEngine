@@ -21,7 +21,7 @@ namespace RailDataEngine.Core.Boundary.TrainMovements
         {
             try
             {
-                _interactor.SaveMovementMessages(new ProcessMovementMessageInteractorRequest
+                _interactor.ProcessMovementMessages(new ProcessMovementMessageInteractorRequest
                 {
                     MessageToSave = request.MessageToSave
                 });
