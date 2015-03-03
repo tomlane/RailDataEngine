@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using Newtonsoft.Json;
 using RailDataEngine.Domain.Interactor.ProcessMovementMessageInteractor;
 using RailDataEngine.Domain.Services.CloudQueueService;
@@ -47,17 +46,9 @@ namespace RailDataEngine.Core.Interactor.TrainMovements
                     Movements = deserializedMessages.Movements
                 });
 
-            SendMessageToServiceBus(convertedMessages);
-
-        }
-
-        private void SendMessageToServiceBus(MovementMessageConversionResponse convertedMessages)
-        {
-            var messageContent = JsonConvert.SerializeObject(convertedMessages);
-
             _cloudQueueService.AddToServiceBusQueue(new CloudQueueServiceRequest
             {
-                MessageContent = messageContent
+                MessageContent = JsonConvert.SerializeObject(convertedMessages)
             });
         }
     }

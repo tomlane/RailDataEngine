@@ -7,12 +7,12 @@ using RailDataEngine.Domain.Services.FeedListenerService;
 
 namespace RailDataEngine.Services.FeedListener
 {
-    public class StompMessageFeedListener : IMessageFeedListener
+    public class BackgroundStompMessageFeedListener : IMessageFeedListener
     {
         private readonly IProcessMovementMessageBoundary _movementMessageBoundary;
         private readonly IProcessDescriberMessageBoundary _describerMessageBoundary;
 
-        public StompMessageFeedListener(IProcessMovementMessageBoundary movementMessageBoundary, IProcessDescriberMessageBoundary describerMessageBoundary)
+        public BackgroundStompMessageFeedListener(IProcessMovementMessageBoundary movementMessageBoundary, IProcessDescriberMessageBoundary describerMessageBoundary)
         {
             if (movementMessageBoundary == null)
                 throw new ArgumentNullException("movementMessageBoundary");
@@ -49,6 +49,7 @@ namespace RailDataEngine.Services.FeedListener
 
                     Console.WriteLine("Message listeners started.");
 
+                    Console.ReadLine();
                     connection.Close();
                 }
             }
