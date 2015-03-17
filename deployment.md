@@ -1,1 +1,0 @@
-Testing an automatic deploymeny using azure websites.
