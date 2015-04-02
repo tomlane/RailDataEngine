@@ -1,4 +1,6 @@
-﻿namespace RailDataEngine.Domain.Entity.StationBoard
+﻿using RailDataEngine.Domain.Entity.StationBoard.Enums;
+
+namespace RailDataEngine.Domain.Entity.StationBoard
 {
     public abstract class StationBoardEntity
     {

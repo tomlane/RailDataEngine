@@ -1,15 +1,13 @@
 ﻿using System;
-using RailDataEngine.Domain.Gateway;
 
 namespace RailDataEngine.Domain.Entity.Schedule
 {
-    public class Header : IIdentifyable
+    public class Header : ScheduleEntity
     {
-        public int Id { get; set; }
         public string Classification { get; set; }
         public DateTime? Timestamp { get; set; }
         public string Owner { get; set; }
-        protected Sender Sender { get; set; }
+        public Sender Sender { get; set; }
         public MetaData MetaData { get; set; }
     }
 

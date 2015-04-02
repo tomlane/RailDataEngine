@@ -1,12 +1,10 @@
 ﻿using System;
-using RailDataEngine.Domain.Gateway;
+using RailDataEngine.Domain.Entity.TrainMovements.Enums;
 
 namespace RailDataEngine.Domain.Entity.TrainMovements
 {
-    public class TrainActivation : IIdentifyable
+    public class TrainActivation : TrainMovementEntity
     {
-        public int Id { get; set; }
-        public string TrainId { get; set; }
         public DateTime? CreationTimestamp { get; set; }
         public DateTime? OriginTimestamp { get; set; }
         public string TrainUid { get; set; }

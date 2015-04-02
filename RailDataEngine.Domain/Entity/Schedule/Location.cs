@@ -1,10 +1,9 @@
-﻿using RailDataEngine.Domain.Gateway;
+﻿using RailDataEngine.Domain.Entity.Schedule.Enums;
 
 namespace RailDataEngine.Domain.Entity.Schedule
 {
-    public class Location : IIdentifyable
+    public class Location : ScheduleEntity
     {
-        public int Id { get; set; }
         public LocationType? LocationIdentity { get; set; }
         public string TiplocCode { get; set; }
         public string Arrival { get; set; }
