@@ -1,6 +1,6 @@
-﻿using RailDataEngine.Domain.Entity.Schedule.Enums;
+﻿using RailDataEngine.Domain.Entities.Schedule.Enums;
 
-namespace RailDataEngine.Domain.Providers
+namespace RailDataEngine.Domain.Providers.Schedule
 {
 	public interface IStpIndicationProvider
 	{

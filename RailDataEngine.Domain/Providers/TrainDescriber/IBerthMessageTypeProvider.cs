@@ -1,4 +1,4 @@
-﻿using RailDataEngine.Domain.Entity.TrainDescriber.Berth;
+﻿using RailDataEngine.Domain.Entities.TrainDescriber.Berth;
 
 namespace RailDataEngine.Domain.Providers.TrainDescriber
 {

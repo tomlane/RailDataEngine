@@ -1,4 +1,4 @@
-﻿using RailDataEngine.Domain.Entity.TrainDescriber.Signal;
+﻿using RailDataEngine.Domain.Entities.TrainDescriber.Signal;
 
 namespace RailDataEngine.Domain.Providers.TrainDescriber
 {

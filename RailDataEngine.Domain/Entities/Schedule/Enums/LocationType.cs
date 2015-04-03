@@ -1,0 +1,16 @@
+﻿using System.ComponentModel;
+
+namespace RailDataEngine.Domain.Entities.Schedule.Enums
+{
+    public enum LocationType
+    {
+        [Description("Originating")]
+        Originating,
+
+        [Description("Intermediate")]
+        Intermediate,
+
+        [Description("Terminating")]
+        Terminating
+    }
+}

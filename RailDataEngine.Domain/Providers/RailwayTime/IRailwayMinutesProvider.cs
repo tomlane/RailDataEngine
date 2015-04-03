@@ -1,4 +1,4 @@
-﻿namespace RailDataEngine.Domain.Services.TimeConversionService
+﻿namespace RailDataEngine.Domain.Providers.RailwayTime
 {
 	public interface IRailwayMinutesProvider
 	{

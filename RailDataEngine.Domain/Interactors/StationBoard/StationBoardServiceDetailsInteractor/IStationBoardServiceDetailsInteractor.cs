@@ -1,0 +1,7 @@
+﻿namespace RailDataEngine.Domain.Interactors.StationBoard.StationBoardServiceDetailsInteractor
+{
+	public interface IStationBoardServiceDetailsInteractor
+	{
+		StationBoardServiceDetailsInteractorResponse GetServiceDetails(StationBoardServiceDetailsInteractorRequest request);
+	}
+}

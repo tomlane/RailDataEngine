@@ -1,7 +1,6 @@
-﻿using RailDataEngine.Domain.Entity.TrainMovements;
-using RailDataEngine.Domain.Entity.TrainMovements.Enums;
+﻿using RailDataEngine.Domain.Entities.TrainMovements.Enums;
 
-namespace RailDataEngine.Domain.Providers
+namespace RailDataEngine.Domain.Providers.TrainMovements
 {
 	public interface ITrainDirectionProvider
 	{
