@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ct="http://thalesgroup.com/RTTI/2007-10-10/ldb/commontypes" xmlns:prev="http://thalesgroup.com/RTTI/2012-01-13/ldb/types" xmlns:tns="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" id="RTTI_2014-02-20_ldb_types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ct="http://thalesgroup.com/RTTI/2007-10-10/ldb/commontypes" xmlns:tns="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" xmlns:prev="http://thalesgroup.com/RTTI/2012-01-13/ldb/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" id="RTTI_2014-02-20_ldb_types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="rtti_2007-10-10_ldb_common_types.xsd" namespace="http://thalesgroup.com/RTTI/2007-10-10/ldb/commontypes" />
   <xs:import schemaLocation="rtti_2012-01-13_ldb_types.xsd" namespace="http://thalesgroup.com/RTTI/2012-01-13/ldb/types" />
   <xs:complexType name="ServiceLocation">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://thalesgroup.com/RTTI/2014-02-20/ldb/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tok="http://thalesgroup.com/RTTI/2013-11-28/Token/types" targetNamespace="http://thalesgroup.com/RTTI/2014-02-20/ldb/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:tok="http://thalesgroup.com/RTTI/2013-11-28/Token/types" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://thalesgroup.com/RTTI/2014-02-20/ldb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://thalesgroup.com/RTTI/2014-02-20/ldb/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:import namespace="http://thalesgroup.com/RTTI/2013-11-28/Token/types" location="darwin_token_types_2013-11-28.wsdl" />
   <wsdl:types>
-    <xs:schema xmlns:ct="http://thalesgroup.com/RTTI/2007-10-10/ldb/commontypes" xmlns:ldbt2="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" xmlns:ldbt="http://thalesgroup.com/RTTI/2012-01-13/ldb/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://thalesgroup.com/RTTI/2014-02-20/ldb/">
+    <xs:schema xmlns:ct="http://thalesgroup.com/RTTI/2007-10-10/ldb/commontypes" xmlns:ldbt="http://thalesgroup.com/RTTI/2012-01-13/ldb/types" xmlns:ldbt2="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://thalesgroup.com/RTTI/2014-02-20/ldb/">
       <xs:import schemaLocation="rtti_2007-10-10_ldb_common_types.xsd" namespace="http://thalesgroup.com/RTTI/2007-10-10/ldb/commontypes" />
       <xs:import schemaLocation="rtti_2012-01-13_ldb_types.xsd" namespace="http://thalesgroup.com/RTTI/2012-01-13/ldb/types" />
       <xs:import schemaLocation="rtti_2014-02-20_ldb_types.xsd" namespace="http://thalesgroup.com/RTTI/2014-02-20/ldb/types" />

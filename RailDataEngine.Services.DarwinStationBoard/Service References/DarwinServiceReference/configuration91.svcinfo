@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="KjJSubFHZB342ZX8LQJG7sAYwqA=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="9v10w4eAw+/xRljkqnG7B14bfn81nAAO1hsY/2Shzug=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="LDBServiceSoap">
       <properties>
